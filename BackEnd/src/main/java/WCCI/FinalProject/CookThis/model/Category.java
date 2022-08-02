@@ -53,4 +53,7 @@ public class Category {
     public int hashCode() {
         return Objects.hash(Id, title, categoryImgUrl);
     }
+
+
+
 }

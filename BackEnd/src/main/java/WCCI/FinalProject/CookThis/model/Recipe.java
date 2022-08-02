@@ -2,17 +2,15 @@ package WCCI.FinalProject.CookThis.model;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.aspectj.apache.bcel.generic.Instruction;
 
-import javax.persistence.ElementCollection;
-import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Collection;
 
 @Entity
 public class Recipe {
-
+    @Id
+    @GeneratedValue
     private long id;
 
     @ElementCollection
@@ -22,13 +20,13 @@ public class Recipe {
     @ManyToMany
     @JsonIgnore
     private Collection<Category> categories;
-  @ElementCollection
-  private Collection<Ingredient> ingredients;
+    @ElementCollection
+    private Collection<Ingredient> ingredients;
 
-  @ElementCollection
-  private Collection<Comment> comments;
+    @ElementCollection
+    private Collection<Review> comments;
 
-    public Recipe( String picOfDish) {
+    public Recipe(String picOfDish) {
         this.steps = new ArrayList<>();
         this.picOfDish = picOfDish;
         this.ingredients = new ArrayList<>();
@@ -58,7 +56,11 @@ public class Recipe {
         return ingredients;
     }
 
-    public Collection<Comment> getComments() {
+    public Collection<Review> getComments() {
         return comments;
+    }
+
+    public void addComments(Review newComment) {
+        comments.add(newComment);
     }
 }
