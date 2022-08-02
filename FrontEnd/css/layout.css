@@ -93,3 +93,19 @@ overflow: hidden;
     
     text-align: center;
 }
+
+#open-book{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 0.1fr 0.9fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    margin: auto auto;
+}
+#open-book-image{
+    grid-area: 2 / 2 / 3 / 5;
+}
+#open-book-image-spec{
+    height: 750px;
+    z-index: 100;
+ }
