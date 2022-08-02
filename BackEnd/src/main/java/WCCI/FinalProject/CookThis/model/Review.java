@@ -1,10 +1,9 @@
 package WCCI.FinalProject.CookThis.model;
 
 import javax.persistence.*;
-import java.util.Objects;
 
 @Embeddable
-class Comment {
+public class Review {
 
     private String author;
 
@@ -14,14 +13,14 @@ class Comment {
     @ManyToOne
     private Recipe recipe;
 
-    public Comment(String author, String content, double rating, Recipe recipe) {
+    public Review(String author, String content, double rating, Recipe recipe) {
         this.author = author;
         this.content = content;
         this.rating = rating;
         this.recipe = recipe;
     }
 
-    public Comment() {
+    public Review() {
     }
 
 
