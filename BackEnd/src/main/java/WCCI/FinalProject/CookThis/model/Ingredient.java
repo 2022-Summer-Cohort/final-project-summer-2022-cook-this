@@ -9,11 +9,12 @@ public class Ingredient {
 
     private String measurement;
 
-
     public Ingredient(String name, String measurement) {
         this.name = name;
         this.measurement = measurement;
     }
+
+
 
     public Ingredient() {
     }

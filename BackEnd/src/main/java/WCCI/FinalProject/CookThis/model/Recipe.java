@@ -1,6 +1,7 @@
 package WCCI.FinalProject.CookThis.model;
 
 
+import WCCI.FinalProject.CookThis.repository.RecipeRepo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;

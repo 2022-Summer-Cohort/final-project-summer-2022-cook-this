@@ -1,6 +1,9 @@
 package WCCI.FinalProject.CookThis;
 
-import WCCI.FinalProject.CookThis.model.*;
+import WCCI.FinalProject.CookThis.model.Category;
+import WCCI.FinalProject.CookThis.model.Ingredient;
+import WCCI.FinalProject.CookThis.model.Recipe;
+import WCCI.FinalProject.CookThis.model.Step;
 import WCCI.FinalProject.CookThis.repository.CategoryRepo;
 import WCCI.FinalProject.CookThis.repository.RecipeRepo;
 import org.springframework.boot.CommandLineRunner;
@@ -158,6 +161,9 @@ public class Populator implements CommandLineRunner {
 
         Ingredient burrIngredient12 = new Ingredient("fresh cilantro","To Taste");
         recipe1.addIngredient(burrIngredient12);
+        Ingredient ingredient1 = new Ingredient("Granny Smith Apples","8");
+        recipe1.addIngredient(ingredient1);
+        recipeRepo.save(recipe1);
 
 
 

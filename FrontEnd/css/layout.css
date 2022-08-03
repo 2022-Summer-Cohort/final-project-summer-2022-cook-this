@@ -1,15 +1,24 @@
 body{
-    background-image: url(/images/annie-spratt-osuiatBDTww-unsplash.jpg);
-    background-size: 150%;
+    background-image: url(/images/countertopBackground.jpg);
+    background-size: cover;
+    
    
 }
 .container{
     max-width: 1200px;
 }
+a{
+    text-decoration: none;
+    color: black;
+}
+a:active{
+    text-decoration: none;
+    color: black;
+}
 /* Home Page: Closed Book */
 #closed-book{
     display: flex;
-    justify-content: center;
+    margin-left: 10%;
 }
 #closed-book-image{
     grid-area: 2 / 2 / 3 / 4;
@@ -71,7 +80,7 @@ body{
 }
 
 .recipe-list{
-    height: 600px;
+    height: 650px;
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
@@ -106,4 +115,50 @@ body{
     background-color: white;
     width: 600px;
     border-left: 2px solid black;
+}
+h2 {
+    text-align: center;
+}
+#title {
+    text-align: center;
+}
+#title h1{
+    margin-bottom: 0;
+}
+#avgRating{
+    color: gold;
+    margin-top: 0;
+}
+#recipe-top {
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+}
+#ingredients-list h2{
+    margin: 0;
+}
+.recipe-image img{
+    width: 100%;
+}
+.recipe-image{
+    width: 50%;
+}
+#instruction-list{
+    height: 350px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.instructions ul::-webkit-scrollbar {
+    display: hidden;
+}
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+.instructions ul{
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+  
+#instructions ul li {
+    margin-right: 10px;
 }
