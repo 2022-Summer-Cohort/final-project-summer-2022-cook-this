@@ -5,14 +5,16 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.Objects;
 
 @Entity
 public class Recipe {
     @Id
     @GeneratedValue
-    private long id;
-
+    private Long id;
+    private String name;
     @ElementCollection
     private Collection<Step> steps;
 
@@ -26,9 +28,11 @@ public class Recipe {
     @ElementCollection
     private Collection<Review> comments;
 
-    public Recipe(String picOfDish) {
+    public Recipe(String name, String picOfDish,Category ... categories) {
         this.steps = new ArrayList<>();
+        this.name = name;
         this.picOfDish = picOfDish;
+        this.categories = Arrays.asList(categories);
         this.ingredients = new ArrayList<>();
 
     }
@@ -36,8 +40,12 @@ public class Recipe {
     public Recipe() {
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public Collection<Step> getSteps() {
@@ -63,4 +71,22 @@ public class Recipe {
     public void addComments(Review newComment) {
         comments.add(newComment);
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Recipe recipe = (Recipe) o;
+        return id == recipe.id && Objects.equals(name, recipe.name) && Objects.equals(picOfDish, recipe.picOfDish);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, picOfDish);
+    }
+
+    public void addStep(Step step1) {
+        steps.add(step1);
+    }
 }
+
