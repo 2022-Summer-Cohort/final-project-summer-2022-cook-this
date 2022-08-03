@@ -1,8 +1,6 @@
 package WCCI.FinalProject.CookThis;
 
-import WCCI.FinalProject.CookThis.model.Category;
-import WCCI.FinalProject.CookThis.model.Recipe;
-import WCCI.FinalProject.CookThis.model.Step;
+import WCCI.FinalProject.CookThis.model.*;
 import WCCI.FinalProject.CookThis.repository.CategoryRepo;
 import WCCI.FinalProject.CookThis.repository.RecipeRepo;
 import org.springframework.boot.CommandLineRunner;
@@ -51,6 +49,11 @@ public class Populator implements CommandLineRunner {
         recipe1.addStep(step10);
         recipe1.addStep(step11);
         recipeRepo.save(recipe1);
+
+        Ingredient ingredient1 = new Ingredient("Granny Smith Apples","8");
+        recipe1.addIngredient(ingredient1);
+        recipeRepo.save(recipe1);
+
 
 
 
