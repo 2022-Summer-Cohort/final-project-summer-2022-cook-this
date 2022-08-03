@@ -5,11 +5,7 @@ import WCCI.FinalProject.CookThis.model.Recipe;
 import WCCI.FinalProject.CookThis.model.Review;
 import WCCI.FinalProject.CookThis.repository.CategoryRepo;
 import WCCI.FinalProject.CookThis.repository.RecipeRepo;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-
+import org.springframework.web.bind.annotation.*;
 
 
 public class RecipeController {
@@ -40,4 +36,11 @@ public class RecipeController {
         return recipeToChange;
     }
 
+
+    @PostMapping("/api/recipe")
+    public Recipe addRecipe(@RequestBody Recipe recipeToAdd) {
+        recipeRepo.save(recipeToAdd);
+        return recipeToAdd;
     }
+
+}

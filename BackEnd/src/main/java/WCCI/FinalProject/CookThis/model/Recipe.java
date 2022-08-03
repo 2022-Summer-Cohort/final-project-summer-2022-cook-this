@@ -1,6 +1,7 @@
 package WCCI.FinalProject.CookThis.model;
 
 
+import WCCI.FinalProject.CookThis.repository.RecipeRepo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
@@ -88,5 +89,10 @@ public class Recipe {
     public void addStep(Step step1) {
         steps.add(step1);
     }
+
+    public void addIngredient(Ingredient ingredient1) {
+        ingredients.add(ingredient1);
+    }
+
 }
 

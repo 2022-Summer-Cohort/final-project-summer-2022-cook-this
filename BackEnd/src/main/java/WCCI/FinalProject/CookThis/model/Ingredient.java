@@ -5,32 +5,25 @@ import java.util.Objects;
 
 @Embeddable
 public class Ingredient {
-    private String title;
+    private String name;
 
-    private String imgUrl;
+    private String measurement;
 
-    private String description;
-
-
-    public Ingredient(String title, String imgUrl, String description) {
-        this.title = title;
-        this.imgUrl = imgUrl;
-        this.description = description;
+    public Ingredient(String name, String measurement) {
+        this.name = name;
+        this.measurement = measurement;
     }
+
+
 
     public Ingredient() {
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public String getImgUrl() {
-        return imgUrl;
+    public String getMeasurement() {
+        return measurement;
     }
-
-    public String getDescription() {
-        return description;
-    }
-
 }
