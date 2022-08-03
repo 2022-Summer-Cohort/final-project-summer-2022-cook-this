@@ -6,13 +6,9 @@ body{
 .container{
     max-width: 1200px;
 }
-nav{
-   
-}
-
+/* Home Page: Closed Book */
 #closed-book{
     display: flex;
-    
     justify-content: center;
 }
 #closed-book-image{
@@ -24,21 +20,17 @@ nav{
    height: 750px;
    z-index: 100;
 }
-
+/* side tabs */
 .tabs{
     writing-mode: vertical-rl;
     grid-area: 2 / 2 / 3 / 4;
     display: flex;
-    grid-template-columns: repeat(4, 4fr);
-    grid-template-rows: 2fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
     justify-content: space-evenly;
     height: 600px;
-    margin-top: 40px;
-    font-size: 14px;
-    /* position: relative; */
-    /* width: 700px; */
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 4px;
     align-items: top;
     overflow: hidden;
     
@@ -52,7 +44,10 @@ nav{
     width: 40px;
     justify-content: center;
     z-index: 99;
-    /* flex-wrap: wrap; */
+}
+.side-tabs:hover{
+    box-shadow: 2px 2px 2px 2px rgba(235, 206, 168,0.3);
+    cursor: pointer;
 }
 .side-tabs h2{
     font-size: 15pt;
@@ -60,7 +55,7 @@ nav{
     margin-bottom: 5px;
 }
 
-/* Open book pages */
+/* Open Book Pages */
 #open-book{
     display: flex;
     justify-content: center;
@@ -68,16 +63,13 @@ nav{
     margin: 0px auto;
     height: 750px;
 }
+/* Left Page: Single Category/Recipe list  */
 .left-page{
     background-color: white;
     width: 600px;
     border-right: 2px solid black;    
 }
-.right-page{
-    background-color: white;
-    width: 600px;
-    border-left: 2px solid black;
-}
+
 .recipe-list{
     height: 600px;
     display: flex;
@@ -108,4 +100,10 @@ nav{
 .recipe-cards p{
     margin: 3% 0;
     padding-left: 5%;
+}
+/* Right Page: Recipe Page  */
+.right-page{
+    background-color: white;
+    width: 600px;
+    border-left: 2px solid black;
 }
