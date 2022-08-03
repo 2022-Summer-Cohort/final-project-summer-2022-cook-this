@@ -53,6 +53,11 @@ public class Populator implements CommandLineRunner {
         recipe1.addStep(step11);
         recipeRepo.save(recipe1);
 
+        Ingredient ingredient1 = new Ingredient("Granny Smith Apples","8");
+        recipe1.addIngredient(ingredient1);
+        recipeRepo.save(recipe1);
+
+
 
         Ingredient ingredient1 = new Ingredient("Granny Smith Apples","8");
         recipe1.addIngredient(ingredient1);

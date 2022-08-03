@@ -6,6 +6,14 @@ body{
 .container{
     max-width: 1200px;
 }
+a{
+    text-decoration: none;
+    color: black;
+}
+a:active{
+    text-decoration: none;
+    color: black;
+}
 /* Home Page: Closed Book */
 #closed-book{
     display: flex;

@@ -93,6 +93,5 @@ public class Recipe {
     public void addIngredient(Ingredient ingredient1) {
         ingredients.add(ingredient1);
     }
-
 }
 
