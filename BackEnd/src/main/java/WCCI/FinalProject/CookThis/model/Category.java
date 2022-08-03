@@ -1,6 +1,7 @@
 package WCCI.FinalProject.CookThis.model;
 
 import javax.persistence.*;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Objects;
 
@@ -8,33 +9,26 @@ import java.util.Objects;
 public class Category {
     @Id
     @GeneratedValue
-    private long Id;
+    private Long Id;
 
     private String title;
 
-    private String categoryImgUrl;
     @ManyToMany(mappedBy = "categories")
     private Collection<Recipe> recipes;
 
-    public Category(String title, String categoryImgUrl, Collection<Recipe> recipes) {
+    public Category(String title) {
         this.title = title;
-        this.categoryImgUrl = categoryImgUrl;
-        this.recipes = recipes;
     }
 
     public Category() {
     }
 
-    public long getId() {
+    public Long getId() {
         return Id;
     }
 
     public String getTitle() {
         return title;
-    }
-
-    public String getCategoryImgUrl() {
-        return categoryImgUrl;
     }
 
     public Collection<Recipe> getRecipes() {
@@ -46,14 +40,11 @@ public class Category {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Category category = (Category) o;
-        return Id == category.Id && Objects.equals(title, category.title) && Objects.equals(categoryImgUrl, category.categoryImgUrl);
+        return Id == category.Id && Objects.equals(title, category.title);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(Id, title, categoryImgUrl);
+        return Objects.hash(Id, title);
     }
-
-
-
 }
