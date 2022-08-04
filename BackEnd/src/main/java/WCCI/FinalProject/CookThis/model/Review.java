@@ -8,7 +8,7 @@ import java.util.Collection;
 public class Review {
 
     private String author;
-
+    @Lob
     private String content;
 
     private Double ratings;

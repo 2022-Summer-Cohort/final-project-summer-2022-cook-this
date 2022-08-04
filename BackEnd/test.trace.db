@@ -1448,6 +1448,30 @@ Caused by: org.h2.mvstore.MVStoreException: File is corrupted - unable to recove
 	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4082)
 	at org.h2.mvstore.db.Store.<init>(Store.java:136)
 	... 58 more
+<<<<<<< HEAD
 2022-08-04 13:29:32 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLDataException: Value too long for column "INSTRUCTIONS CHARACTER VARYING(255)": "U&'Step 6: Assemble! One at a time, lay out a tortilla and spoon some of the sau... (306)"; SQL statement:
 insert into recipe_steps (recipe_id, instructions) values (?, ?) [22001-214]
+=======
+2022-08-04 10:11:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "INSTRUCTIONS CHARACTER VARYING(255)": "U&'Step 6: Assemble! One at a time, lay out a tortilla and spoon some of the sau... (306)"; SQL statement:
+insert into recipe_steps (recipe_id, instructions) values (?, ?) [22001-214]
+2022-08-04 10:13:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "INSTRUCTIONS CHARACTER VARYING(255)": "U&'Step 6: Assemble! One at a time, lay out a tortilla and spoon some of the sau... (306)"; SQL statement:
+insert into recipe_steps (recipe_id, instructions) values (?, ?) [22001-214]
+2022-08-04 10:16:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "INSTRUCTIONS CHARACTER VARYING(255)": "SPACE(306 /* table: -2 id: 22 */) (306)"; SQL statement:
+insert into recipe_steps (recipe_id, instructions) values (?, ?) [22001-214]
+2022-08-04 10:17:46 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "INSTRUCTIONS CHARACTER VARYING(255)": "SPACE(306 /* table: -2 id: 22 */) (306)"; SQL statement:
+insert into recipe_steps (recipe_id, instructions) values (?, ?) [22001-214]
+2022-08-04 10:35:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "INSTRUCTIONS CHARACTER VARYING(255)": "SPACE(306 /* table: -2 id: 46 */) (306)"; SQL statement:
+insert into recipe_steps (recipe_id, instructions) values (?, ?) [22001-214]
+2022-08-04 10:36:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "INSTRUCTIONS CHARACTER VARYING(255)": "SPACE(306 /* table: -2 id: 14 */) (306)"; SQL statement:
+insert into recipe_steps (recipe_id, instructions) values (?, ?) [22001-214]
+2022-08-04 10:38:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "INSTRUCTIONS CHARACTER VARYING(255)": "SPACE(306 /* table: -2 id: 14 */) (306)"; SQL statement:
+insert into recipe_steps (recipe_id, instructions) values (?, ?) [22001-214]
+>>>>>>> main

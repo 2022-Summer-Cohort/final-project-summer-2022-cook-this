@@ -90,9 +90,13 @@ public class Populator implements CommandLineRunner {
         recipeRepo.save(recipe1);
 
 
-        Recipe recipe2 = new Recipe("ApplePie", "/images/ApplePie.jpg", category1);
-        recipeRepo.save(recipe2);
 
+
+
+
+
+        Recipe recipe2 = new Recipe("ApplePie","/images/ApplePie.jpg",category1);
+        recipeRepo.save(recipe2);
 
         Step burrStep1 = new Step("Step 1: Prep! Whisk the eggs, dice the potatoes, chop the green onions, slice your avocado.");
         Step burrStep2 = new Step("Step 2: Brown! Cook the breakfast sausage—ground, not links—until it’s nicely browned and sizzling.");
@@ -101,70 +105,68 @@ public class Populator implements CommandLineRunner {
         Step burrStep5 = new Step("Step 5: Mix it up! Once the potatoes are cooked, add the sausage, eggs and green onions to the pan. Stir to combine.");
         Step burrStep6 = new Step("Step 6: Assemble! One at a time, lay out a tortilla and spoon some of the sausage-egg-potato mixture directly into your mouth. No wait. That’s not right. One at a time, lay out a tortilla and spoon some of the sausage-egg-potato mixture into a tortilla. Top with cheese, avocado slices, salsa and cilantro.");
         Step burrStep7 = new Step("Step 7: Melty, crispy, gooey breakfast burrito goodness! Line all of your assembled burritos up on a baking sheet, and bake just until they are golden on the outside and the cheese is melted, about 10 minutes.");
-        recipe1.addStep(burrStep1);
-        recipe1.addStep(burrStep2);
-        recipe1.addStep(burrStep3);
-        recipe1.addStep(burrStep4);
-        recipe1.addStep(burrStep5);
-        recipe1.addStep(burrStep6);
-        recipe1.addStep(burrStep7);
-        recipeRepo.save(recipe2);
-
-        Ingredient burrIngredient1 = new Ingredient("large russet potatoes, peeled and grated", "2");
-        recipe1.addIngredient(burrIngredient1);
+        recipe2.addStep(burrStep1);
+        recipe2.addStep(burrStep2);
+        recipe2.addStep(burrStep3);
+        recipe2.addStep(burrStep4);
+        recipe2.addStep(burrStep5);
+        recipe2.addStep(burrStep6);
+        recipe2.addStep(burrStep7);
 
 
-        Ingredient burrIngredient2 = new Ingredient("breakfast sausage, ground (not links)", "1 lb");
-        recipe1.addIngredient(burrIngredient2);
 
 
-        Ingredient burrIngredient3 = new Ingredient("eggs, beaten", "6");
-        recipe1.addIngredient(burrIngredient3);
+        Ingredient burrIngredient1 = new Ingredient("large russet potatoes, peeled and grated","2");
+        recipe2.addIngredient(burrIngredient1);
 
 
-        Ingredient burrIngredient4 = new Ingredient("olive oil", "2 tbsp");
-        recipe1.addIngredient(burrIngredient4);
+        Ingredient burrIngredient2 = new Ingredient("breakfast sausage, ground (not links)","1 lb");
+        recipe2.addIngredient(burrIngredient2);
 
 
-        Ingredient burrIngredient5 = new Ingredient("salt", "1 tsp");
-        recipe1.addIngredient(burrIngredient5);
+        Ingredient burrIngredient3 = new Ingredient("eggs, beaten","6");
+        recipe2.addIngredient(burrIngredient3);
 
 
-        Ingredient burrIngredient6 = new Ingredient("ground pepper", "1/4 tsp");
-        recipe1.addIngredient(burrIngredient6);
+        Ingredient burrIngredient4 = new Ingredient("olive oil","2 tbsp");
+        recipe2.addIngredient(burrIngredient4);
 
 
-        Ingredient burrIngredient7 = new Ingredient("bunch green onions, white and green parts, chopped", "1");
-        recipe1.addIngredient(burrIngredient7);
+        Ingredient burrIngredient5 = new Ingredient("salt","1 tsp");
+        recipe2.addIngredient(burrIngredient5);
 
 
-        Ingredient burrIngredient8 = new Ingredient("large flour tortillas", "6");
-        recipe1.addIngredient(burrIngredient8);
+        Ingredient burrIngredient6 = new Ingredient("ground pepper","1/4 tsp");
+        recipe2.addIngredient(burrIngredient6);
 
 
-        Ingredient burrIngredient9 = new Ingredient("cheddar cheese, grated", "2 cups");
-        recipe1.addIngredient(burrIngredient9);
+        Ingredient burrIngredient7 = new Ingredient("bunch green onions, white and green parts, chopped","1");
+        recipe2.addIngredient(burrIngredient7);
 
 
-        Ingredient burrIngredient10 = new Ingredient("avocados, sliced", "2");
-        recipe1.addIngredient(burrIngredient10);
+        Ingredient burrIngredient8 = new Ingredient("large flour tortillas","6");
+        recipe2.addIngredient(burrIngredient8);
 
 
-        Ingredient burrIngredient11 = new Ingredient("salsa", "To Taste");
-        recipe1.addIngredient(burrIngredient11);
+        Ingredient burrIngredient9 = new Ingredient("cheddar cheese, grated","2 cups");
+        recipe2.addIngredient(burrIngredient9);
 
 
-        Ingredient burrIngredient12 = new Ingredient("fresh cilantro", "To Taste");
-        recipe1.addIngredient(burrIngredient12);
-        Ingredient ingredient1 = new Ingredient("Granny Smith Apples", "8");
-        recipe1.addIngredient(ingredient1);
-        recipeRepo.save(recipe1);
+        Ingredient burrIngredient10 = new Ingredient("avocados, sliced","2");
+        recipe2.addIngredient(burrIngredient10);
 
+
+        Ingredient burrIngredient11 = new Ingredient("salsa","To Taste");
+        recipe2.addIngredient(burrIngredient11);
+
+
+        Ingredient burrIngredient12 = new Ingredient("fresh cilantro","To Taste");
+        recipe2.addIngredient(burrIngredient12);
 
         Review burrReview1 = new Review("Alex", "Make your morning amazing!", 4.0);
-        recipe1.addReview(burrReview1);
-
+        recipe2.addReview(burrReview1);
         recipeRepo.save(recipe2);
+      
 
         Recipe recipe3 = new Recipe("Vegetable Fried Rice", "/images/FriedRice.jpg", category1);
         recipeRepo.save(recipe3);
@@ -221,3 +223,6 @@ public class Populator implements CommandLineRunner {
 
     }
 }
+
+
+
