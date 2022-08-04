@@ -16,6 +16,7 @@ public class Category {
     @ManyToMany(mappedBy = "categories")
     private Collection<Recipe> recipes;
 
+
     public Category(String title) {
         this.title = title;
     }
@@ -34,6 +35,9 @@ public class Category {
     public Collection<Recipe> getRecipes() {
         return recipes;
     }
+
+
+
 
     @Override
     public boolean equals(Object o) {

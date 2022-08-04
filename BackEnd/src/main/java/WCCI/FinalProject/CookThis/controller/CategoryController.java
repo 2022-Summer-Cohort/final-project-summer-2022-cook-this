@@ -16,12 +16,12 @@ public class CategoryController {
     }
 
     @GetMapping("api/categories")
-        public Iterable<Category> getAllCategories(){
+    public Iterable<Category> getAllCategories() {
         return categoryRepo.findAll();
     }
 
     @GetMapping("api/categories/{id}")
-    public Category getCategoryById(@PathVariable Long id){
+    public Category getCategoryById(@PathVariable Long id) {
         return categoryRepo.findById(id).get();
     }
 
@@ -32,11 +32,8 @@ public class CategoryController {
 //    }
 
 
-
-//    @PostMapping("api/categories/{Id}/addImgUrl")
+//    @PostMapping("api/category/newCategory")
 //    public Category categoryToAddImg(@PathVariable Long Id){
 //        Category categoryToAdd = categoryRepo.findById(Id).get();
 //        categoryToAdd.addCategoryImgUrl();
-//    }
-
 }
