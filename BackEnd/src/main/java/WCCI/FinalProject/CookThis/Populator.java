@@ -32,22 +32,21 @@ public class Populator implements CommandLineRunner {
         categoryRepo.save(category4);
 
 
-
-        Recipe recipe1 = new Recipe("ApplePie","/images/ApplePie.jpg",category1);
+        Recipe recipe1 = new Recipe("ApplePie", "/images/ApplePie.jpg", category1);
         recipeRepo.save(recipe1);
 
 
         Step pieStep1 = new Step("Step 1: Peel and core apples, then thinly slice. ");
-        Step pieStep2 =new Step("Step 2: Preheat the oven to 425 degrees F (220 degrees C).");
-        Step pieStep3 =new Step("Step 3: Melt butter in a saucepan over medium heat. Add flour and stir to form a paste; cook until fragrant, about 1 to 2 minutes. Add both sugars and water; bring to a boil. Reduce the heat to low and simmer for 3 to 5 minutes. Remove from the heat.");
-        Step pieStep4 =new Step("Step 4: Press one pastry into the bottom and up the sides of a 9-inch pie pan. Roll out remaining pastry so it will overhang the pie by about 1/2 inch. Cut pastry into eight 1-inch strips.");
-        Step pieStep5 =new Step("Step 5: Place sliced apples in the bottom crust, forming a slight mound.");
-        Step pieStep6 =new Step("Step 6: Lay four strips vertically and evenly spaced over top of the filled pie, using longer strips in the center and shorter strips at the edges.");
-        Step pieStep7 =new Step("Step 7: Fold the first and third strips all the way back so they're almost falling off the pie. Lay one of the unused strips perpendicular over the second and forth strips, then unfold the first and third strips back into their original position.");
-        Step pieStep8 =new Step("Step 8: Fold the second and forth vertical strips back. Lay one of the three unused strips perpendicular over top. Unfold the first and third strips back into their original position.");
-        Step pieStep9 =new Step("Step 9: Repeat Steps 7 and 8 to weave in the last two strips of pastry. Fold and trim excess dough at the edges as necessary, and pinch to secure. ");
-        Step pieStep10 =new Step("Step 10: Slowly and gently pour the sugar-butter mixture over the crust, making sure it seeps down through the lattice and over the sliced apples. Brush some over the top of the lattice, but make sure it doesn't run off the sides");
-        Step pieStep11 =new Step("Step 11: Bake in the preheated oven for 15 minutes. Reduce the temperature to 350 degrees F (175 degrees C) and continue baking until apples are soft, 35 to 45 minutes.");
+        Step pieStep2 = new Step("Step 2: Preheat the oven to 425 degrees F (220 degrees C).");
+        Step pieStep3 = new Step("Step 3: Melt butter in a saucepan over medium heat. Add flour and stir to form a paste; cook until fragrant, about 1 to 2 minutes. Add both sugars and water; bring to a boil. Reduce the heat to low and simmer for 3 to 5 minutes. Remove from the heat.");
+        Step pieStep4 = new Step("Step 4: Press one pastry into the bottom and up the sides of a 9-inch pie pan. Roll out remaining pastry so it will overhang the pie by about 1/2 inch. Cut pastry into eight 1-inch strips.");
+        Step pieStep5 = new Step("Step 5: Place sliced apples in the bottom crust, forming a slight mound.");
+        Step pieStep6 = new Step("Step 6: Lay four strips vertically and evenly spaced over top of the filled pie, using longer strips in the center and shorter strips at the edges.");
+        Step pieStep7 = new Step("Step 7: Fold the first and third strips all the way back so they're almost falling off the pie. Lay one of the unused strips perpendicular over the second and forth strips, then unfold the first and third strips back into their original position.");
+        Step pieStep8 = new Step("Step 8: Fold the second and forth vertical strips back. Lay one of the three unused strips perpendicular over top. Unfold the first and third strips back into their original position.");
+        Step pieStep9 = new Step("Step 9: Repeat Steps 7 and 8 to weave in the last two strips of pastry. Fold and trim excess dough at the edges as necessary, and pinch to secure. ");
+        Step pieStep10 = new Step("Step 10: Slowly and gently pour the sugar-butter mixture over the crust, making sure it seeps down through the lattice and over the sliced apples. Brush some over the top of the lattice, but make sure it doesn't run off the sides");
+        Step pieStep11 = new Step("Step 11: Bake in the preheated oven for 15 minutes. Reduce the temperature to 350 degrees F (175 degrees C) and continue baking until apples are soft, 35 to 45 minutes.");
         recipe1.addStep(pieStep1);
         recipe1.addStep(pieStep2);
         recipe1.addStep(pieStep3);
@@ -61,31 +60,31 @@ public class Populator implements CommandLineRunner {
         recipe1.addStep(pieStep11);
 
 
-        Ingredient pieIngredient1 = new Ingredient("Granny Smith Apples","8");
+        Ingredient pieIngredient1 = new Ingredient("Granny Smith Apples", "8");
         recipe1.addIngredient(pieIngredient1);
 
 
-        Ingredient pieIngredient2 = new Ingredient("Unsalted Butter","1/2 Cup");
+        Ingredient pieIngredient2 = new Ingredient("Unsalted Butter", "1/2 Cup");
         recipe1.addIngredient(pieIngredient2);
 
 
-        Ingredient pieIngredient3 = new Ingredient("White Sugar","3 tablespoons");
+        Ingredient pieIngredient3 = new Ingredient("White Sugar", "3 tablespoons");
         recipe1.addIngredient(pieIngredient3);
 
 
-        Ingredient pieIngredient4 = new Ingredient("Packed Brown Sugar","1/2 Cup");
+        Ingredient pieIngredient4 = new Ingredient("Packed Brown Sugar", "1/2 Cup");
         recipe1.addIngredient(pieIngredient4);
 
 
-        Ingredient pieIngredient5 = new Ingredient("Water","1/4 Cup");
+        Ingredient pieIngredient5 = new Ingredient("Water", "1/4 Cup");
         recipe1.addIngredient(pieIngredient5);
 
 
-        Ingredient pieIngredient6 = new Ingredient("Double-Crust Pie Pastry (Thawed)","9 Inches");
+        Ingredient pieIngredient6 = new Ingredient("Double-Crust Pie Pastry (Thawed)", "9 Inches");
         recipe1.addIngredient(pieIngredient6);
 
 
-        Review pieReview1 = new Review("Alex","Amazing Amazing Amazing!",4.0);
+        Review pieReview1 = new Review("Alex", "Amazing Amazing Amazing!", 4.0);
         recipe1.addReview(pieReview1);
 
         recipeRepo.save(recipe1);
@@ -166,9 +165,58 @@ public class Populator implements CommandLineRunner {
 
         Review burrReview1 = new Review("Alex", "Make your morning amazing!", 4.0);
         recipe2.addReview(burrReview1);
-
-
         recipeRepo.save(recipe2);
+      
+
+        Recipe recipe3 = new Recipe("Vegetable Fried Rice", "/images/FriedRice.jpg", category1);
+        recipeRepo.save(recipe3);
+
+        Step thirdStep1 = new Step("Step 1: Bring water to a boil in a saucepan. Stir in rice. Reduce heat, cover, and simmer until liquid is absorbed, about 20 minutes. Set aside.");
+        Step thirdStep2 = new Step("Step 2: Heat peanut oil in a large skillet or wok over medium heat. Add onions, bell pepper, garlic, and red pepper flakes. Cook, stirring occasionally, for 3 minutes.");
+        Step thirdStep3 = new Step("Step 3: Increase heat to medium-high. Stir in cooked rice, green onions, and soy sauce; cook and stir for 1 minute. Add peas and cook 1 minute more.");
+        Step thirdStep4 = new Step("Step 4: Remove from heat. Stir in sesame oil and garnish with peanuts.");
+        recipe1.addStep(thirdStep1);
+        recipe1.addStep(thirdStep2);
+        recipe1.addStep(thirdStep3);
+        recipe1.addStep(thirdStep4);
+        recipeRepo.save(recipe3);
+
+        Ingredient thirdIngredient1 = new Ingredient("Cups of Water", "3 ");
+        recipe3.addIngredient(thirdIngredient1);
+
+        Ingredient thirdIngredient2 = new Ingredient("Tablespoons Peanut Oil", "2 ");
+        recipe3.addIngredient(thirdIngredient2);
+
+        Ingredient thirdIngredient3 = new Ingredient("Small Yellow Onion, Chopped", "1 ");
+        recipe3.addIngredient(thirdIngredient3);
+
+        Ingredient thirdIngredient4 = new Ingredient("Small Green Bell Pepper", "1 ");
+        recipe3.addIngredient(thirdIngredient4);
+
+        Ingredient thirdIngredient5 = new Ingredient("Teaspoon Minced Garlic", "1 ");
+        recipe3.addIngredient(thirdIngredient5);
+
+        Ingredient thirdIngredient6 = new Ingredient("Teaspoon Red Pepper Flakes", "1/4 ");
+        recipe3.addIngredient(thirdIngredient6);
+
+        Ingredient thirdIngredient7 = new Ingredient("Tablespoons Soy Sauce", "3 ");
+        recipe3.addIngredient(thirdIngredient7);
+
+        Ingredient thirdIngredient8 = new Ingredient("Frozen Petite Peas", "1 cup ");
+        recipe3.addIngredient(thirdIngredient8);
+
+        Ingredient thirdIngredient9 = new Ingredient("Teaspoons of Sesame Oil", "2 ");
+        recipe3.addIngredient(thirdIngredient9);
+
+        Ingredient thirdIngredient10 = new Ingredient("Roasted Peanuts", "1/4 cup ");
+        recipe3.addIngredient(thirdIngredient10);
+        recipeRepo.save(recipe3);
+
+        Review thirdReview1 = new Review("Zak","Delicious",4.3);
+        recipe1.addReview(thirdReview1);
+        recipeRepo.save(recipe3);
+
+
 
 
 
