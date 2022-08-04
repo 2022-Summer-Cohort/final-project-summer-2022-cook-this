@@ -1,9 +1,6 @@
 package WCCI.FinalProject.CookThis;
 
-import WCCI.FinalProject.CookThis.model.Category;
-import WCCI.FinalProject.CookThis.model.Ingredient;
-import WCCI.FinalProject.CookThis.model.Recipe;
-import WCCI.FinalProject.CookThis.model.Step;
+import WCCI.FinalProject.CookThis.model.*;
 import WCCI.FinalProject.CookThis.repository.CategoryRepo;
 import WCCI.FinalProject.CookThis.repository.RecipeRepo;
 import org.springframework.boot.CommandLineRunner;
@@ -167,9 +164,9 @@ public class Populator implements CommandLineRunner {
 
 
 
-        Review burrReview1 = new Review("Alex","Make your morning amazing!",4.0);
-        recipe1.addReview(burrReview1);
-
-        recipeRepo.save(recipe2);
+        
     }
 }
+
+
+
