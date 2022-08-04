@@ -35,6 +35,8 @@ public class Recipe {
         this.picOfDish = picOfDish;
         this.categories = Arrays.asList(categories);
         this.ingredients = new ArrayList<>();
+        this.comments = new ArrayList<>();
+
 
     }
 
