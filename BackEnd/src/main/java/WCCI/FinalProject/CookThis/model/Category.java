@@ -20,6 +20,7 @@ public class Category {
     @JsonIgnore
     private Collection<Recipe> recipes;
 
+
     public Category(String title) {
         this.title = title;
         this.recipes = new ArrayList<>();
@@ -39,6 +40,9 @@ public class Category {
     public Collection<Recipe> getRecipes() {
         return recipes;
     }
+
+
+
 
     @Override
     public boolean equals(Object o) {
