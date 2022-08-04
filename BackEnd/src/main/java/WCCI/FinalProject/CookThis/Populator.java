@@ -92,9 +92,12 @@ public class Populator implements CommandLineRunner {
 
 
 
+
+
+
+
         Recipe recipe2 = new Recipe("ApplePie","/images/ApplePie.jpg",category1);
         recipeRepo.save(recipe2);
-
 
         Step burrStep1 = new Step("Step 1: Prep! Whisk the eggs, dice the potatoes, chop the green onions, slice your avocado.");
         Step burrStep2 = new Step("Step 2: Brown! Cook the breakfast sausage—ground, not links—until it’s nicely browned and sizzling.");
@@ -103,14 +106,16 @@ public class Populator implements CommandLineRunner {
         Step burrStep5 = new Step("Step 5: Mix it up! Once the potatoes are cooked, add the sausage, eggs and green onions to the pan. Stir to combine.");
         Step burrStep6 = new Step("Step 6: Assemble! One at a time, lay out a tortilla and spoon some of the sausage-egg-potato mixture directly into your mouth. No wait. That’s not right. One at a time, lay out a tortilla and spoon some of the sausage-egg-potato mixture into a tortilla. Top with cheese, avocado slices, salsa and cilantro.");
         Step burrStep7 = new Step("Step 7: Melty, crispy, gooey breakfast burrito goodness! Line all of your assembled burritos up on a baking sheet, and bake just until they are golden on the outside and the cheese is melted, about 10 minutes.");
-        recipe1.addStep(burrStep1);
-        recipe1.addStep(burrStep2);
-        recipe1.addStep(burrStep3);
-        recipe1.addStep(burrStep4);
-        recipe1.addStep(burrStep5);
-        recipe1.addStep(burrStep6);
-        recipe1.addStep(burrStep7);
-        recipeRepo.save(recipe2);
+        recipe2.addStep(burrStep1);
+        recipe2.addStep(burrStep2);
+        recipe2.addStep(burrStep3);
+        recipe2.addStep(burrStep4);
+        recipe2.addStep(burrStep5);
+        recipe2.addStep(burrStep6);
+        recipe2.addStep(burrStep7);
+
+
+
 
         Ingredient burrIngredient1 = new Ingredient("large russet potatoes, peeled and grated","2");
         recipe2.addIngredient(burrIngredient1);
@@ -159,6 +164,11 @@ public class Populator implements CommandLineRunner {
         Ingredient burrIngredient12 = new Ingredient("fresh cilantro","To Taste");
         recipe2.addIngredient(burrIngredient12);
 
+        Review burrReview1 = new Review("Alex", "Make your morning amazing!", 4.0);
+        recipe2.addReview(burrReview1);
+
+
+        recipeRepo.save(recipe2);
 
 
 

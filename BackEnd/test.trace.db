@@ -1460,3 +1460,12 @@ insert into recipe_steps (recipe_id, instructions) values (?, ?) [22001-214]
 2022-08-04 10:17:46 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLDataException: Value too long for column "INSTRUCTIONS CHARACTER VARYING(255)": "SPACE(306 /* table: -2 id: 22 */) (306)"; SQL statement:
 insert into recipe_steps (recipe_id, instructions) values (?, ?) [22001-214]
+2022-08-04 10:35:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "INSTRUCTIONS CHARACTER VARYING(255)": "SPACE(306 /* table: -2 id: 46 */) (306)"; SQL statement:
+insert into recipe_steps (recipe_id, instructions) values (?, ?) [22001-214]
+2022-08-04 10:36:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "INSTRUCTIONS CHARACTER VARYING(255)": "SPACE(306 /* table: -2 id: 14 */) (306)"; SQL statement:
+insert into recipe_steps (recipe_id, instructions) values (?, ?) [22001-214]
+2022-08-04 10:38:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "INSTRUCTIONS CHARACTER VARYING(255)": "SPACE(306 /* table: -2 id: 14 */) (306)"; SQL statement:
+insert into recipe_steps (recipe_id, instructions) values (?, ?) [22001-214]

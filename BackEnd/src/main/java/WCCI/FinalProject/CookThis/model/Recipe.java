@@ -21,7 +21,6 @@ public class Recipe {
 
     private String picOfDish;
     @ManyToMany
-    @JsonIgnore
     private Collection<Category> categories;
     @ElementCollection
     private Collection<Ingredient> ingredients;
