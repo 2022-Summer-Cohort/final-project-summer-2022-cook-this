@@ -35,11 +35,16 @@ a:active{
     grid-area: 2 / 2 / 3 / 4;
     display: flex;
     justify-content: space-evenly;
-    height: 600px;
-    margin-top: 20px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-right: 4px;
+    /*600px*/
+    height: 80vh;
+        /* 20px */
+    margin-top: 3%;
+        /* 20px */
+    padding-top: 3%;
+        /* 20px */
+    padding-bottom: 3%;
+    /*4px*/
+    padding-right: .6%;
     align-items: top;
     overflow: hidden;
     
@@ -49,7 +54,8 @@ a:active{
     align-items: flex-end;
     background-color:rgb(235, 206, 168);
     border-radius: 0 15px 15px 0;
-    height: 135px;
+    height: 25%;
+    /* height: 135px; */
     width: 40px;
     justify-content: center;
     z-index: 99;
@@ -59,7 +65,8 @@ a:active{
     cursor: pointer;
 }
 .side-tabs h2{
-    font-size: 15pt;
+    font-size: 1.1em;
+    /* font-size:15pt; */
     margin-top: 5px;
     margin-bottom: 5px;
 }
@@ -70,23 +77,34 @@ a:active{
     justify-content: center;
     width: 100vw;
     margin: 0px auto;
-    height: 750px;
+    max-height:750px;
+    height: 95vh;
 }
 /* Left Page: Single Category/Recipe list  */
 .left-page{
     background-color: white;
     width: 600px;
-    border-right: 2px solid black;    
+    border-right: 2px solid black; 
+    height: 100%;   
 }
-
+.recipe-flex{
+    height: 91%;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.recipe-flex::-webkit-scrollbar {
+    display: hidden;
+}
 .recipe-list{
-    height: 650px;
+    /* height: 600px; */
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
     justify-content: center;
-    overflow-y: scroll;
+
 }
+
 .recipe-cards {
     display: flex;
     flex-direction: column;
@@ -115,6 +133,7 @@ a:active{
     background-color: white;
     width: 600px;
     border-left: 2px solid black;
+    height: 100%;
 }
 h2 {
     text-align: center;
@@ -133,9 +152,22 @@ h2 {
     display: flex;
     align-items: center;
     margin-top: 0;
+    height: 30%
+}
+#ingredients-list{
+    height: 100%;
 }
 #ingredients-list h2{
     margin: 0;
+}
+#ingredients-list ul{
+    height: 80%;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.ingredients-list ul::-webkit-scrollbar {
+    display: hidden;
 }
 .recipe-image img{
     width: 100%;
@@ -144,9 +176,9 @@ h2 {
     width: 50%;
 }
 #instruction-list{
-    height: 350px;
-    overflow-y: scroll;
     scrollbar-width: none;
+    height: 22em;
+    overflow-y: scroll;
 }
 
 .instructions ul::-webkit-scrollbar {
