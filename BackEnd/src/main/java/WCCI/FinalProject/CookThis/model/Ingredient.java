@@ -1,5 +1,7 @@
 package WCCI.FinalProject.CookThis.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.Embeddable;
 import java.util.Objects;
 

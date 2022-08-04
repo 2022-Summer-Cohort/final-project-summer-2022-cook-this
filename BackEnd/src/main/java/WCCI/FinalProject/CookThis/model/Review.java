@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class Review {
 
     private String author;
-@Lob
+    @Lob
     private String content;
 
     private double rating;
