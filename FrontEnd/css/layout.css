@@ -32,13 +32,12 @@ a:active{
 /* side tabs */
 .tabs{
     writing-mode: vertical-rl;
-    grid-area: 2 / 2 / 3 / 4;
     display: flex;
     justify-content: space-evenly;
     /*600px*/
-    height: 80vh;
+    height: 80%;
         /* 20px */
-    margin-top: 3%;
+    margin-top: 1%;
         /* 20px */
     padding-top: 3%;
         /* 20px */
@@ -51,7 +50,7 @@ a:active{
 }
 .side-tabs{
     display: flex;
-    align-items: flex-end;
+    align-items: flex-start;
     background-color:rgb(235, 206, 168);
     border-radius: 0 15px 15px 0;
     height: 25%;
@@ -87,11 +86,13 @@ a:active{
     border-right: 2px solid black; 
     height: 100%;   
 }
+
 .recipe-flex{
     height: 91%;
     overflow-y: scroll;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
+   
 }
 .recipe-flex::-webkit-scrollbar {
     display: hidden;
@@ -135,14 +136,18 @@ a:active{
     border-left: 2px solid black;
     height: 100%;
 }
-h2 {
+.right-page-headers {
     text-align: center;
+    font-size: 1em;
+    margin: 0;
 }
 #title {
     text-align: center;
 }
-#title h1{
-    margin-bottom: 0;
+#title-header{
+    margin:0;
+    padding-top: 5px;
+    font-size: 1.4em;
 }
 #avgRating{
     color: gold;
@@ -175,9 +180,12 @@ h2 {
 .recipe-image{
     width: 50%;
 }
+h2{
+    margin: 0;
+}
 #instruction-list{
     scrollbar-width: none;
-    height: 22em;
+    height: 17em;
     overflow-y: scroll;
 }
 
