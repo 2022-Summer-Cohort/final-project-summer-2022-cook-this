@@ -21,7 +21,6 @@ public class Recipe {
 
     private String picOfDish;
     @ManyToMany
-    @JsonIgnore
     private Collection<Category> categories;
     @ElementCollection
     private Collection<Ingredient> ingredients;
@@ -29,12 +28,15 @@ public class Recipe {
     @ElementCollection
     private Collection<Review> comments;
 
+    private double avgRating;
+
     public Recipe(String name, String picOfDish,Category ... categories) {
         this.steps = new ArrayList<>();
         this.name = name;
         this.picOfDish = picOfDish;
         this.categories = Arrays.asList(categories);
         this.ingredients = new ArrayList<>();
+        this.comments = new ArrayList<>();
 
     }
 
@@ -73,6 +75,11 @@ public class Recipe {
         comments.add(newComment);
     }
 
+    public double getAvgRating() {
+        avgRating = avgRating();
+        return avgRating;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -94,8 +101,24 @@ public class Recipe {
         ingredients.add(ingredient1);
     }
 
-    public void addReview(Review review1) {
-        comments.add(review1);
+
+    public void changeName(String newName) {
+        name = newName;
+    }
+
+    public void addReview(Review pieReview1) {
+    }
+
+    public void deleteSteps() {
+        steps.removeAll(steps);
+    }
+
+    public double avgRating(){
+        double sum = 0;
+        for (Review rating: comments){
+            sum += rating.getRatings();
+        }
+        return Math.round((((sum / comments.size()) *10)) /10);
     }
 }
 

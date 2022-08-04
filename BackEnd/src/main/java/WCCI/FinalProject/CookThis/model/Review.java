@@ -1,20 +1,23 @@
 package WCCI.FinalProject.CookThis.model;
 
 import javax.persistence.*;
+import java.util.Arrays;
+import java.util.Collection;
 
 @Embeddable
 public class Review {
 
     private String author;
-
+    @Lob
     private String content;
 
-    private double rating;
+    private Double ratings;
+    private double avgRating;
 
-    public Review(String author, String content, double rating) {
+    public Review(String author, String content, Double ratings) {
         this.author = author;
         this.content = content;
-        this.rating = rating;
+        this.ratings = ratings;
     }
 
     public Review() {
@@ -29,9 +32,11 @@ public class Review {
         return content;
     }
 
-    public double getRating() {
-        return rating;
+    public Double getRatings() {
+        return ratings;
     }
+
+
 
 
 
