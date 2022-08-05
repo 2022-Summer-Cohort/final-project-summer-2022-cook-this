@@ -213,11 +213,172 @@ public class Populator implements CommandLineRunner {
         recipeRepo.save(recipe3);
 
         Review thirdReview1 = new Review("Zak","Delicious",4.3);
-        recipe1.addReview(thirdReview1);
+        recipe3.addReview(thirdReview1);
         recipeRepo.save(recipe3);
 
+        Recipe recipe4 = new Recipe("Spicy Garlic-Parmesan spaghetti Squash with Bacon", "images/spicy garlic permesan.Jpg/", category1);
+        recipeRepo.save(recipe3);
+
+        Step fourthstep1 = new Step(" Step 1: Preheat the oven to 375 degrees F (190 degrees C). Line a baking sheet with parchment paper or foil.");
+        Step fourthstep2 = new Step("Step 2: Using a sharp knife, cut off the root end of the squash, cut in half lengthwise, and scrape out the seeds and connecting strands with a spoon. Brush the cut sides with olive oil and place squash on the baking sheet with cut sides down.");
+        Step fourthstep3= new Step("Step 3:Bake until the skin can be easily pierced with a fork, and the flesh is tender, about 45 minutes. ");
+        Step fourthstep4 = new Step("Step 4: While squash is baking, cook bacon over medium heat until crispy and browned, 3 to 4 minutes. Remove to a paper towel to drain.");
+        Step fourthstep5 = new Step("Step 5: Remove squash from the oven and let rest until cool enough to handle. Scrape out the flesh with a fork creating long strands, loosening and removing the strands from the shells.");
+        Step fourthstep6 = new Step("Step 6: Heat a large pan on medium heat, and melt butter. Add garlic and cook until fragrant, about 30 seconds. Add squash strands, toss with garlic butter, and cook until heated through, stirring often, about 2 minutes.");
+        Step fourthstep7 = new Step("Step 7: Remove pan from the heat, stir in Parmesan cheese, and season with salt and pepper. Gently stir to coat the strands and let the cheese melt. Garnish with bacon, oregano, and red pepper flakes");
+
+        recipe4.addStep(fourthstep1);
+        recipe4.addStep(fourthstep2);
+        recipe4.addStep(fourthstep3);
+        recipe4.addStep(fourthstep4);
+        recipe4.addStep(fourthstep5);
+        recipe4.addStep(fourthstep6);
+        recipe4.addStep(fourthstep7);
 
 
+        Ingredient fourthIngredient1 = new Ingredient("Spaghetti squash halved and seeded", "2 1/2");
+        recipe4.addIngredient(fourthIngredient1);
+
+        Ingredient fourthIngredient2 = new Ingredient("Tablespoon Olive Oil", "2");
+        recipe4.addIngredient(fourthIngredient2);
+
+        Ingredient fourthIngredient3 = new Ingredient("slice bacon cut in to pieces", "2 inch");
+        recipe4.addIngredient(fourthIngredient3);
+
+        Ingredient fourthIngredient4 = new Ingredient("Tablespoon unsalted butter", "2");
+        recipe4.addIngredient(fourthIngredient4);
+
+        Ingredient fourthIngredient5 = new Ingredient("Cloves of Minced Garlic", "3");
+        recipe4.addIngredient(fourthIngredient5);
+
+        Ingredient fourthIngredient6 = new Ingredient("Grated parmesan cheese", "1/2");
+        recipe4.addIngredient(fourthIngredient6);
+
+        Ingredient fourthIngredient7 = new Ingredient("Salt and ground pepper to taste", "1");
+        recipe4.addIngredient(fourthIngredient7);
+
+        Ingredient fourthIngredient8 = new Ingredient("Teaspoon Chopped fresh oregon", "1/3");
+        recipe4.addIngredient(fourthIngredient8);
+
+        Ingredient fourthIngredient9 = new Ingredient("Teaspoon crushed red pepper flakes", "1/3");
+        recipe4.addIngredient(fourthIngredient9);
+
+        Ingredient fourthIngredient10 = new Ingredient("Grated parmesan cheese", "1/4cup");
+        recipe4.addIngredient(fourthIngredient10);
+
+
+        Review fourthReview1 = new Review("Arsi","PerfectlyPlated",4.5);
+        recipe4.addReview(fourthReview1);
+        recipeRepo.save(recipe4);
+
+        Recipe recipe5 = new Recipe("ActiFried Chicken Tikka Masala", "/images/FriedRiceChickenMasala.jpg", category1);
+        recipeRepo.save(recipe5);
+
+        Step indoStep1 = new Step("Step 1: Mix the tikka masala curry paste with half of the yoghurt in a large mixing bowl.");
+        Step indoStep2 = new Step("Step 2: Cut the chicken into 1-cm strips, then add the yoghurt mixture and stir to coat the chicken. Cover. Leave to marinate in the fridge for at least 2 hours or overnight, if you have time.");
+        Step indoStep3 = new Step("Step 3: Place the oil and onion in the ActiFry. Close the lid. Cook for 10 minutes.");
+        Step indoStep4 = new Step("Step 4: Add the marinated chicken, tomatoes, water, the rest of the yoghurt, sugar, and lemon juice. Stir with a wooden spoon. Close the lid. Leave to cook for 15 minutes.");
+        Step indoStep5 = new Step("Step 5: Serve hot, sprinkled with chopped coriander and accompanied with basmati rice or naan bread.");
+        recipe1.addStep(indoStep1);
+        recipe1.addStep(indoStep2);
+        recipe1.addStep(indoStep3);
+        recipe1.addStep(indoStep4);
+        recipe1.addStep(indoStep5);
+        recipeRepo.save(recipe5);
+
+        Ingredient indoIngredient1 = new Ingredient("Tikka masala curry pasta", "100 g ");
+        recipe5.addIngredient(indoIngredient1);
+
+        Ingredient indoIngredient2 = new Ingredient(" Low-fat yoghurt", "200 g ");
+        recipe5.addIngredient(indoIngredient2);
+
+        Ingredient indoIngredient3 = new Ingredient(" low-fat yoghurt", "1⅓ pounds 600 g ");
+        recipe5.addIngredient(indoIngredient3);
+
+        Ingredient indoIngredient4 = new Ingredient(" ActiFry spoon vegetable oil", "1 ");
+        recipe5.addIngredient(indoIngredient4);
+
+        Ingredient indoIngredient5 = new Ingredient("Onion, finely chopped", "1 ");
+        recipe5.addIngredient(indoIngredient5);
+
+        Ingredient indoIngredient6 = new Ingredient("Package whole peeled tomatoes", "1 (400 g)  ");
+        recipe5.addIngredient(indoIngredient6);
+
+        Ingredient indoIngredient7 = new Ingredient(" Water", "20ml ");
+        recipe5.addIngredient(indoIngredient7);
+
+        Ingredient indoIngredient8 = new Ingredient("ActiFry spoon sugar", "1 ");
+        recipe5.addIngredient(indoIngredient8);
+
+        Ingredient indoIngredient9 = new Ingredient("Small bunch chopped fresh coriander leaves", "1 ");
+        recipe5.addIngredient(indoIngredient9);
+        recipeRepo.save(recipe5);
+
+        Review indoReview1 = new Review("Zak","Delicious",4.3);
+        recipe5.addReview(indoReview1);
+        recipeRepo.save(recipe5);
+
+        Recipe recipe6= new Recipe("Vegetable Tofu Soup with Lemongrass and Coconut Milk", "/images/FriedRiceChickenMasala.jpg", category1);
+        recipeRepo.save(recipe6);
+
+        Step tofuStep1 = new Step("Heat 2 tablespoons oil in a large pot over medium heat. Add onion; cook and stir until lightly browned, about 7 minutes. Stir in garlic and ginger; cook until fragrant, about 2 minutes. Add curry powder; cook and stir until fragrant, about 1 minute..");
+        Step tofuStep2 = new Step("Step 2: Pour vegetable stock and coconut milk into the pot. Add yam, carrots, celery, lentils, lemongrass, and sugar. Increase heat to medium-high; bring to a boil. Reduce heat slightly; simmer until vegetables soften, 10 to 15 minutes. Season soup with salt.");
+        Step tofuStep3 = new Step("Step 3: Heat remaining 3 tablespoons oil in a large nonstick skillet over medium heat. Add tofu in a single layer; cook until lightly browned, about 4 minutes per side. Stir tofu into soup.");
+        recipe1.addStep(tofuStep1);
+        recipe1.addStep(tofuStep2);
+        recipe1.addStep(tofuStep3);
+        recipeRepo.save(recipe6);
+
+        Ingredient tofuIngredient1 = new Ingredient("tablespoons vegetable oil, divided", "5 ");
+        recipe6.addIngredient(tofuIngredient1);
+
+        Ingredient tofuIngredient2 = new Ingredient(" Large onion, chopped", "1 ");
+        recipe6.addIngredient(tofuIngredient2);
+
+        Ingredient tofuIngredient3 = new Ingredient(" Tablespoon finely chopped garlic", "1 ");
+        recipe6.addIngredient(tofuIngredient3);
+
+        Ingredient tofuIngredient4 = new Ingredient(" Tablespoon finely chopped ginger", "1 ");
+        recipe6.addIngredient(tofuIngredient4);
+
+        Ingredient tofuIngredient5 = new Ingredient("Tablespoons curry powder", "2 ");
+        recipe6.addIngredient(tofuIngredient5);
+
+        Ingredient tofuIngredient6 = new Ingredient("Cups vegetable stock", "3 ");
+        recipe6.addIngredient(tofuIngredient6);
+
+        Ingredient tofuIngredient7 = new Ingredient("  (14 ounce) can coconut milk", "1 ");
+        recipe6.addIngredient(tofuIngredient7);
+
+        Ingredient tofuIngredient8 = new Ingredient("large yam, cut into chunks", "1 ");
+        recipe6.addIngredient(tofuIngredient8);
+
+        Ingredient tofuIngredient9 = new Ingredient("large carrots, cut into chunks", "2 ");
+        recipe6.addIngredient(tofuIngredient9);
+
+        Ingredient tofuIngredient10 = new Ingredient("ribs celery, chopped", "2 ");
+        recipe6.addIngredient(tofuIngredient10);
+
+        Ingredient tofuIngredient11 = new Ingredient("cup red lentils", "1/2 ");
+        recipe6.addIngredient(tofuIngredient11);
+
+        Ingredient tofuIngredient12 = new Ingredient("cup minced lemongrass", "1/4");
+        recipe6.addIngredient(tofuIngredient12);
+
+        Ingredient tofuIngredient13 = new Ingredient("tablespoons white sugar", "2 ");
+        recipe6.addIngredient(tofuIngredient13);
+
+        Ingredient tofuIngredient14 = new Ingredient("salt to taste", "some");
+        recipe6.addIngredient(tofuIngredient14);
+
+        Ingredient tofuIngredient15 = new Ingredient("package medium-firm tofu, cubed and patted dry", "1(12ounce)");
+        recipe6.addIngredient(tofuIngredient15);
+
+        recipeRepo.save(recipe6);
+
+        Review tofuReview1 = new Review("Zak","Delicious",4.3);
+        recipe6.addReview(tofuReview1);
+        recipeRepo.save(recipe6);
 
 
 
