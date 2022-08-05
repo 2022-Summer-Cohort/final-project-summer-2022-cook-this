@@ -1,11 +1,16 @@
+*::-webkit-scrollbar{
+        display: none;
+}
+*{
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
 body{
     background-image: url(/images/countertopBackground.jpg);
     background-size: cover;
-    
-   
 }
 .container{
-    max-width: 1200px;
+    margin-top: 3%;
 }
 a{
     text-decoration: none;
@@ -15,48 +20,50 @@ a:active{
     text-decoration: none;
     color: black;
 }
+
 /* Home Page: Closed Book */
 #closed-book{
     display: flex;
     margin-left: 10%;
 }
 #closed-book-image{
-    grid-area: 2 / 2 / 3 / 4;
     text-align: right;
     z-index: 999;
 }
 #closed-book-image-spec{
-   height: 750px;
+   max-height: 750px;
    z-index: 100;
 }
 /* side tabs */
-.tabs{
+.book-tabs-cover{
     writing-mode: vertical-rl;
     display: flex;
     justify-content: space-evenly;
-    /*600px*/
     height: 80%;
-        /* 20px */
-    margin-top: 1%;
-        /* 20px */
-    padding-top: 3%;
-        /* 20px */
-    padding-bottom: 3%;
-    /*4px*/
+    padding-bottom: 2em;
     padding-right: .6%;
-    align-items: top;
-    overflow: hidden;
-    
+    overflow-y: scroll;
+    padding-top: 2em;
+}
+.book-tabs{
+    writing-mode: vertical-rl;
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 2em;
+    padding-right: .6%;
+    overflow-y: scroll;
+    padding-top: 2em;
 }
 .side-tabs{
     display: flex;
     align-items: flex-start;
     background-color:rgb(235, 206, 168);
     border-radius: 0 15px 15px 0;
-    height: 25%;
-    /* height: 135px; */
-    width: 40px;
+    padding-left: 1%;
+    height: 140px;
+    min-width: 40px;
     justify-content: center;
+    text-align: center;
     z-index: 99;
 }
 .side-tabs:hover{
@@ -64,20 +71,34 @@ a:active{
     cursor: pointer;
 }
 .side-tabs h2{
-    font-size: 1.1em;
-    /* font-size:15pt; */
+    font-size: 1em;
+    text-decoration: none;
+    color: black;
     margin-top: 5px;
     margin-bottom: 5px;
 }
-
+.nav-tabs-2{
+    background-color:rgb(219, 187, 146);
+}
+.nav-tabs-3{
+    background-color:rgb(199, 171, 135);
+}
+.nav-tabs-4{
+    background-color:rgb(163, 139, 110);
+}
+.nav-tabs-5{
+    background-color:rgb(133, 113, 89);
+}
 /* Open Book Pages */
 #open-book{
     display: flex;
-    justify-content: center;
     width: 100vw;
-    margin: 0px auto;
+    /* margin: 0px auto; */
     max-height:750px;
     height: 95vh;
+    background-image: url(/images/cookBookBorder.png);
+    background-position: center;
+    background-size: 100%;
 }
 /* Left Page: Single Category/Recipe list  */
 .left-page{
@@ -92,7 +113,6 @@ a:active{
     overflow-y: scroll;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
-   
 }
 .recipe-flex::-webkit-scrollbar {
     display: hidden;
@@ -172,7 +192,7 @@ a:active{
     scrollbar-width: none;  /* Firefox */
 }
 .ingredients-list ul::-webkit-scrollbar {
-    display: hidden;
+    display: none;
 }
 .recipe-image img{
     width: 100%;
@@ -188,17 +208,10 @@ h2{
     height: 17em;
     overflow-y: scroll;
 }
-
-.instructions ul::-webkit-scrollbar {
-    display: hidden;
-}
-  
-  /* Hide scrollbar for IE, Edge and Firefox */
-.instructions ul{
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-}
-  
 #instructions ul li {
     margin-right: 10px;
+}
+
+.copyright{
+    color: white;
 }
