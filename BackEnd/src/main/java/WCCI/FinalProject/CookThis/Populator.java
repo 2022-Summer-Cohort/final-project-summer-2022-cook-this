@@ -90,12 +90,7 @@ public class Populator implements CommandLineRunner {
         recipeRepo.save(recipe1);
 
 
-
-
-
-
-
-        Recipe recipe2 = new Recipe("ApplePie","/images/ApplePie.jpg",category1);
+        Recipe recipe2 = new Recipe("ApplePie", "/images/ApplePie.jpg", category1);
         recipeRepo.save(recipe2);
 
         Step burrStep1 = new Step("Step 1: Prep! Whisk the eggs, dice the potatoes, chop the green onions, slice your avocado.");
@@ -114,59 +109,57 @@ public class Populator implements CommandLineRunner {
         recipe2.addStep(burrStep7);
 
 
-
-
-        Ingredient burrIngredient1 = new Ingredient("large russet potatoes, peeled and grated","2");
+        Ingredient burrIngredient1 = new Ingredient("large russet potatoes, peeled and grated", "2");
         recipe2.addIngredient(burrIngredient1);
 
 
-        Ingredient burrIngredient2 = new Ingredient("breakfast sausage, ground (not links)","1 lb");
+        Ingredient burrIngredient2 = new Ingredient("breakfast sausage, ground (not links)", "1 lb");
         recipe2.addIngredient(burrIngredient2);
 
 
-        Ingredient burrIngredient3 = new Ingredient("eggs, beaten","6");
+        Ingredient burrIngredient3 = new Ingredient("eggs, beaten", "6");
         recipe2.addIngredient(burrIngredient3);
 
 
-        Ingredient burrIngredient4 = new Ingredient("olive oil","2 tbsp");
+        Ingredient burrIngredient4 = new Ingredient("olive oil", "2 tbsp");
         recipe2.addIngredient(burrIngredient4);
 
 
-        Ingredient burrIngredient5 = new Ingredient("salt","1 tsp");
+        Ingredient burrIngredient5 = new Ingredient("salt", "1 tsp");
         recipe2.addIngredient(burrIngredient5);
 
 
-        Ingredient burrIngredient6 = new Ingredient("ground pepper","1/4 tsp");
+        Ingredient burrIngredient6 = new Ingredient("ground pepper", "1/4 tsp");
         recipe2.addIngredient(burrIngredient6);
 
 
-        Ingredient burrIngredient7 = new Ingredient("bunch green onions, white and green parts, chopped","1");
+        Ingredient burrIngredient7 = new Ingredient("bunch green onions, white and green parts, chopped", "1");
         recipe2.addIngredient(burrIngredient7);
 
 
-        Ingredient burrIngredient8 = new Ingredient("large flour tortillas","6");
+        Ingredient burrIngredient8 = new Ingredient("large flour tortillas", "6");
         recipe2.addIngredient(burrIngredient8);
 
 
-        Ingredient burrIngredient9 = new Ingredient("cheddar cheese, grated","2 cups");
+        Ingredient burrIngredient9 = new Ingredient("cheddar cheese, grated", "2 cups");
         recipe2.addIngredient(burrIngredient9);
 
 
-        Ingredient burrIngredient10 = new Ingredient("avocados, sliced","2");
+        Ingredient burrIngredient10 = new Ingredient("avocados, sliced", "2");
         recipe2.addIngredient(burrIngredient10);
 
 
-        Ingredient burrIngredient11 = new Ingredient("salsa","To Taste");
+        Ingredient burrIngredient11 = new Ingredient("salsa", "To Taste");
         recipe2.addIngredient(burrIngredient11);
 
 
-        Ingredient burrIngredient12 = new Ingredient("fresh cilantro","To Taste");
+        Ingredient burrIngredient12 = new Ingredient("fresh cilantro", "To Taste");
         recipe2.addIngredient(burrIngredient12);
 
         Review burrReview1 = new Review("Alex", "Make your morning amazing!", 4.0);
         recipe2.addReview(burrReview1);
         recipeRepo.save(recipe2);
-      
+
 
         Recipe recipe3 = new Recipe("Vegetable Fried Rice", "/images/FriedRice.jpg", category1);
         recipeRepo.save(recipe3);
@@ -212,7 +205,7 @@ public class Populator implements CommandLineRunner {
         recipe3.addIngredient(thirdIngredient10);
         recipeRepo.save(recipe3);
 
-        Review thirdReview1 = new Review("Zak","Delicious",4.3);
+        Review thirdReview1 = new Review("Zak", "Delicious", 4.3);
         recipe3.addReview(thirdReview1);
         recipeRepo.save(recipe3);
 
@@ -235,6 +228,24 @@ public class Populator implements CommandLineRunner {
         recipe4.addStep(fourthstep6);
         recipe4.addStep(fourthstep7);
 
+        Recipe recipe4 = new Recipe("Spicy Garlic-Parmesan spaghetti Squash with Bacon", "images/spicy garlic permesan.Jpg/", category1);
+        recipeRepo.save(recipe3);
+
+        Step fourthstep1 = new Step(" Step 1: Preheat the oven to 375 degrees F (190 degrees C). Line a baking sheet with parchment paper or foil.");
+        Step fourthstep2 = new Step("Step 2: Using a sharp knife, cut off the root end of the squash, cut in half lengthwise, and scrape out the seeds and connecting strands with a spoon. Brush the cut sides with olive oil and place squash on the baking sheet with cut sides down.");
+        Step fourthstep3 = new Step("Step 3:Bake until the skin can be easily pierced with a fork, and the flesh is tender, about 45 minutes. ");
+        Step fourthstep4 = new Step("Step 4: While squash is baking, cook bacon over medium heat until crispy and browned, 3 to 4 minutes. Remove to a paper towel to drain.");
+        Step fourthstep5 = new Step("Step 5: Remove squash from the oven and let rest until cool enough to handle. Scrape out the flesh with a fork creating long strands, loosening and removing the strands from the shells.");
+        Step fourthstep6 = new Step("Step 6: Heat a large pan on medium heat, and melt butter. Add garlic and cook until fragrant, about 30 seconds. Add squash strands, toss with garlic butter, and cook until heated through, stirring often, about 2 minutes.");
+        Step fourthstep7 = new Step("Step 7: Remove pan from the heat, stir in Parmesan cheese, and season with salt and pepper. Gently stir to coat the strands and let the cheese melt. Garnish with bacon, oregano, and red pepper flakes");
+
+        recipe4.addStep(fourthstep1);
+        recipe4.addStep(fourthstep2);
+        recipe4.addStep(fourthstep3);
+        recipe4.addStep(fourthstep4);
+        recipe4.addStep(fourthstep5);
+        recipe4.addStep(fourthstep6);
+        recipe4.addStep(fourthstep7);
 
         Ingredient fourthIngredient1 = new Ingredient("Spaghetti squash halved and seeded", "2 1/2");
         recipe4.addIngredient(fourthIngredient1);
@@ -380,10 +391,48 @@ public class Populator implements CommandLineRunner {
         recipe6.addReview(tofuReview1);
         recipeRepo.save(recipe6);
 
+        Ingredient fourthIngredient1 = new Ingredient("Spaghetti squash halved and seeded", "2 1/2");
+        recipe4.addIngredient(fourthIngredient1);
 
+        Ingredient fourthIngredient2 = new Ingredient("Tablespoon Olive Oil", "2");
+        recipe4.addIngredient(fourthIngredient2);
+
+        Ingredient fourthIngredient3 = new Ingredient("slice bacon cut in to pieces", "2 inch");
+        recipe4.addIngredient(fourthIngredient3);
+
+        Ingredient fourthIngredient4 = new Ingredient("Tablespoon unsalted butter", "2");
+        recipe4.addIngredient(fourthIngredient4);
+
+        Ingredient fourthIngredient5 = new Ingredient("Cloves of Minced Garlic", "3");
+        recipe4.addIngredient(fourthIngredient5);
+
+        Ingredient fourthIngredient6 = new Ingredient("Grated parmesan cheese", "1/2");
+        recipe4.addIngredient(fourthIngredient6);
+
+        Ingredient fourthIngredient7 = new Ingredient("Salt and ground pepper to taste", "1");
+        recipe4.addIngredient(fourthIngredient7);
+
+        Ingredient fourthIngredient8 = new Ingredient("Teaspoon Chopped fresh oregon", "1/3");
+        recipe4.addIngredient(fourthIngredient8);
+
+        Ingredient fourthIngredient9 = new Ingredient("Teaspoon crushed red pepper flakes", "1/3");
+        recipe4.addIngredient(fourthIngredient9);
+
+        Ingredient fourthIngredient10 = new Ingredient("Grated parmesan cheese", "1/4cup");
+        recipe4.addIngredient(fourthIngredient10);
+
+
+        Review fourthReview1 = new Review("Arsi", "PerfectlyPlated", 4.5);
+        recipe4.addReview(fourthReview1);
+        recipeRepo.save(recipe4);
 
     }
+
+
 }
+
+
+
 
 
 
