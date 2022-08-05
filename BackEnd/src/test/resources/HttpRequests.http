@@ -18,6 +18,49 @@ Content-Type: application/json
 POST http://localhost:8080/api/recipes/5/addComment
 Content-Type: application/json
 
+{"author":"x","content":"blah","ratings":3.8}
+
 ### Add recipe
-POST http://localhost:8080//api/recipe
+POST http://localhost:8080/api/recipe
 Content-Type: application/json
+
+{"name":"Blah","steps":[],"picOfDish":"","categories":[],"ingredients":[],"comments":[],"avgRating":9.8}
+
+### Add step to recipe
+POST http://localhost:8080/api/recipes/5/addSteps
+Content-Type: application/json
+
+{"instructions": "step 1"}
+
+### Add ingredient to recipe THIS MAY NEED CHANGED IF WE ARE MAKING THIS AN ENTITY
+POST http://localhost:8080/api/recipes/5/addIngredient
+Content-Type: application/json
+
+{"name": "Rambutan", "measurement": "1"}
+
+### Add Recipe
+POST http://localhost:8080/api/recipe
+Content-Type: application/json
+
+{"name": "Best Dish Ever", "steps":[],"picOfDish":"","categories":[],"ingredients":[],"comments":[]}
+
+### Change recipe name by id  THIS NEEDS TESTED
+PATCH http://localhost:8080/api/recipe/5/name
+
+
+### Delete recipe by id
+DELETE http://localhost:8080/api/recipes/5/deleteSingleStep
+Content-Type: application/json
+
+###Delete Ingredient
+DELETE http://localhost:8080/api/recipes/10/deleteIngredients
+Content-Type: application/json
+
+### Delete Step from recipe  THIS ONE MAY HAVE A METHOD ISSUE
+DELETE https://localhost:8080/api/recipes/5/deleteSteps
+Content-Type: application/json
+
+
+
+
+### delete comment from recipe
