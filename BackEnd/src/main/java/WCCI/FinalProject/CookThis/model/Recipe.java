@@ -120,5 +120,13 @@ public class Recipe {
         }
         return Math.round((((sum / comments.size()) *10)) /10);
     }
+
+    public void deleteIngredients() {
+        ingredients.removeAll(ingredients);
+    }
+
+    public void deleteComments() {
+        comments.removeAll(comments);
+    }
 }
 

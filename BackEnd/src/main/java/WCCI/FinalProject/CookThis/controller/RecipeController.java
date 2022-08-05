@@ -28,15 +28,23 @@ public class RecipeController {
         return recipeRepo.findById(Id).get();
     }
 
-    @PostMapping("api/recipes/{id}/addComment")
+    @PostMapping("api/recipes/{id}/addComments")
     public Recipe recipeToAddCommentTo(@RequestBody Review newComment, @PathVariable Long id) {
         Recipe recipeToChange = recipeRepo.findById(id).get();
         recipeToChange.addComments(newComment);
         recipeRepo.save(recipeToChange);
         return recipeToChange;
     }
+    @PatchMapping("api/recipes/{id}/deleteComments")
+    public Recipe recipeDeleteComments (@PathVariable Long id){
+        Recipe recipeToChange = recipeRepo.findById(id).get();
+        recipeToChange.deleteComments();
+        recipeRepo.save(recipeToChange);
+        return recipeToChange;
+    }
 
-    @PostMapping("api/recipes/{id}/addStep")
+
+    @PostMapping("api/recipes/{id}/addSteps")
     public Recipe recipeToAddStep(@RequestBody  Step newStep , @PathVariable Long id) {
         Recipe recipeToChange = recipeRepo.findById(id).get();
         recipeToChange.addStep(newStep);
@@ -51,10 +59,18 @@ public class RecipeController {
         return recipeToChange;
     }
 
+
     @PostMapping("api/recipes/{id}/addIngredient")
     public Recipe recipeToAddIngredient(@RequestBody Ingredient newIngredient , @PathVariable Long id) {
         Recipe recipeToChange = recipeRepo.findById(id).get();
         recipeToChange.addIngredient(newIngredient);
+        recipeRepo.save(recipeToChange);
+        return recipeToChange;
+    }
+    @PatchMapping("api/recipes/{id}/deleteIngredients")
+    public Recipe recipeDeleteIngredients (@PathVariable Long id){
+        Recipe recipeToChange = recipeRepo.findById(id).get();
+        recipeToChange.deleteIngredients();
         recipeRepo.save(recipeToChange);
         return recipeToChange;
     }
