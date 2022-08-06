@@ -22,7 +22,7 @@ public class Recipe {
     private String picOfDish;
     @ManyToMany
     private Collection<Category> categories;
-    @ElementCollection
+    @ManyToMany(mappedBy = "recipes")
     private Collection<Ingredient> ingredients;
 
     @ElementCollection
@@ -37,7 +37,6 @@ public class Recipe {
         this.categories = Arrays.asList(categories);
         this.ingredients = new ArrayList<>();
         this.comments = new ArrayList<>();
-
     }
 
     public Recipe() {

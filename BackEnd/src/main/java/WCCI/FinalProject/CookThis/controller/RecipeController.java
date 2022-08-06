@@ -60,20 +60,20 @@ public class RecipeController {
     }
 
 
-    @PostMapping("api/recipes/{id}/addIngredient")
-    public Recipe recipeToAddIngredient(@RequestBody Ingredient newIngredient , @PathVariable Long id) {
-        Recipe recipeToChange = recipeRepo.findById(id).get();
-        recipeToChange.addIngredient(newIngredient);
-        recipeRepo.save(recipeToChange);
-        return recipeToChange;
-    }
-    @PatchMapping("api/recipes/{id}/deleteIngredients")
-    public Recipe recipeDeleteIngredients (@PathVariable Long id){
-        Recipe recipeToChange = recipeRepo.findById(id).get();
-        recipeToChange.deleteIngredients();
-        recipeRepo.save(recipeToChange);
-        return recipeToChange;
-    }
+//    @PostMapping("api/recipes/{id}/addIngredient")
+//    public Recipe recipeToAddIngredient(@RequestBody Ingredient newIngredient , @PathVariable Long id) {
+//        Recipe recipeToChange = recipeRepo.findById(id).get();
+//        recipeToChange.addIngredient(newIngredient);
+//        recipeRepo.save(recipeToChange);
+//        return recipeToChange;
+//    }
+//    @PatchMapping("api/recipes/{id}/deleteIngredients")
+//    public Recipe recipeDeleteIngredients (@PathVariable Long id){
+//        Recipe recipeToChange = recipeRepo.findById(id).get();
+//        recipeToChange.deleteIngredients();
+//        recipeRepo.save(recipeToChange);
+//        return recipeToChange;
+//    }
 
     @PostMapping("/api/recipe")
     public Recipe addRecipe(@RequestBody Recipe recipeToAdd) {

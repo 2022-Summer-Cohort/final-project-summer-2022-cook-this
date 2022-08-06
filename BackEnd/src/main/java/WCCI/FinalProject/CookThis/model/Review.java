@@ -12,7 +12,6 @@ public class Review {
     private String content;
 
     private Double ratings;
-    private double avgRating;
 
     public Review(String author, String content, Double ratings) {
         this.author = author;
