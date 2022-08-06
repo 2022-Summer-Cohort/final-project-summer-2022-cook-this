@@ -166,7 +166,7 @@ public class Populator implements CommandLineRunner {
         Review burrReview1 = new Review("Alex", "Make your morning amazing!", 4.0);
         recipe2.addReview(burrReview1);
         recipeRepo.save(recipe2);
-      
+
 
         Recipe recipe3 = new Recipe("Vegetable Fried Rice", "/images/FriedRice.jpg", category1);
         recipeRepo.save(recipe3);
@@ -212,7 +212,7 @@ public class Populator implements CommandLineRunner {
         recipe3.addIngredient(thirdIngredient10);
         recipeRepo.save(recipe3);
 
-        Review thirdReview1 = new Review("Zak","Delicious",4.3);
+        Review thirdReview1 = new Review("Zak", "Delicious", 4.3);
         recipe3.addReview(thirdReview1);
         recipeRepo.save(recipe3);
 
@@ -381,9 +381,13 @@ public class Populator implements CommandLineRunner {
         recipeRepo.save(recipe6);
 
 
-
     }
+
+
 }
+
+
+
 
 
 

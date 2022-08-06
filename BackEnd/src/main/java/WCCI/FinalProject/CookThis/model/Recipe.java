@@ -5,10 +5,7 @@ import WCCI.FinalProject.CookThis.repository.RecipeRepo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Objects;
+import java.util.*;
 
 @Entity
 public class Recipe {
@@ -75,7 +72,7 @@ public class Recipe {
     }
 
     public double getAvgRating() {
-        avgRating = avgRating();
+//        avgRating = avgRating();
         return avgRating;
     }
 
@@ -111,6 +108,9 @@ public class Recipe {
     public void deleteSteps() {
         steps.removeAll(steps);
     }
+    public void deleteSingleStep(int stepIndexToRemove){
+        steps.remove(stepIndexToRemove);
+    }
 
     public double avgRating(){
         double sum = 0;
@@ -124,8 +124,8 @@ public class Recipe {
         ingredients.removeAll(ingredients);
     }
 
-    public void deleteComments() {
-        comments.removeAll(comments);
-    }
+//    public void deleteComments() {
+//        comments.removeAll(comments);
+//    }
 }
 
