@@ -11,6 +11,7 @@ body{
 }
 .container{
     margin-top: 3%;
+    margin-bottom: 5%;
 }
 a{
     text-decoration: none;
@@ -20,7 +21,9 @@ a:active{
     text-decoration: none;
     color: black;
 }
-
+h1{
+    text-align: center;
+}
 /* Home Page: Closed Book */
 #closed-book{
     display: flex;
@@ -108,6 +111,7 @@ a:active{
     height: 100%;   
 }
 
+
 .recipe-flex{
     height: 91%;
     overflow-y: scroll;
@@ -164,10 +168,11 @@ a:active{
 #title {
     text-align: center;
 }
-#title-header{
+.title-header{
     margin:0;
     padding-top: 5px;
     font-size: 1.4em;
+    text-align: center;
 }
 #avgRating{
     color: gold;
@@ -214,4 +219,21 @@ h2{
 
 .copyright{
     color: white;
+}
+
+footer {
+    background-color: #59433E;
+    margin-right: 0px;
+    /* width: 100%; */
+    padding: 2%;
+}
+
+.copyright {
+    color: #BFBA73;
+    font-weight: 500;
+}
+
+.devs {
+    color: #ec8484;
+    font-weight: 700;
 }
