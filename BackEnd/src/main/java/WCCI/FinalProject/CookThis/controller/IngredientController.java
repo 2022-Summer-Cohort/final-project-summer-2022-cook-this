@@ -8,13 +8,12 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class IngredientController {
+    private RecipeRepo recipeRepo;
     private IngredientRepo ingredientRepo;
 
-    private RecipeRepo recipeRepo;
-
-    public IngredientController(IngredientRepo ingredientRepo, RecipeRepo recipeRepo) {
-        this.ingredientRepo = ingredientRepo;
+    public IngredientController(RecipeRepo recipeRepo, IngredientRepo ingredientRepo) {
         this.recipeRepo = recipeRepo;
+        this.ingredientRepo = ingredientRepo;
     }
 
     @GetMapping("api/ingredients")
@@ -23,8 +22,8 @@ public class IngredientController {
     }
 
     @GetMapping("api/ingredients/{id}")
-    public Ingredient getIngredientById(@PathVariable Long Id) {
-        return ingredientRepo.findById(Id).get();
+    public Ingredient getIngredientById(@PathVariable Long id) {
+        return ingredientRepo.findById(id).get();
     }
     @PostMapping("api/recipes/{id}/addIngredient")
     public Recipe recipeToAddIngredient(@RequestBody Ingredient newIngredient , @PathVariable Long id) {
@@ -33,8 +32,7 @@ public class IngredientController {
         recipeRepo.save(recipeToChange);
         return recipeToChange;
     }
-
-    @PatchMapping("api/recipes/{id}/deleteIngredients")
+    @DeleteMapping("api/recipes/{id}/deleteIngredients")
     public Recipe recipeDeleteIngredients (@PathVariable Long id){
         Recipe recipeToChange = recipeRepo.findById(id).get();
         recipeToChange.deleteIngredients();
@@ -42,4 +40,3 @@ public class IngredientController {
         return recipeToChange;
     }
 }
-
