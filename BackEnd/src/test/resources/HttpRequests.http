@@ -82,12 +82,12 @@ Content-Type: application/json
 GET http://localhost:8080/api/ingredients
 Content-Type: application/json
 
-###Get ingredient by id DOES NOT WORK (ADDED TO POPULATOR)
-GET http://localhost:8080/api/ingredients/5
+###Get ingredient by id WORKS
+GET http://localhost:8080/api/ingredients/6
 Content-Type: application/json
 
 ### Add ingredient to recipe DOES NOT WORK INGREDIENT CONTROLLER RELATED
-PATCH http://localhost:8080/api/recipes/ingredients/5/addIngredient
+PATCH http://localhost:8080/api/recipes/5/ingredients/6/addIngredient
 Content-Type: application/json
 
 {"name": "Rambutan", "measurement": "1"}
