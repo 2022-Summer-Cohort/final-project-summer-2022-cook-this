@@ -216,24 +216,38 @@ h2{
 #instructions ul li {
     margin-right: 10px;
 }
-
+/* footer */
 .copyright{
     color: white;
 }
-
 footer {
     background-color: #59433E;
     margin-right: 0px;
-    /* width: 100%; */
     padding: 2%;
 }
-
 .copyright {
     color: #BFBA73;
     font-weight: 500;
 }
-
+/* Dev pop-ups */
 .devs {
     color: #ec8484;
     font-weight: 700;
+}
+.modal-bg{
+    background-color: #BF6002;
+}
+
+.dev-btn:hover{
+    cursor: pointer;
+}
+.portfolio-link{
+    text-decoration: underline;
+}
+.social-icon{
+    width: 50px;
+}
+.dev-info{
+    display: flex;
+    flex-direction: column;
 }

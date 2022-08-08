@@ -1,77 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cook This!</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/layout.css">
-</head>
-
-<body>
-    <div class="container">
-        <!-- <header>
-        </header> -->
-        <div id="closed-book">
-            <div id="closed-book-image">
-                <img id="closed-book-image-spec" src="/images/COOKBOOKCOVER-SMALLERFONT.png" alt="Cook This Book Cover">
-            </div>
-            <nav class="book-tabs-cover">
-                <a href="#" class="side-tabs nav-tabs-1">
-                    <h2>Search</h2>
-                </a>
-                <a href="./categories.html" class="side-tabs nav-tabs-2">
-                    <h2>Categories</h2>
-                </a>
-                <a href="./learn.html" class="side-tabs nav-tabs-3">
-                    <h2>Learn to Cook!</h2>
-                </a>
-                <a href="./ingredients.html" class="side-tabs nav-tabs-4">
-                    <h2>Ingredient Info</h2>
-                </a>
-                <a href="#" class="side-tabs nav-tabs-5">
-                    <h2>Home</h2>
-                </a>
-            </nav>
-        </div>
-    </div>
-
-    <footer class="container-fluid text-center" id="footer">
-        <div class="row">
-            <div class="col"></div>
-            <p class="copyright col">&copy; Cook This! 2022 </p>
-            <div class="devs col">
-                <h4>Devs:</h4>
-                <div class="fw-light">
-                    <div  class="dev-btn" data-bs-toggle="modal" data-bs-target="#stein-popup">
-                        Alex K. Stein
-                    </div>
-                    <div id="pedro-btn" class="dev-btn" data-bs-toggle="modal" data-bs-target="#pedro-popup">
-                        Pedro Barbosa
-                    </div>
-                    <div id="mia-btn" class="dev-btn" data-bs-toggle="modal" data-bs-target="#mia-popup">
-                        Mia Olivera
-                    </div>
-                    <div id="zak-btn" class="dev-btn" data-bs-toggle="modal" data-bs-target="#zak-popup">
-                        Zakariya Mohamud
-                    </div>
-                    <div id="arsema-btn" class="dev-btn" data-bs-toggle="modal" data-bs-target="#arsi-popup">
-                        Arsema Berhe
-                    </div>
-                    <div id="lex-btn" class="dev-btn" data-bs-toggle="modal" data-bs-target="#lex-popup">
-                        Lex Nathans
-                    </div>
-                </div>
-            </div>
-            <div class="col"></div>
-        </div>
-
+export default function makeFooter() {
+    return `
     </footer>
-    <!-- Dev Modals -->
     <div class="modal fade" id="stein-popup" tabindex="-1" aria-labelledby="steinModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content text-center">
@@ -233,13 +162,6 @@
             </div>
         </div>
     </div>
-
-
-
-    <!-- <script src="/js/app.js" type="module"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-        crossorigin="anonymous"></script>
-</body>
-
-</html>
+    
+    `
+}

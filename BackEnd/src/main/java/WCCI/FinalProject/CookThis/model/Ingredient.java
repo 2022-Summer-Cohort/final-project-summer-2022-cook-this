@@ -12,7 +12,6 @@ import java.util.Objects;
 public class Ingredient {
     @Id
     @GeneratedValue
-
     private Long id;
     private String name;
 
