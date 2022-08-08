@@ -17,8 +17,9 @@ public class Ingredient {
 
     private String imageUrl;
 
-
     private String description;
+
+    private String ingredientMeasurement;
 
     private int spiceLevel;
 
@@ -30,7 +31,7 @@ public class Ingredient {
     @ManyToMany(mappedBy = "ingredients")
     private Collection<Measurement> measurements;
 
-    public Ingredient(String name, String imageUrl, String description, int spiceLevel, boolean spicy,Recipe ... recipes) {
+    public Ingredient(String name, String imageUrl, String description, int spiceLevel, boolean spicy,Recipe... recipes) {
         this.name = name;
         this.imageUrl = imageUrl;
         this.description = description;
@@ -66,7 +67,7 @@ public class Ingredient {
         return spiceLevel;
     }
 
-    public Collection<Measurement> getMeasurments() {
+    public Collection<Measurement> getMeasurements() {
         return measurements;
     }
 
@@ -95,9 +96,15 @@ public class Ingredient {
         return Objects.hash(id, name, imageUrl, description, spiceLevel, spicy);
     }
 
-    public void updateMeasurement(Long id, Measurement newMeasurement) {
-
-    }
+//    public void updateMeasurement(Long recId, Long measId) {
+//        for(Recipe recipe: recipes){
+//            for(Measurement measurement: measurements){
+//                if(recipe.getId()==recId && measurement.getId()==measId){
+//                    ingredientMeasurement = measurement.getAmount() + " " + measurement.getType();
+//                }
+//            }
+//        }
+//    }
 }
 
 
