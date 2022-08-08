@@ -160,6 +160,9 @@ h1{
     border-left: 2px solid black;
     height: 100%;
 }
+.right-page-ingredient{
+    overflow-y: scroll;
+}
 .right-page-headers {
     text-align: center;
     font-size: 1em;
@@ -183,6 +186,31 @@ h1{
     align-items: center;
     margin-top: 0;
     height: 30%
+}
+#ingredient-title {
+    font-size:x-large;
+}
+#ingredient-title h1{
+    text-align: left;   
+}
+#ingredient-title p{
+    font-size: small;
+    border: none;
+}
+.ingredient-image {
+    /* width: 100%; */
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+.ingredient-image img {
+    width:60%;
+    float: right;
+    margin-left: 3%;
+}
+#ingredient-description {
+    margin: 5% 5%;
+    text-align: left;
 }
 #ingredients-list{
     height: 100%;
