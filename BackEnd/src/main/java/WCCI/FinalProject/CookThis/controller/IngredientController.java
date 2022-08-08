@@ -1,6 +1,5 @@
 package WCCI.FinalProject.CookThis.controller;
 
-import WCCI.FinalProject.CookThis.model.Category;
 import WCCI.FinalProject.CookThis.model.Ingredient;
 import WCCI.FinalProject.CookThis.model.Recipe;
 import WCCI.FinalProject.CookThis.repository.IngredientRepo;

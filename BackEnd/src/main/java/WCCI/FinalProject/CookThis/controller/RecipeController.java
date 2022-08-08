@@ -1,6 +1,6 @@
 package WCCI.FinalProject.CookThis.controller;
 
-import WCCI.FinalProject.CookThis.model.Ingredient;
+// import WCCI.FinalProject.CookThis.model.Ingredient;
 import WCCI.FinalProject.CookThis.model.Recipe;
 import WCCI.FinalProject.CookThis.model.Review;
 import WCCI.FinalProject.CookThis.model.Step;
@@ -94,7 +94,6 @@ public class RecipeController {
 //        recipeRepo.save(recipeToChange);
 //        return recipeToChange;
 //    }
-
 
     @PostMapping("/api/recipe")
     public Recipe addRecipe(@RequestBody Recipe recipeToAdd) {
