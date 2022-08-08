@@ -46,18 +46,44 @@
         <p class="copyright col">&copy; Cook This! 2022 </p>
         <div class="devs col">
             <h4>Devs:</h4>
-             <a><p>Alex Stein</p></a>
-             <a><p>Pedro Barbosa</p></a>
-             <a><p>Mia Olivera</p></a>
-             <a><p>Zakariya Mohamud</p></a>
-             <a><p>Arsema Berhe</p></a>
-             <a><p>Lex Nathans</p></a>
+
+                        <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Launch demo modal
+            </button>
+            
+             <button id="stein-btn" class="modal-dialog modal-dialog-centered" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <p>Alex Stein</p>
+             </button>
+             <div id="pedro-btn"><p>Pedro Barbosa</p></div>
+             <div id="mia-btn"><p>Mia Olivera</p></div>
+             <div id="zak-btn"><p>Zakariya Mohamud</p></div>
+             <div id="arsema-btn"><p>Arsema Berhe</p></div>
+             <div id="lex-btn"><p>Lex Nathans</p></div>
         </ul>
         </div>
     </footer>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            ...
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+        </div>
+    </div>
 
 
-    <!-- <script src="/js/app.js" type="module"></script> -->
+    <script src="/js/app.js" type="module"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>
 
