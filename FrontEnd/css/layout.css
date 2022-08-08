@@ -1,5 +1,5 @@
 *::-webkit-scrollbar{
-        display: none;
+    display: none;
 }
 *{
     -ms-overflow-style: none;  /* IE and Edge */
@@ -95,23 +95,24 @@ h1{
 /* Open Book Pages */
 #open-book{
     display: flex;
-    width: 100vw;
-    /* margin: 0px auto; */
+    /* width: 100vw; */
     max-height:750px;
     height: 95vh;
-    background-image: url(/images/cookBookBorder.png);
-    background-position: center;
-    background-size: 100%;
+    border: 15px solid transparent;
+    border-image: url(/images/cookBookBorder.png) 30 round;
+}
+#open-border{
+    display: flex;
 }
 /* Left Page: Single Category/Recipe list  */
 .left-page{
+    background-image: linear-gradient(to right, white 91%, rgba(0, 0, 0, 0.3));
     background-color: white;
     width: 600px;
     border-right: 2px solid black; 
     height: 100%;   
+    
 }
-
-
 .recipe-flex{
     height: 91%;
     overflow-y: scroll;
@@ -129,7 +130,6 @@ h1{
     justify-content: center;
 
 }
-
 .recipe-cards {
     display: flex;
     flex-direction: column;
@@ -156,6 +156,7 @@ h1{
 /* Right Page: Recipe Page  */
 .right-page{
     background-color: white;
+    background-image: linear-gradient(to left, white 91%, rgba(0, 0, 0, 0.3));
     width: 600px;
     border-left: 2px solid black;
     height: 100%;
@@ -217,9 +218,6 @@ h2{
     margin-right: 10px;
 }
 /* footer */
-.copyright{
-    color: white;
-}
 footer {
     background-color: #59433E;
     margin-right: 0px;
@@ -230,14 +228,16 @@ footer {
     font-weight: 500;
 }
 /* Dev pop-ups */
-.devs {
-    color: #ec8484;
+.dev-list {
+    color: #EFD8AF;
     font-weight: 700;
 }
-.modal-bg{
+.modal-header{
+    background-color: #EFD8AF;
+}
+.modal-footer{
     background-color: #BF6002;
 }
-
 .dev-btn:hover{
     cursor: pointer;
 }
