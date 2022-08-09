@@ -1,66 +1,97 @@
-### Get all categories
+
+###CATEGORY CONTROLLER
+
+
+### Get all categories WORKS
 GET http://localhost:8080/api/categories
 Content-Type: application/json
 
-### Get all recipes
-GET http://localhost:8080/api/recipes
-Content-Type: application/json
-
-### Get category with given id
+### Get category with given id WORKS
 GET http://localhost:8080/api/categories/1
 Content-Type: application/json
 
-### Get recipe with given id
+
+
+
+###RECIPE CONTROLLER
+
+
+### Get all recipes WORKS
+GET http://localhost:8080/api/recipes
+Content-Type: application/json
+
+### Get recipe with given id WORKS
 GET http://localhost:8080/api/recipes/5
 Content-Type: application/json
 
-### Add a comment to a recipe
+### Get Steps by recipe id
+GET http://localhost:8080/api/recipes/5/steps
+
+### Add a comment to a recipe WORKS
 POST http://localhost:8080/api/recipes/5/addComment
 Content-Type: application/json
 
 {"author":"x","content":"blah","ratings":3.8}
 
-### Add recipe
+### Add recipe WORKS
 POST http://localhost:8080/api/recipe
 Content-Type: application/json
 
 {"name":"Blah","steps":[],"picOfDish":"","categories":[],"ingredients":[],"comments":[],"avgRating":9.8}
 
-### Add step to recipe
+### Add step to recipe WORKS
 POST http://localhost:8080/api/recipes/5/addSteps
 Content-Type: application/json
 
 {"instructions": "step 1"}
 
-### Add ingredient to recipe THIS MAY NEED CHANGED IF WE ARE MAKING THIS AN ENTITY
-POST http://localhost:8080/api/recipes/5/addIngredient
-Content-Type: application/json
 
-{"name": "Rambutan", "measurement": "1"}
-
-### Add Recipe
+### Add Recipe WORKS
 POST http://localhost:8080/api/recipe
 Content-Type: application/json
 
 {"name": "Best Dish Ever", "steps":[],"picOfDish":"","categories":[],"ingredients":[],"comments":[]}
 
-### Change recipe name by id  THIS NEEDS TESTED
+### Change recipe name by id  WORKS
 PATCH http://localhost:8080/api/recipe/5/name
 
+Changed Recipe Name
 
-### Delete recipe by id
-DELETE http://localhost:8080/api/recipes/5/deleteSingleStep
+### Delete recipe by id WORKS
+DELETE http://localhost:8080/api/recipes/8/deleteRecipe
+
+### Delete Delete single step of recipe DOES NOT SEEM TO WORK
+PATCH http://localhost:8080/api/recipes/5/deleteSingleStep
 Content-Type: application/json
 
-###Delete Ingredient
-DELETE http://localhost:8080/api/recipes/10/deleteIngredients
-Content-Type: application/json
 
-### Delete Step from recipe  THIS ONE MAY HAVE A METHOD ISSUE
+### Delete Step from recipe  DOES NOT WORK
 DELETE https://localhost:8080/api/recipes/5/deleteSteps
 Content-Type: application/json
 
 
-
-
 ### delete comment from recipe
+
+
+
+
+###INGREDIENT CONTROLLER
+
+
+###Get all ingredients WORKS??? RETURNS A COLLECTION
+GET http://localhost:8080/api/ingredients
+Content-Type: application/json
+
+###Get ingredient by id WORKS
+GET http://localhost:8080/api/ingredients/6
+Content-Type: application/json
+
+### Add ingredient to recipe DOES NOT WORK INGREDIENT CONTROLLER RELATED
+PATCH http://localhost:8080/api/recipes/5/ingredients/6/addIngredient
+Content-Type: application/json
+
+{"name": "Rambutan", "measurement": "1"}
+
+###Delete ingredient from recipe DOES NOT WORK INGREDIENT CONTROLLER RELATED
+DELETE http://localhost:8080/api/recipes/5/deleteIngredients
+Content-Type: application/json

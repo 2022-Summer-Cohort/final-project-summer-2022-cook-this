@@ -113,4 +113,10 @@ public class RecipeController {
         return recipeRepo.findAll();
     }
 
+//    @PatchMapping("/api/recipes/{id}/setIngredientMeasurment")
+//    public Recipe setIngredientMeasurementByRecipeId(@RequestBody String measurementToSet, @PathVariable Long id){
+//        Recipe recipeToChange = recipeRepo.findById(id).get();
+//        recipeToChange.setIngredientMeasurment()
+//    }
+
 }
