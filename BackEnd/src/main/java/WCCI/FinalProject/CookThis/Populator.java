@@ -82,7 +82,7 @@ public class Populator implements CommandLineRunner {
         ingredientRepo.save(pieIngredient4);
 
 
-        Ingredient pieIngredient5 = new Ingredient("Water", "d","","3",3, recipe1);
+        Ingredient pieIngredient5 = new Ingredient("Water", "d","","0",0, recipe1);
         ingredientRepo.save(pieIngredient5);
 
 
