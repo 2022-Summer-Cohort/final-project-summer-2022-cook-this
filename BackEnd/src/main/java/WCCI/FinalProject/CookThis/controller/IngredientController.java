@@ -1,10 +1,8 @@
 package WCCI.FinalProject.CookThis.controller;
 
 import WCCI.FinalProject.CookThis.model.Ingredient;
-import WCCI.FinalProject.CookThis.model.Measurement;
 import WCCI.FinalProject.CookThis.model.Recipe;
 import WCCI.FinalProject.CookThis.repository.IngredientRepo;
-import WCCI.FinalProject.CookThis.repository.MeasurementRepo;
 import WCCI.FinalProject.CookThis.repository.RecipeRepo;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,12 +11,10 @@ public class IngredientController {
     private RecipeRepo recipeRepo;
     private IngredientRepo ingredientRepo;
 
-    private MeasurementRepo measurementRepo;
 
-    public IngredientController(RecipeRepo recipeRepo, IngredientRepo ingredientRepo, MeasurementRepo measurementRepo) {
+    public IngredientController(RecipeRepo recipeRepo, IngredientRepo ingredientRepo) {
         this.recipeRepo = recipeRepo;
         this.ingredientRepo = ingredientRepo;
-        this.measurementRepo = measurementRepo;
     }
 
     @GetMapping("api/ingredients")

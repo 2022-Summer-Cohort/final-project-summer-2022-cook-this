@@ -23,26 +23,19 @@ public class Ingredient {
 
     private int spiceLevel;
 
-    private boolean spicy;
     @ManyToMany
     @JsonIgnore
     private Collection<Recipe> recipes;
 
-//    @ManyToMany(mappedBy = "ingredients")
-//    private Collection<Measurement> measurements;
-@OneToMany(mappedBy = "ingredients")
-private Collection<Measurement> measurements;
 
-    public Ingredient(String name, String imageUrl, String description, int spiceLevel, boolean spicy,Recipe... recipes) {
+    public Ingredient(String name, String imageUrl, String description, String ingredientMeasurement, int spiceLevel, Recipe... recipes) {
         this.name = name;
         this.imageUrl = imageUrl;
         this.description = description;
+        this.ingredientMeasurement = ingredientMeasurement;
         this.spiceLevel = spiceLevel;
-        this.spicy = spicy;
-        this.recipes = Arrays.asList(recipes);
-        this.measurements = new ArrayList<>();
+        this.recipes = new ArrayList<>();
     }
-
 
 
     public Ingredient() {
@@ -69,16 +62,12 @@ private Collection<Measurement> measurements;
         return spiceLevel;
     }
 
-    public Collection<Measurement> getMeasurements() {
-        return measurements;
+    public String getIngredientMeasurement() {
+        return ingredientMeasurement;
     }
 
     public void setRecipes(Collection<Recipe> recipes) {
         this.recipes = recipes;
-    }
-
-    public boolean isSpicy() {
-        return spicy;
     }
 
     public Collection<Recipe> getRecipes() {
@@ -90,12 +79,12 @@ private Collection<Measurement> measurements;
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Ingredient that = (Ingredient) o;
-        return spiceLevel == that.spiceLevel && spicy == that.spicy && Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(imageUrl, that.imageUrl) && Objects.equals(description, that.description);
+        return spiceLevel == that.spiceLevel  && Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(imageUrl, that.imageUrl) && Objects.equals(description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, imageUrl, description, spiceLevel, spicy);
+        return Objects.hash(id, name, imageUrl, description, spiceLevel);
     }
 
 //    public void updateMeasurement(Long recId, Long measId) {
