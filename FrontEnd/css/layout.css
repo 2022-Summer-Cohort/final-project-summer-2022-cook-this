@@ -2,15 +2,19 @@
     display: none;
 }
 *{
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
 }
 body{
     background-image: url(/images/countertopBackground.jpg);
     background-size: cover;
 }
 .container{
-    margin-top: 3%;
+    margin-top: 1%;
+    margin-bottom: 5%;
+}
+.open-container{
+    margin-top: 1%;
     margin-bottom: 5%;
 }
 a{
@@ -27,7 +31,7 @@ h1{
 /* Home Page: Closed Book */
 #closed-book{
     display: flex;
-    margin-left: 10%;
+    /* margin-left: 10%; */
 }
 #closed-book-image{
     text-align: right;
@@ -45,7 +49,7 @@ h1{
     height: 80%;
     padding-bottom: 2em;
     padding-right: .6%;
-    overflow-y: scroll;
+    overflow-y: hidden;
     padding-top: 2em;
 }
 .book-tabs{
@@ -53,9 +57,9 @@ h1{
     display: flex;
     justify-content: space-evenly;
     padding-bottom: 2em;
-    padding-right: .6%;
     overflow-y: scroll;
     padding-top: 2em;
+    margin-left: -15px;
 }
 .side-tabs{
     display: flex;
@@ -93,16 +97,20 @@ h1{
     background-color:rgb(133, 113, 89);
 }
 /* Open Book Pages */
+@media screen and (max-width:1400px){
+    .container{
+        margin-left: 0;
+    }
+}
 #open-book{
     display: flex;
-    /* width: 100vw; */
     max-height:750px;
-    height: 95vh;
     border: 15px solid transparent;
-    border-image: url(/images/cookBookBorder.png) 30 round;
+    border-image: url(/images/cookBookBorder.png) 60 round;
 }
 #open-border{
     display: flex;
+    width: 1300px;
 }
 /* Left Page: Single Category/Recipe list  */
 .left-page{
@@ -111,17 +119,16 @@ h1{
     width: 600px;
     border-right: 2px solid black; 
     height: 100%;   
-    
 }
 .recipe-flex{
     height: 91%;
     overflow-y: scroll;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    /* -ms-overflow-style: none;  
+    scrollbar-width: none;   */
 }
-.recipe-flex::-webkit-scrollbar {
+/* .recipe-flex::-webkit-scrollbar {
     display: hidden;
-}
+} */
 .recipe-list{
     /* height: 600px; */
     display: flex;
@@ -194,12 +201,12 @@ h1{
 #ingredients-list ul{
     height: 80%;
     overflow-y: scroll;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    /* -ms-overflow-style: none;  
+    scrollbar-width: none;   */
 }
-.ingredients-list ul::-webkit-scrollbar {
+/* .ingredients-list ul::-webkit-scrollbar {
     display: none;
-}
+} */
 .recipe-image img{
     width: 100%;
 }
@@ -210,7 +217,6 @@ h2{
     margin: 0;
 }
 #instruction-list{
-    scrollbar-width: none;
     height: 17em;
     overflow-y: scroll;
 }
