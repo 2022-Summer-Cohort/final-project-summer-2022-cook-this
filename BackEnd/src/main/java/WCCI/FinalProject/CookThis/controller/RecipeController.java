@@ -113,14 +113,21 @@ public class RecipeController {
         recipeRepo.save(recipeToChange);
         return recipeToChange;
     }
-
-    @DeleteMapping("api/recipes/{id}")
+    @PatchMapping("api/recipes/{id}/updateStep/{indexOfStep}")
+    public Recipe recipeToChangeStep(@PathVariable Integer indexOfStep, @RequestBody  Step updatedStep, @PathVariable Long id) {
+        Recipe recipeToChange = recipeRepo.findById(id).get();
+        recipeToChange.updateSingleStep(indexOfStep, updatedStep);
+        recipeRepo.save(recipeToChange);
+        return recipeToChange;
+    }
+    @DeleteMapping("api/recipes/{id}/deleteRecipe")
     public Iterable<Recipe> deleteRecipeById(@PathVariable Long id) {
         recipeRepo.deleteById(id);
         return recipeRepo.findAll();
     }
 }
-    
-
-
-
+//    @PatchMapping("/api/recipes/{id}/setIngredientMeasurment")
+//    public Recipe setIngredientMeasurementByRecipeId(@RequestBody String measurementToSet, @PathVariable Long id){
+//        Recipe recipeToChange = recipeRepo.findById(id).get();
+//        recipeToChange.setIngredientMeasurment()
+//    }

@@ -14,12 +14,15 @@ public class Recipe {
     private Long id;
     private String name;
     @ElementCollection
-    private Collection<Step> steps;
+    private List<Step> steps;
 
     private String picOfDish;
     @ManyToMany
     private Collection<Category> categories;
-    @ManyToMany(mappedBy = "recipes")
+
+//    @ManyToMany(mappedBy = "recipes")
+//    private Collection<Ingredient> ingredients;
+    @OneToMany(mappedBy = "recipes")
     private Collection<Ingredient> ingredients;
 
     @ElementCollection
@@ -69,6 +72,14 @@ public class Recipe {
 
     public void addComments(Review newComment) {
         comments.add(newComment);
+    }
+
+    public Step getSingleStep(Integer indexOfStep){
+        return steps.get(indexOfStep);
+    }
+    public void updateSingleStep(Integer indexOfStep, Step newStep){
+        steps.remove(steps.get(indexOfStep));
+        steps.add(indexOfStep, newStep);
     }
 
     public double getAvgRating() {
