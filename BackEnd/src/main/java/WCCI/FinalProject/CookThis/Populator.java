@@ -392,6 +392,40 @@ public class Populator implements CommandLineRunner {
         recipe6.addReview(tofuReview1);
         recipeRepo.save(recipe6);
 
+//        Ingredient fourthIngredient1 = new Ingredient("Spaghetti squash halved and seeded", "2 1/2");
+//        recipe4.addIngredient(fourthIngredient1);
+//
+//        Ingredient fourthIngredient2 = new Ingredient("Tablespoon Olive Oil", "2");
+//        recipe4.addIngredient(fourthIngredient2);
+//
+//        Ingredient fourthIngredient3 = new Ingredient("slice bacon cut in to pieces", "2 inch");
+//        recipe4.addIngredient(fourthIngredient3);
+//
+//        Ingredient fourthIngredient4 = new Ingredient("Tablespoon unsalted butter", "2");
+//        recipe4.addIngredient(fourthIngredient4);
+//
+//        Ingredient fourthIngredient5 = new Ingredient("Cloves of Minced Garlic", "3");
+//        recipe4.addIngredient(fourthIngredient5);
+//
+//        Ingredient fourthIngredient6 = new Ingredient("Grated parmesan cheese", "1/2");
+//        recipe4.addIngredient(fourthIngredient6);
+//
+//        Ingredient fourthIngredient7 = new Ingredient("Salt and ground pepper to taste", "1");
+//        recipe4.addIngredient(fourthIngredient7);
+//
+//        Ingredient fourthIngredient8 = new Ingredient("Teaspoon Chopped fresh oregon", "1/3");
+//        recipe4.addIngredient(fourthIngredient8);
+//
+//        Ingredient fourthIngredient9 = new Ingredient("Teaspoon crushed red pepper flakes", "1/3");
+//        recipe4.addIngredient(fourthIngredient9);
+//
+//        Ingredient fourthIngredient10 = new Ingredient("Grated parmesan cheese", "1/4cup");
+//        recipe4.addIngredient(fourthIngredient10);
+//
+//
+//        Review fourthReview1 = new Review("Arsi", "PerfectlyPlated", 4.5);
+//        recipe4.addReview(fourthReview1);
+//        recipeRepo.save(recipe4);
 
     }
 

@@ -93,7 +93,7 @@ GET http://localhost:8080/api/ingredients/8
 Content-Type: application/json
 
 ### Add ingredient to recipe DOES NOT WORK INGREDIENT CONTROLLER RELATED
-PATCH http://localhost:8080/api/recipes/ingredients/5/addIngredient
+PATCH http://localhost:8080/api/recipes/5/ingredients/6/addIngredient
 Content-Type: application/json
 
 {"name": "Rambutan", "measurement": "1"}
