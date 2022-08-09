@@ -21,7 +21,7 @@ GET http://localhost:8080/api/recipes
 Content-Type: application/json
 
 ### Get recipe with given id WORKS
-GET http://localhost:8080/api/recipes/12
+GET http://localhost:8080/api/recipes/5
 Content-Type: application/json
 
 ### Get Steps by recipe id WORKS

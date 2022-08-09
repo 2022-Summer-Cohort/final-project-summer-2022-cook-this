@@ -27,14 +27,10 @@ public class RecipeController {
     }
 
     @GetMapping("api/recipes/{id}")
-    public Recipe getCategoryById(@PathVariable Long Id) {
-        return recipeRepo.findById(Id).get();
-    }
-
-    @GetMapping("api/recipes/{id}")
-    public Recipe getRecipeById(@PathVariable Long id){
+    public Recipe getCategoryById(@PathVariable Long id) {
         return recipeRepo.findById(id).get();
     }
+
     @GetMapping("api/recipes/{id}/steps")
     public Iterable<Step> getStepsByRecipeId(@PathVariable Long id){
         Recipe recipeSteps= recipeRepo.findById(id).get();
