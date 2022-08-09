@@ -21,10 +21,10 @@ GET http://localhost:8080/api/recipes
 Content-Type: application/json
 
 ### Get recipe with given id WORKS
-GET http://localhost:8080/api/recipes/5
+GET http://localhost:8080/api/recipes/12
 Content-Type: application/json
 
-### Get Steps by recipe id
+### Get Steps by recipe id WORKS
 GET http://localhost:8080/api/recipes/5/steps
 
 ### Add a comment to a recipe WORKS
@@ -58,7 +58,7 @@ PATCH http://localhost:8080/api/recipe/5/name
 Changed Recipe Name
 
 ### Delete recipe by id WORKS
-DELETE http://localhost:8080/api/recipes/8/deleteRecipe
+DELETE http://localhost:8080/api/recipes/12/deleteRecipe
 
 ### Delete Delete single step of recipe DOES NOT SEEM TO WORK
 PATCH http://localhost:8080/api/recipes/5/deleteSingleStep
@@ -69,6 +69,12 @@ Content-Type: application/json
 DELETE https://localhost:8080/api/recipes/5/deleteSteps
 Content-Type: application/json
 
+### Update Single Step
+PATCH http://localhost:8080/api/recipes/5/updateStep/2
+Content-Type: application/json
+
+{"instructions": "changed step"}
+
 
 ### delete comment from recipe
 
@@ -78,12 +84,12 @@ Content-Type: application/json
 ###INGREDIENT CONTROLLER
 
 
-###Get all ingredients WORKS??? RETURNS A COLLECTION
+###Get all ingredients WORKS
 GET http://localhost:8080/api/ingredients
 Content-Type: application/json
 
-###Get ingredient by id DOES NOT WORK (ADDED TO POPULATOR)
-GET http://localhost:8080/api/ingredients/5
+###Get ingredient by id WORKS
+GET http://localhost:8080/api/ingredients/8
 Content-Type: application/json
 
 ### Add ingredient to recipe DOES NOT WORK INGREDIENT CONTROLLER RELATED
@@ -93,5 +99,5 @@ Content-Type: application/json
 {"name": "Rambutan", "measurement": "1"}
 
 ###Delete ingredient from recipe DOES NOT WORK INGREDIENT CONTROLLER RELATED
-DELETE http://localhost:8080/api/recipes/5/deleteIngredients
+DELETE http://localhost:8080/api/recipes/6/deleteIngredients
 Content-Type: application/json

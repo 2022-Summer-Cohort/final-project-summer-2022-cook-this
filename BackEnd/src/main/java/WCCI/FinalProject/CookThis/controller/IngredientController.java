@@ -37,7 +37,7 @@ public class IngredientController {
 //        ingredientRepo.
 //        return recipeRepo.;
 //    }
-    @DeleteMapping("api/recipes/{id}/deleteIngredients")
+    @DeleteMapping("api/recipes/{id}/ingredients/{id}/deleteIngredients")
     public Recipe recipeDeleteIngredients (@PathVariable Long id){
         Recipe recipeToChange = recipeRepo.findById(id).get();
         recipeToChange.deleteIngredients();

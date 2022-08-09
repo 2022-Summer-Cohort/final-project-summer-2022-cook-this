@@ -28,8 +28,10 @@ public class Ingredient {
     @JsonIgnore
     private Collection<Recipe> recipes;
 
-    @ManyToMany(mappedBy = "ingredients")
-    private Collection<Measurement> measurements;
+//    @ManyToMany(mappedBy = "ingredients")
+//    private Collection<Measurement> measurements;
+@OneToMany(mappedBy = "ingredients")
+private Collection<Measurement> measurements;
 
     public Ingredient(String name, String imageUrl, String description, int spiceLevel, boolean spicy,Recipe... recipes) {
         this.name = name;
