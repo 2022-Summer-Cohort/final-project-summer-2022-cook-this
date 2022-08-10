@@ -4115,3 +4115,9 @@ Caused by: org.h2.mvstore.MVStoreException: File is corrupted - unable to recove
 	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4082)
 	at org.h2.mvstore.db.Store.<init>(Store.java:136)
 	... 58 more
+2022-08-08 11:10:09 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]INGREDIENTS_ID"; expected "INSERT"; SQL statement:
+INGREDIENTS_ID [42001-214]
+2022-08-08 11:14:55 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM RECIPE_COMMENTS RECIPE_INGREDIENTS [*]RECIPE_STEPS"; SQL statement:
+SELECT * FROM RECIPE_COMMENTS RECIPE_INGREDIENTS RECIPE_STEPS [42000-214]

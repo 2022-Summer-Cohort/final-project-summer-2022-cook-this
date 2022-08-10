@@ -1,16 +1,20 @@
 *::-webkit-scrollbar{
-        display: none;
+    display: none;
 }
 *{
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
 }
 body{
     background-image: url(/images/countertopBackground.jpg);
     background-size: cover;
 }
 .container{
-    margin-top: 3%;
+    margin-top: 1%;
+    margin-bottom: 5%;
+}
+.open-container{
+    margin-top: 1%;
     margin-bottom: 5%;
 }
 a{
@@ -27,7 +31,7 @@ h1{
 /* Home Page: Closed Book */
 #closed-book{
     display: flex;
-    margin-left: 10%;
+    /* margin-left: 10%; */
 }
 #closed-book-image{
     text-align: right;
@@ -45,7 +49,7 @@ h1{
     height: 80%;
     padding-bottom: 2em;
     padding-right: .6%;
-    overflow-y: scroll;
+    overflow-y: hidden;
     padding-top: 2em;
 }
 .book-tabs{
@@ -53,9 +57,10 @@ h1{
     display: flex;
     justify-content: space-evenly;
     padding-bottom: 2em;
-    padding-right: .6%;
     overflow-y: scroll;
-    padding-top: 2em;
+    padding-top: 1.5em;
+    padding-right: .6%;
+    margin-left: -15px;
 }
 .side-tabs{
     display: flex;
@@ -63,7 +68,7 @@ h1{
     background-color:rgb(235, 206, 168);
     border-radius: 0 15px 15px 0;
     padding-left: 1%;
-    height: 140px;
+    height: 130px;
     min-width: 40px;
     justify-content: center;
     text-align: center;
@@ -80,6 +85,14 @@ h1{
     margin-top: 5px;
     margin-bottom: 5px;
 }
+#search-tab{
+    height: 30px;
+    padding-right:5%;
+}
+.nav-tabs-0{
+    height: 50px;
+    background-color: rgb(250, 234, 212);;
+}
 .nav-tabs-2{
     background-color:rgb(219, 187, 146);
 }
@@ -93,53 +106,50 @@ h1{
     background-color:rgb(133, 113, 89);
 }
 /* Open Book Pages */
+@media screen and (max-width:1400px){
+    .container{
+        margin-left: 0;
+    }
+}
 #open-book{
     display: flex;
-    width: 100vw;
-    /* margin: 0px auto; */
     max-height:750px;
-    height: 95vh;
-    background-image: url(/images/cookBookBorder.png);
-    background-position: center;
-    background-size: 100%;
+    border: 15px solid transparent;
+    border-image: url(/images/cookBookBorder.png) 60 round;
+}
+#open-border{
+    display: flex;
+    width: 1300px;
 }
 /* Left Page: Single Category/Recipe list  */
 .left-page{
+    background-image: linear-gradient(to right, white 91%, rgba(0, 0, 0, 0.35));
     background-color: white;
     width: 600px;
-    border-right: 2px solid black; 
-    height: 100%;   
+    padding-bottom: 3%;
 }
-
-
 .recipe-flex{
     height: 91%;
     overflow-y: scroll;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    /* -ms-overflow-style: none;  
+    scrollbar-width: none;   */
 }
-.recipe-flex::-webkit-scrollbar {
+/* .recipe-flex::-webkit-scrollbar {
     display: hidden;
-}
+} */
 .recipe-list{
     /* height: 600px; */
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
     justify-content: center;
-
 }
-
 .recipe-cards {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
     width: 40%;
 }
 .recipe-cards:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    cursor: pointer;
 }
 .recipe-name {
     margin: 0;
@@ -156,9 +166,9 @@ h1{
 /* Right Page: Recipe Page  */
 .right-page{
     background-color: white;
+    background-image: linear-gradient(to left, white 91%, rgba(0, 0, 0, 0.35));
     width: 600px;
-    border-left: 2px solid black;
-    height: 100%;
+    padding-bottom: 3%;
 }
 .right-page-ingredient{
     overflow-y: scroll;
@@ -173,19 +183,50 @@ h1{
 }
 .title-header{
     margin:0;
-    padding-top: 5px;
+    padding-top: 3px;
     font-size: 1.4em;
     text-align: center;
 }
-#avgRating{
+#recipe-page{
+    padding-left: 5%;
+    overflow-y: scroll;
+}
+.avgRating{
     color: gold;
     margin-top: 0;
 }
-#recipe-top {
-    display: flex;
-    align-items: center;
-    margin-top: 0;
-    height: 30%
+.reviews-btn{
+    position: relative;
+}
+.reviews-btn .review-tip{
+    visibility: hidden;
+    width: 120px;
+    background-color: rgba(202, 202, 202, 0.75);
+    color: black;
+    border-radius: 6px;
+    padding: 5px 0;
+    font-size: 10pt;
+    text-align: center;
+    position: absolute;
+    z-index: 1;
+    top: 38px;
+    left: 75px;
+}
+.reviews-btn:hover .review-tip{
+    visibility: visible;
+}
+#review-content-input{
+    text-align: left;
+}
+#overall-rating{
+    font-size: small;
+}
+#new-review h6{
+    color: black;
+}
+.hr-short{
+    width:50px;
+    margin: 0px auto;
 }
 #ingredient-title {
     font-size:x-large;
@@ -213,55 +254,78 @@ h1{
     text-align: left;
 }
 #ingredients-list{
-    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
 }
 #ingredients-list h2{
     margin: 0;
 }
-#ingredients-list ul{
-    height: 80%;
-    overflow-y: scroll;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-}
-.ingredients-list ul::-webkit-scrollbar {
-    display: none;
-}
-.recipe-image img{
-    width: 100%;
+.ingredient-list-item{
+    width: 50%;
+    display: flex;
+    align-items: center;
 }
 .recipe-image{
-    width: 50%;
+    width: 75%;
 }
 h2{
     margin: 0;
 }
 #instruction-list{
-    scrollbar-width: none;
-    height: 17em;
     overflow-y: scroll;
+}
+#instruction-list h4{
+    color:#BF6002
 }
 #instructions ul li {
     margin-right: 10px;
 }
+/* Right Page: Learn */
+#video-text{
 
-.copyright{
-    color: white;
+    width: 80%;
 }
-
+.video-flex{
+    height: 91%;
+    overflow-y: scroll;
+    display: flex;
+    align-content: flex-start;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+/* footer */
 footer {
     background-color: #59433E;
     margin-right: 0px;
-    /* width: 100%; */
     padding: 2%;
 }
-
 .copyright {
     color: #BFBA73;
     font-weight: 500;
 }
-
-.devs {
-    color: #ec8484;
+.dev-list {
+    color: #EFD8AF;
     font-weight: 700;
+}
+.modal-header{
+    background-color: #EFD8AF;
+}
+.modal-footer{
+    background-color: #BF6002;
+}
+.dev-btn:hover{
+    cursor: pointer;
+}
+.portfolio-link{
+    text-decoration: underline;
+}
+.social-icon{
+    width: 50px;
+}
+.dev-info{
+    display: flex;
+    flex-direction: column;
 }

@@ -11,6 +11,7 @@ public class IngredientController {
     private RecipeRepo recipeRepo;
     private IngredientRepo ingredientRepo;
 
+
     public IngredientController(RecipeRepo recipeRepo, IngredientRepo ingredientRepo) {
         this.recipeRepo = recipeRepo;
         this.ingredientRepo = ingredientRepo;
@@ -25,14 +26,15 @@ public class IngredientController {
     public Ingredient getIngredientById(@PathVariable Long id) {
         return ingredientRepo.findById(id).get();
     }
-    @PostMapping("api/recipes/{id}/addIngredient")
-    public Recipe recipeToAddIngredient(@RequestBody Ingredient newIngredient , @PathVariable Long id) {
-        Recipe recipeToChange = recipeRepo.findById(id).get();
-        recipeToChange.addIngredient(newIngredient);
-        recipeRepo.save(recipeToChange);
-        return recipeToChange;
-    }
-    @DeleteMapping("api/recipes/{id}/deleteIngredients")
+//    @PatchMapping("api/recipes/{recId}/ingredients/{id}/updateRecipeIngredientMeasurement")
+//    public Recipe updateRecipeIngredientMeasurement(@PathVariable Long measId, @PathVariable Long id, @PathVariable Long recId) {
+//        Ingredient ingredientToUpdate = ingredientRepo.findById(id).get();
+//        ingredientToUpdate.updateMeasurement(recId,measId);
+//        ingredientRepo.
+//        return recipeRepo.;
+
+//    }
+    @DeleteMapping("api/recipes/{id}/ingredients/{id}/deleteIngredients")
     public Recipe recipeDeleteIngredients (@PathVariable Long id){
         Recipe recipeToChange = recipeRepo.findById(id).get();
         recipeToChange.deleteIngredients();

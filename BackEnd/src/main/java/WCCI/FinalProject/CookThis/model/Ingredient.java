@@ -12,32 +12,30 @@ import java.util.Objects;
 public class Ingredient {
     @Id
     @GeneratedValue
-
     private Long id;
     private String name;
 
     private String imageUrl;
-    private String measurement;
 
     private String description;
 
+    private String ingredientMeasurement;
+
     private int spiceLevel;
 
-    private boolean spicy;
     @ManyToMany
+    @JsonIgnore
     private Collection<Recipe> recipes;
 
 
-    public Ingredient(String name, String imageUrl, String measurement, String description, int spiceLevel, boolean spicy,Recipe ... recipes) {
+    public Ingredient(String name, String imageUrl, String description, String ingredientMeasurement, int spiceLevel, Recipe... recipes) {
         this.name = name;
         this.imageUrl = imageUrl;
-        this.measurement = measurement;
         this.description = description;
+        this.ingredientMeasurement = ingredientMeasurement;
         this.spiceLevel = spiceLevel;
-        this.spicy = spicy;
-        this.recipes = Arrays.asList(recipes);
+        this.recipes = new ArrayList<>();
     }
-
 
 
     public Ingredient() {
@@ -55,9 +53,6 @@ public class Ingredient {
         return imageUrl;
     }
 
-    public String getMeasurement() {
-        return measurement;
-    }
 
     public String getDescription() {
         return description;
@@ -67,8 +62,12 @@ public class Ingredient {
         return spiceLevel;
     }
 
-    public boolean isSpicy() {
-        return spicy;
+    public String getIngredientMeasurement() {
+        return ingredientMeasurement;
+    }
+
+    public void setRecipes(Collection<Recipe> recipes) {
+        this.recipes = recipes;
     }
 
     public Collection<Recipe> getRecipes() {
@@ -80,14 +79,23 @@ public class Ingredient {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Ingredient that = (Ingredient) o;
-        return spiceLevel == that.spiceLevel && spicy == that.spicy && Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(imageUrl, that.imageUrl) && Objects.equals(measurement, that.measurement) && Objects.equals(description, that.description);
+        return spiceLevel == that.spiceLevel  && Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(imageUrl, that.imageUrl) && Objects.equals(description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, imageUrl, measurement, description, spiceLevel, spicy);
+        return Objects.hash(id, name, imageUrl, description, spiceLevel);
     }
 
+//    public void updateMeasurement(Long recId, Long measId) {
+//        for(Recipe recipe: recipes){
+//            for(Measurement measurement: measurements){
+//                if(recipe.getId()==recId && measurement.getId()==measId){
+//                    ingredientMeasurement = measurement.getAmount() + " " + measurement.getType();
+//                }
+//            }
+//        }
+//    }
 }
 
 
