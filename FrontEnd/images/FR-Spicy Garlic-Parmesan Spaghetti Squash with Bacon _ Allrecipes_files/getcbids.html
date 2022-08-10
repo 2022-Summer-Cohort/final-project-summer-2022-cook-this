@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!-- saved from url=(0084)https://allrecipes.assistpub.com/getcbids.html?_csvr=080911_417&_ositekey_disabled=1 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="./aaxcb.js"></script><script>
+        function isDisplayIframe(type) {
+            return type;
+        }
+
+        function isPrefetchIframe(type) {
+            return type === "prefetch_frame";
+        }
+
+        function buildDisplayUrl(srcUrl, type) {
+            srcUrl = srcUrl + "&type=" + type;
+            if (isPrefetchIframe(type)) {
+                srcUrl = "";
+            }
+            return srcUrl;
+        }
+
+        function getScriptUrl(srcUrl) {
+            if (window.name !== '') {
+                try {
+                    var iframeParams = JSON.parse(window.name);
+                    if (isDisplayIframe(iframeParams.type)) {
+                        srcUrl = buildDisplayUrl(srcUrl, iframeParams.type);
+                    }
+                } catch (e) {
+                }
+            }
+            return srcUrl;
+        }
+
+        function loadScript(scriptUrl) {
+            if (scriptUrl === "") {
+                return;
+            }
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.src = scriptUrl;
+            var placeTag = document.getElementsByTagName("script")[0];
+            placeTag.parentNode.insertBefore(script, placeTag);
+        }
+
+        window.aax = window.aax || {};
+        window.aax["__conf"] = {"sitekey_disabled":"1","referer":"https://www.allrecipes.com/recipe/268472/actifried-chicken-tikka-masala/"};
+        scriptUrl = getScriptUrl("https://c.aaxads.com/aaxcb.js?svr=080911_417");
+        loadScript(scriptUrl);
+    </script>
+</head>
+<body marginwidth="0" marginheight="0"><iframe marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="0" width="0" id="iframe3" src="./usync.html" style="display: none !important;"></iframe><iframe marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="0" width="0" id="iframe2" src="./async_usersync.html" style="display: none !important;"></iframe><iframe marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="0" width="0" id="iframe1" src="./ixmatch.html" style="display: none !important;"></iframe>
+
+</body></html>

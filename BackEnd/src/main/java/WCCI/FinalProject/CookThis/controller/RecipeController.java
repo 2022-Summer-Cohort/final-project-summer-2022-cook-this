@@ -6,6 +6,7 @@ import WCCI.FinalProject.CookThis.model.Review;
 import WCCI.FinalProject.CookThis.model.Step;
 import WCCI.FinalProject.CookThis.repository.CategoryRepo;
 import WCCI.FinalProject.CookThis.repository.RecipeRepo;
+import com.sun.xml.bind.XmlAccessorFactory;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
@@ -21,15 +22,15 @@ public class RecipeController {
     }
 
     @GetMapping("api/recipes")
-    public Iterable<Recipe> getAllRecipes(){
+    public Iterable<Recipe> getAllCategories() {
         return recipeRepo.findAll();
     }
 
-
     @GetMapping("api/recipes/{id}")
-    public Recipe getRecipeById(@PathVariable Long id){
+    public Recipe getCategoryById(@PathVariable Long id) {
         return recipeRepo.findById(id).get();
     }
+
     @GetMapping("api/recipes/{id}/steps")
     public Iterable<Step> getStepsByRecipeId(@PathVariable Long id){
         Recipe recipeSteps= recipeRepo.findById(id).get();
@@ -58,7 +59,7 @@ public class RecipeController {
 
 
     @PostMapping("api/recipes/{id}/addSteps")
-    public Recipe recipeToAddStep(@RequestBody  Step newStep , @PathVariable Long id) {
+    public Recipe recipeToAddStep(@RequestBody Step newStep, @PathVariable Long id) {
         Recipe recipeToChange = recipeRepo.findById(id).get();
         recipeToChange.addStep(newStep);
         recipeRepo.save(recipeToChange);
@@ -100,10 +101,18 @@ public class RecipeController {
         recipeRepo.save(recipeToAdd);
         return recipeToAdd;
     }
+
     @PatchMapping("api/recipe/{id}/name")
-    public Recipe recipeChangeName (@RequestBody String newName,@PathVariable Long id){
+    public Recipe recipeChangeName(@RequestBody String newName, @PathVariable Long id) {
         Recipe recipeToChange = recipeRepo.findById(id).get();
         recipeToChange.changeName(newName);
+        recipeRepo.save(recipeToChange);
+        return recipeToChange;
+    }
+    @PatchMapping("api/recipes/{id}/updateStep/{indexOfStep}")
+    public Recipe recipeToChangeStep(@PathVariable Integer indexOfStep, @RequestBody  Step updatedStep, @PathVariable Long id) {
+        Recipe recipeToChange = recipeRepo.findById(id).get();
+        recipeToChange.updateSingleStep(indexOfStep, updatedStep);
         recipeRepo.save(recipeToChange);
         return recipeToChange;
     }
@@ -112,11 +121,9 @@ public class RecipeController {
         recipeRepo.deleteById(id);
         return recipeRepo.findAll();
     }
-
+}
 //    @PatchMapping("/api/recipes/{id}/setIngredientMeasurment")
 //    public Recipe setIngredientMeasurementByRecipeId(@RequestBody String measurementToSet, @PathVariable Long id){
 //        Recipe recipeToChange = recipeRepo.findById(id).get();
 //        recipeToChange.setIngredientMeasurment()
 //    }
-
-}

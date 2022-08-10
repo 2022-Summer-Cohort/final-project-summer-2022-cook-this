@@ -58,7 +58,8 @@ h1{
     justify-content: space-evenly;
     padding-bottom: 2em;
     overflow-y: scroll;
-    padding-top: 2em;
+    padding-top: 1.5em;
+    padding-right: .6%;
     margin-left: -15px;
 }
 .side-tabs{
@@ -67,7 +68,7 @@ h1{
     background-color:rgb(235, 206, 168);
     border-radius: 0 15px 15px 0;
     padding-left: 1%;
-    height: 140px;
+    height: 130px;
     min-width: 40px;
     justify-content: center;
     text-align: center;
@@ -83,6 +84,14 @@ h1{
     color: black;
     margin-top: 5px;
     margin-bottom: 5px;
+}
+#search-tab{
+    height: 30px;
+    padding-right:5%;
+}
+.nav-tabs-0{
+    height: 50px;
+    background-color: rgb(250, 234, 212);;
 }
 .nav-tabs-2{
     background-color:rgb(219, 187, 146);
@@ -114,11 +123,10 @@ h1{
 }
 /* Left Page: Single Category/Recipe list  */
 .left-page{
-    background-image: linear-gradient(to right, white 91%, rgba(0, 0, 0, 0.3));
+    background-image: linear-gradient(to right, white 91%, rgba(0, 0, 0, 0.35));
     background-color: white;
     width: 600px;
-    border-right: 2px solid black; 
-    height: 100%;   
+    padding-bottom: 3%;
 }
 .recipe-flex{
     height: 91%;
@@ -135,18 +143,13 @@ h1{
     gap: 10px;
     flex-wrap: wrap;
     justify-content: center;
-
 }
 .recipe-cards {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
     width: 40%;
 }
 .recipe-cards:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    cursor: pointer;
 }
 .recipe-name {
     margin: 0;
@@ -163,10 +166,9 @@ h1{
 /* Right Page: Recipe Page  */
 .right-page{
     background-color: white;
-    background-image: linear-gradient(to left, white 91%, rgba(0, 0, 0, 0.3));
+    background-image: linear-gradient(to left, white 91%, rgba(0, 0, 0, 0.35));
     width: 600px;
-    border-left: 2px solid black;
-    height: 100%;
+    padding-bottom: 3%;
 }
 .right-page-headers {
     text-align: center;
@@ -178,50 +180,93 @@ h1{
 }
 .title-header{
     margin:0;
-    padding-top: 5px;
+    padding-top: 3px;
     font-size: 1.4em;
     text-align: center;
 }
-#avgRating{
+#recipe-page{
+    padding-left: 5%;
+    overflow-y: scroll;
+}
+.avgRating{
     color: gold;
     margin-top: 0;
 }
-#recipe-top {
-    display: flex;
-    align-items: center;
-    margin-top: 0;
-    height: 30%
+.reviews-btn{
+    position: relative;
+}
+.reviews-btn .review-tip{
+    visibility: hidden;
+    width: 120px;
+    background-color: rgba(202, 202, 202, 0.75);
+    color: black;
+    border-radius: 6px;
+    padding: 5px 0;
+    font-size: 10pt;
+    text-align: center;
+    position: absolute;
+    z-index: 1;
+    top: 38px;
+    left: 75px;
+}
+.reviews-btn:hover .review-tip{
+    visibility: visible;
+}
+#review-content-input{
+    text-align: left;
+}
+#overall-rating{
+    font-size: small;
+}
+#new-review h6{
+    color: black;
+}
+.hr-short{
+    width:50px;
+    margin: 0px auto;
 }
 #ingredients-list{
-    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
 }
 #ingredients-list h2{
     margin: 0;
 }
-#ingredients-list ul{
-    height: 80%;
-    overflow-y: scroll;
-    /* -ms-overflow-style: none;  
-    scrollbar-width: none;   */
-}
-/* .ingredients-list ul::-webkit-scrollbar {
-    display: none;
-} */
-.recipe-image img{
-    width: 100%;
+.ingredient-list-item{
+    width: 50%;
+    display: flex;
+    align-items: center;
 }
 .recipe-image{
-    width: 50%;
+    width: 75%;
 }
 h2{
     margin: 0;
 }
 #instruction-list{
-    height: 17em;
     overflow-y: scroll;
+}
+#instruction-list h4{
+    color:#BF6002
 }
 #instructions ul li {
     margin-right: 10px;
+}
+/* Right Page: Learn */
+#video-text{
+
+    width: 80%;
+}
+.video-flex{
+    height: 91%;
+    overflow-y: scroll;
+    display: flex;
+    align-content: flex-start;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 /* footer */
 footer {
@@ -233,7 +278,6 @@ footer {
     color: #BFBA73;
     font-weight: 500;
 }
-/* Dev pop-ups */
 .dev-list {
     color: #EFD8AF;
     font-weight: 700;
