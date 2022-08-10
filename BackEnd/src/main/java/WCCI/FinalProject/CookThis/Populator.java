@@ -63,30 +63,30 @@ public class Populator implements CommandLineRunner {
         recipe1.addStep(pieStep11);
 
 
-        Ingredient pieIngredient1 = new Ingredient("Granny Smith Apples","f","f",4,true, recipe1);
+        Ingredient pieIngredient1 = new Ingredient("Granny Smith Apples","f","f","4",0, recipe1);
 //        recipe1.addIngredient(pieIngredient1);
         ingredientRepo.save(pieIngredient1);
 
 
 
-        Ingredient pieIngredient2 = new Ingredient("Unsalted Butter", "y","3",2,true, recipe1);
+        Ingredient pieIngredient2 = new Ingredient("Unsalted Butter", "y","3","2",0, recipe1);
 //        recipe1.addIngredient(pieIngredient2);
         ingredientRepo.save(pieIngredient2);
 
 
-        Ingredient pieIngredient3 = new Ingredient("White Sugar","f","f",3,true, recipe1);
+        Ingredient pieIngredient3 = new Ingredient("White Sugar","f","f","3",3, recipe1);
         ingredientRepo.save(pieIngredient3);
 
 
-        Ingredient pieIngredient4 = new Ingredient("Packed Brown Sugar","nc", "e",3,true, recipe1);
+        Ingredient pieIngredient4 = new Ingredient("Packed Brown Sugar","nc", "e","3",3, recipe1);
         ingredientRepo.save(pieIngredient4);
 
 
-        Ingredient pieIngredient5 = new Ingredient("Water", "d","",3,true, recipe1);
+        Ingredient pieIngredient5 = new Ingredient("Water", "d","","0",0, recipe1);
         ingredientRepo.save(pieIngredient5);
 
 
-        Ingredient pieIngredient6 = new Ingredient("Double-Crust Pie Pastry (Thawed)","","",3,true, recipe1);
+        Ingredient pieIngredient6 = new Ingredient("Double-Crust Pie Pastry (Thawed)","","","3",3, recipe1);
         ingredientRepo.save(pieIngredient6);
 
 
@@ -122,52 +122,52 @@ public class Populator implements CommandLineRunner {
 
 
 
-        Ingredient burrIngredient1 = new Ingredient("large russet potatoes, peeled and grated","","2",1,true);
-        recipe2.addIngredient(burrIngredient1);
+        Ingredient burrIngredient1 = new Ingredient("large russet potatoes, peeled and grated","","2","1",1, recipe2);
+        ingredientRepo.save(burrIngredient1);
 
 
-        Ingredient burrIngredient2 = new Ingredient("breakfast sausage, ground (not links)","","1 lb",0,false);
-        recipe2.addIngredient(burrIngredient2);
+        Ingredient burrIngredient2 = new Ingredient("breakfast sausage, ground (not links)","","1 lb","0",0, recipe2);
+        ingredientRepo.save(burrIngredient2);
 
 
-        Ingredient burrIngredient3 = new Ingredient("eggs, beaten","","6",3,true);
-        recipe2.addIngredient(burrIngredient3);
+        Ingredient burrIngredient3 = new Ingredient("eggs, beaten","","6","3",3, recipe2);
+        ingredientRepo.save(burrIngredient3);
 
 
-        Ingredient burrIngredient4 = new Ingredient("olive oil","","2 tbsp",2,true);
-        recipe2.addIngredient(burrIngredient4);
+        Ingredient burrIngredient4 = new Ingredient("olive oil","","2 tbsp","2",2, recipe2);
+        ingredientRepo.save(burrIngredient4);
 
 
-        Ingredient burrIngredient5 = new Ingredient("salt","","1 tsp",4,true);
-        recipe2.addIngredient(burrIngredient5);
+        Ingredient burrIngredient5 = new Ingredient("salt","","1 tsp","4",4, recipe2);
+        ingredientRepo.save(burrIngredient5);
 
 
-        Ingredient burrIngredient6 = new Ingredient("ground pepper","","1/4 tsp",3,true);
-        recipe2.addIngredient(burrIngredient6);
+        Ingredient burrIngredient6 = new Ingredient("ground pepper","","1/4 tsp","3",3, recipe2);
+        ingredientRepo.save(burrIngredient6);
 
 
-        Ingredient burrIngredient7 = new Ingredient("bunch green onions, white and green parts, chopped","1","",3,true);
-        recipe2.addIngredient(burrIngredient7);
+        Ingredient burrIngredient7 = new Ingredient("bunch green onions, white and green parts, chopped","1","","3",3, recipe2);
+        ingredientRepo.save(burrIngredient7);
 
 
-        Ingredient burrIngredient8 = new Ingredient("large flour tortillas",",","6",2,true);
-        recipe2.addIngredient(burrIngredient8);
+        Ingredient burrIngredient8 = new Ingredient("large flour tortillas",",","6","2",2, recipe2);
+        ingredientRepo.save(burrIngredient8);
 
 
-        Ingredient burrIngredient9 = new Ingredient("cheddar cheese, grated","","2 cups",4,true);
-        recipe2.addIngredient(burrIngredient9);
+        Ingredient burrIngredient9 = new Ingredient("cheddar cheese, grated","","2 cups","4",4, recipe2);
+        ingredientRepo.save(burrIngredient9);
 
 
-        Ingredient burrIngredient10 = new Ingredient("avocados, sliced","","2",6,true);
-        recipe2.addIngredient(burrIngredient10);
+        Ingredient burrIngredient10 = new Ingredient("avocados, sliced","","2","6",6, recipe2);
+        ingredientRepo.save(burrIngredient10);
 
 
-        Ingredient burrIngredient11 = new Ingredient("salsa","","To Taste",2,true);
-        recipe2.addIngredient(burrIngredient11);
+        Ingredient burrIngredient11 = new Ingredient("salsa","","To Taste","2",2, recipe2);
+        ingredientRepo.save(burrIngredient11);
 
 
-        Ingredient burrIngredient12 = new Ingredient("fresh cilantro",",","To Taste",1,true);
-        recipe2.addIngredient(burrIngredient12);
+        Ingredient burrIngredient12 = new Ingredient("fresh cilantro",",","To Taste","1",1, recipe2);
+        ingredientRepo.save(burrIngredient12);
 
         Review burrReview1 = new Review("Alex", "Make your morning amazing!", 4.0);
         recipe2.addReview(burrReview1);
@@ -187,35 +187,36 @@ public class Populator implements CommandLineRunner {
         recipe1.addStep(thirdStep4);
         recipeRepo.save(recipe3);
 
-        Ingredient thirdIngredient1 = new Ingredient("Cups of Water","", "3",4,true);
-        recipe3.addIngredient(thirdIngredient1);
+        Ingredient thirdIngredient1 = new Ingredient("Cups of Water","", "3","4",4, recipe3);
+        ingredientRepo.save(thirdIngredient1);
 
-        Ingredient thirdIngredient2 = new Ingredient("Tablespoons Peanut Oil", "2 ","",1,true);
-        recipe3.addIngredient(thirdIngredient2);
+        Ingredient thirdIngredient2 = new Ingredient("Tablespoons Peanut Oil", "2 ","","1",1, recipe3);
+        ingredientRepo.save(thirdIngredient2);
 
-        Ingredient thirdIngredient3 = new Ingredient("Small Yellow Onion, Chopped", "1 ","",2,true);
-        recipe3.addIngredient(thirdIngredient3);
+        Ingredient thirdIngredient3 = new Ingredient("Small Yellow Onion, Chopped", "1 ","","2",2, recipe3);
+        ingredientRepo.save(thirdIngredient3);
 
-        Ingredient thirdIngredient4 = new Ingredient("Small Green Bell Pepper", "1","",2,true);
-        recipe3.addIngredient(thirdIngredient4);
+        Ingredient thirdIngredient4 = new Ingredient("Small Green Bell Pepper", "1","","2",2, recipe3);
+        ingredientRepo.save(thirdIngredient4);
 
-        Ingredient thirdIngredient5 = new Ingredient("Teaspoon Minced Garlic", "1 ","r",4,true);
-        recipe3.addIngredient(thirdIngredient5);
+        Ingredient thirdIngredient5 = new Ingredient("Teaspoon Minced Garlic", "1 ","r","4", 4, recipe3);
+        ingredientRepo.save(thirdIngredient5);
 
-        Ingredient thirdIngredient6 = new Ingredient("Teaspoon Red Pepper Flakes", "1/4 ","",3,true);
-        recipe3.addIngredient(thirdIngredient6);
+        Ingredient thirdIngredient6 = new Ingredient("Teaspoon Red Pepper Flakes", "1/4 ","","4",4, recipe3);
+        ingredientRepo.save(thirdIngredient6);
 
-        Ingredient thirdIngredient7 = new Ingredient("Tablespoons Soy Sauce", "3 ","",0,false);
-        recipe3.addIngredient(thirdIngredient7);
+        Ingredient thirdIngredient7 = new Ingredient("Tablespoons Soy Sauce", "3 ","","0",0, recipe3);
+        ingredientRepo.save(thirdIngredient7);
 
-        Ingredient thirdIngredient8 = new Ingredient("Frozen Petite Peas", "1 cup ","",3,true);
-        recipe3.addIngredient(thirdIngredient8);
+        Ingredient thirdIngredient8 = new Ingredient("Frozen Petite Peas", "1 cup ","","3",3, recipe3);
+        ingredientRepo.save(thirdIngredient8);
 
-        Ingredient thirdIngredient9 = new Ingredient("Teaspoons of Sesame Oil","2","",1,true);
-        recipe3.addIngredient(thirdIngredient9);
+        Ingredient thirdIngredient9 = new Ingredient("Teaspoons of Sesame Oil","2","","1",1, recipe3);
+        ingredientRepo.save(thirdIngredient9);
 
-        Ingredient thirdIngredient10 = new Ingredient("Roasted Peanuts","1/4 cup","",3,true);
-        recipe3.addIngredient(thirdIngredient10);
+        Ingredient thirdIngredient10 = new Ingredient("Roasted Peanuts","1/4 cup","","3",3, recipe3);
+        ingredientRepo.save(thirdIngredient10);
+
         recipeRepo.save(recipe3);
 
         Review thirdReview1 = new Review("Zak", "Delicious", 4.3);
@@ -241,57 +242,41 @@ public class Populator implements CommandLineRunner {
         recipe4.addStep(fourthstep6);
         recipe4.addStep(fourthstep7);
 
-       recipeRepo.save(recipe4);
 
-//        Step fourthstep1 = new Step(" Step 1: Preheat the oven to 375 degrees F (190 degrees C). Line a baking sheet with parchment paper or foil.");
-//        Step fourthstep2 = new Step("Step 2: Using a sharp knife, cut off the root end of the squash, cut in half lengthwise, and scrape out the seeds and connecting strands with a spoon. Brush the cut sides with olive oil and place squash on the baking sheet with cut sides down.");
-//        Step fourthstep3 = new Step("Step 3:Bake until the skin can be easily pierced with a fork, and the flesh is tender, about 45 minutes. ");
-//        Step fourthstep4 = new Step("Step 4: While squash is baking, cook bacon over medium heat until crispy and browned, 3 to 4 minutes. Remove to a paper towel to drain.");
-//        Step fourthstep5 = new Step("Step 5: Remove squash from the oven and let rest until cool enough to handle. Scrape out the flesh with a fork creating long strands, loosening and removing the strands from the shells.");
-//        Step fourthstep6 = new Step("Step 6: Heat a large pan on medium heat, and melt butter. Add garlic and cook until fragrant, about 30 seconds. Add squash strands, toss with garlic butter, and cook until heated through, stirring often, about 2 minutes.");
-//        Step fourthstep7 = new Step("Step 7: Remove pan from the heat, stir in Parmesan cheese, and season with salt and pepper. Gently stir to coat the strands and let the cheese melt. Garnish with bacon, oregano, and red pepper flakes");
-//
-//        recipe4.addStep(fourthstep1);
-//        recipe4.addStep(fourthstep2);
-//        recipe4.addStep(fourthstep3);
-//        recipe4.addStep(fourthstep4);
-//        recipe4.addStep(fourthstep5);
-//        recipe4.addStep(fourthstep6);
-//        recipe4.addStep(fourthstep7);
+        Ingredient fourthIngredient1 = new Ingredient("Spaghetti squash halved and seeded", "2 1/2","","2",2, recipe4);
+        ingredientRepo.save(fourthIngredient1);
 
-        Ingredient fourthIngredient1 = new Ingredient("Spaghetti squash halved and seeded", "2 1/2");
-        recipe4.addIngredient(fourthIngredient1);
+        Ingredient fourthIngredient2 = new Ingredient("Tablespoon Olive Oil", "2","","4",4, recipe4);
+        ingredientRepo.save(fourthIngredient2);
 
-        Ingredient fourthIngredient2 = new Ingredient("Tablespoon Olive Oil", "2","",4,true);
-        recipe4.addIngredient(fourthIngredient2);
+        Ingredient fourthIngredient3 = new Ingredient("slice bacon cut in to pieces", "2 inch","","3",4, recipe4);
+        ingredientRepo.save(fourthIngredient3);
 
-        Ingredient fourthIngredient3 = new Ingredient("slice bacon cut in to pieces", "2 inch","",3,true);
-        recipe4.addIngredient(fourthIngredient3);
+        Ingredient fourthIngredient4 = new Ingredient("Tablespoon unsalted butter", "2","","3",4, recipe4);
+        ingredientRepo.save(fourthIngredient4);
 
-        Ingredient fourthIngredient4 = new Ingredient("Tablespoon unsalted butter", "2","",3,true);
-        recipe4.addIngredient(fourthIngredient4);
+        Ingredient fourthIngredient5 = new Ingredient("Cloves of Minced Garlic", "3","","8",8, recipe4);
+        ingredientRepo.save(fourthIngredient5);
 
-        Ingredient fourthIngredient5 = new Ingredient("Cloves of Minced Garlic", "3","",8,true);
-        recipe4.addIngredient(fourthIngredient5);
+        Ingredient fourthIngredient6 = new Ingredient("Grated parmesan cheese", "1/2","","1",1, recipe4);
+        ingredientRepo.save(fourthIngredient6);
 
-        Ingredient fourthIngredient6 = new Ingredient("Grated parmesan cheese", "1/2","",1,true);
-        recipe4.addIngredient(fourthIngredient6);
+        Ingredient fourthIngredient7 = new Ingredient("Salt and ground pepper to taste", "1","","3",3, recipe4);
+        ingredientRepo.save(fourthIngredient7);
 
-        Ingredient fourthIngredient7 = new Ingredient("Salt and ground pepper to taste", "1","",3,true);
-        recipe4.addIngredient(fourthIngredient7);
+        Ingredient fourthIngredient8 = new Ingredient("Teaspoon Chopped fresh oregon", "1/3","","3",3, recipe4);
+        ingredientRepo.save(fourthIngredient8);
 
-        Ingredient fourthIngredient8 = new Ingredient("Teaspoon Chopped fresh oregon", "1/3","",3,true);
-        recipe4.addIngredient(fourthIngredient8);
+        Ingredient fourthIngredient9 = new Ingredient("Teaspoon crushed red pepper flakes", "1/3","","0",0, recipe4);
+        ingredientRepo.save(fourthIngredient9);
 
-        Ingredient fourthIngredient9 = new Ingredient("Teaspoon crushed red pepper flakes", "1/3","",0,false);
-        recipe4.addIngredient(fourthIngredient9);
-
-        Ingredient fourthIngredient10 = new Ingredient("Grated parmesan cheese","1/4cup","",3,true);
-        recipe4.addIngredient(fourthIngredient10);
+        Ingredient fourthIngredient10 = new Ingredient("Grated parmesan cheese","1/4cup","","3",3, recipe4);
+        ingredientRepo.save(fourthIngredient10);
 
 
         Review fourthReview1 = new Review("Arsi","PerfectlyPlated",4.5);
         recipe4.addReview(fourthReview1);
+
         recipeRepo.save(recipe4);
 
         Recipe recipe5 = new Recipe("ActiFried Chicken Tikka Masala", "/images/FriedRiceChickenMasala.jpg", category1);
@@ -309,37 +294,41 @@ public class Populator implements CommandLineRunner {
         recipe1.addStep(indoStep5);
         recipeRepo.save(recipe5);
 
-        Ingredient indoIngredient1 = new Ingredient("Tikka masala curry pasta","100 g ","",0,false);
-        recipe5.addIngredient(indoIngredient1);
+        Ingredient indoIngredient1 = new Ingredient("Tikka masala curry pasta","100 g ","","0",0, recipe5);
+        ingredientRepo.save(indoIngredient1);
 
-        Ingredient indoIngredient2 = new Ingredient(" Low-fat yoghurt","200 g ","",0,false);
-        recipe5.addIngredient(indoIngredient2);
+        Ingredient indoIngredient2 = new Ingredient(" Low-fat yoghurt","200 g ","","0",0, recipe5);
+        ingredientRepo.save(indoIngredient2);
 
-        Ingredient indoIngredient3 = new Ingredient(" low-fat yoghurt","1⅓ pounds 600 g ","",0,false);
-        recipe5.addIngredient(indoIngredient3);
+        Ingredient indoIngredient3 = new Ingredient(" low-fat yoghurt","1⅓ pounds 600 g ","","0",0, recipe5);
+        ingredientRepo.save(indoIngredient3);
 
-        Ingredient indoIngredient4 = new Ingredient(" ActiFry spoon vegetable oil", "1 ","",0,false);
-        recipe5.addIngredient(indoIngredient4);
+        Ingredient indoIngredient4 = new Ingredient(" ActiFry spoon vegetable oil", "1 ","","0",0, recipe5);
+        ingredientRepo.save(indoIngredient4);
 
-        Ingredient indoIngredient5 = new Ingredient("Onion, finely chopped", "1 ","",0,false);
-        recipe5.addIngredient(indoIngredient5);
+        Ingredient indoIngredient5 = new Ingredient("Onion, finely chopped", "1 ","","0",0, recipe5);
+        ingredientRepo.save(indoIngredient5);
 
-        Ingredient indoIngredient6 = new Ingredient("Package whole peeled tomatoes", "1 (400 g)  ","",1,true);
-        recipe5.addIngredient(indoIngredient6);
+        Ingredient indoIngredient6 = new Ingredient("Package whole peeled tomatoes", "1 (400 g)  ","","1",1, recipe5);
+        ingredientRepo.save(indoIngredient6);
 
-        Ingredient indoIngredient7 = new Ingredient(" Water","20ml ","",2,true);
-        recipe5.addIngredient(indoIngredient7);
+        Ingredient indoIngredient7 = new Ingredient(" Water","20ml ","","2",2, recipe5);
+        ingredientRepo.save(indoIngredient7);
 
-        Ingredient indoIngredient8 = new Ingredient("ActiFry spoon sugar", "1 ","",3,true);
-        recipe5.addIngredient(indoIngredient8);
+        Ingredient indoIngredient8 = new Ingredient("ActiFry spoon sugar", "1 ","","3",3, recipe5);
+        ingredientRepo.save(indoIngredient8);
 
-        Ingredient indoIngredient9 = new Ingredient("Small bunch chopped fresh coriander leaves", "1 ","",0,false);
-        recipe5.addIngredient(indoIngredient9);
+        Ingredient indoIngredient9 = new Ingredient("Small bunch chopped fresh coriander leaves", "1 ","","0",0, recipe5);
+        ingredientRepo.save(indoIngredient9);
+
         recipeRepo.save(recipe5);
 
         Review indoReview1 = new Review("Zak","Delicious",4.3);
         recipe5.addReview(indoReview1);
         recipeRepo.save(recipe5);
+
+
+
 
         Recipe recipe6= new Recipe("Vegetable Tofu Soup with Lemongrass and Coconut Milk", "/images/FriedRiceChickenMasala.jpg", category1);
         recipeRepo.save(recipe6);
@@ -352,50 +341,50 @@ public class Populator implements CommandLineRunner {
         recipe1.addStep(tofuStep3);
         recipeRepo.save(recipe6);
 
-        Ingredient tofuIngredient1 = new Ingredient("tablespoons vegetable oil, divided", "5 ","",1,true);
-        recipe6.addIngredient(tofuIngredient1);
+        Ingredient tofuIngredient1 = new Ingredient("tablespoons vegetable oil, divided", "5 ","","1",1, recipe6);
+        ingredientRepo.save(tofuIngredient1);
 
-        Ingredient tofuIngredient2 = new Ingredient(" Large onion, chopped", "1 ","",0,false);
-        recipe6.addIngredient(tofuIngredient2);
+        Ingredient tofuIngredient2 = new Ingredient(" Large onion, chopped", "1 ","","0",0, recipe6);
+        ingredientRepo.save(tofuIngredient2);
 
-        Ingredient tofuIngredient3 = new Ingredient(" Tablespoon finely chopped garlic", "1 ","",4,true);
-        recipe6.addIngredient(tofuIngredient3);
+        Ingredient tofuIngredient3 = new Ingredient(" Tablespoon finely chopped garlic", "1 ","","4",4, recipe6);
+        ingredientRepo.save(tofuIngredient3);
 
-        Ingredient tofuIngredient4 = new Ingredient(" Tablespoon finely chopped ginger", "1 ","",2,true);
-        recipe6.addIngredient(tofuIngredient4);
+        Ingredient tofuIngredient4 = new Ingredient(" Tablespoon finely chopped ginger", "1 ","","2",2, recipe6);
+        ingredientRepo.save(tofuIngredient4);
 
-        Ingredient tofuIngredient5 = new Ingredient("Tablespoons curry powder","2 ","",3,true);
-        recipe6.addIngredient(tofuIngredient5);
+        Ingredient tofuIngredient5 = new Ingredient("Tablespoons curry powder","2 ","","3",3, recipe6);
+        ingredientRepo.save(tofuIngredient5);
 
-        Ingredient tofuIngredient6 = new Ingredient("Cups vegetable stock","3 ","",0,false);
-        recipe6.addIngredient(tofuIngredient6);
+        Ingredient tofuIngredient6 = new Ingredient("Cups vegetable stock","3 ","","0",0, recipe6);
+        ingredientRepo.save(tofuIngredient6);
 
-        Ingredient tofuIngredient7 = new Ingredient("  (14 ounce) can coconut milk", "1","",0,false);
-        recipe6.addIngredient(tofuIngredient7);
+        Ingredient tofuIngredient7 = new Ingredient("  (14 ounce) can coconut milk", "1","","0",0, recipe6);
+        ingredientRepo.save(tofuIngredient7);
 
-        Ingredient tofuIngredient8 = new Ingredient("large yam, cut into chunks","1 ","",0,false);
-        recipe6.addIngredient(tofuIngredient8);
+        Ingredient tofuIngredient8 = new Ingredient("large yam, cut into chunks","1 ","","0",0, recipe6);
+        ingredientRepo.save(tofuIngredient8);
 
-        Ingredient tofuIngredient9 = new Ingredient("large carrots, cut into chunks", "2 ","",0,false);
-        recipe6.addIngredient(tofuIngredient9);
+        Ingredient tofuIngredient9 = new Ingredient("large carrots, cut into chunks", "2 ","","0",0, recipe6);
+        ingredientRepo.save(tofuIngredient9);
 
-        Ingredient tofuIngredient10 = new Ingredient("ribs celery, chopped", "2 ","",1,true);
-        recipe6.addIngredient(tofuIngredient10);
+        Ingredient tofuIngredient10 = new Ingredient("ribs celery, chopped", "2 ","","1",1, recipe6);
+        ingredientRepo.save(tofuIngredient10);
 
-        Ingredient tofuIngredient11 = new Ingredient("cup red lentils", "1/2 ","",0,false);
-        recipe6.addIngredient(tofuIngredient11);
+        Ingredient tofuIngredient11 = new Ingredient("cup red lentils", "1/2 ","","0",0, recipe6);
+        ingredientRepo.save(tofuIngredient11);
 
-        Ingredient tofuIngredient12 = new Ingredient("cup minced lemongrass","1/4","",0,false);
-        recipe6.addIngredient(tofuIngredient12);
+        Ingredient tofuIngredient12 = new Ingredient("cup minced lemongrass","1/4","","0",0, recipe6);
+        ingredientRepo.save(tofuIngredient12);
 
-        Ingredient tofuIngredient13 = new Ingredient("tablespoons white sugar","2 ","",1,true);
-        recipe6.addIngredient(tofuIngredient13);
+        Ingredient tofuIngredient13 = new Ingredient("tablespoons white sugar","2 ","","1",1, recipe6);
+        ingredientRepo.save(tofuIngredient13);
 
-        Ingredient tofuIngredient14 = new Ingredient("salt to taste", "some","",0,false);
-        recipe6.addIngredient(tofuIngredient14);
+        Ingredient tofuIngredient14 = new Ingredient("salt to taste", "some","","0",0, recipe6);
+        ingredientRepo.save(tofuIngredient14);
 
-        Ingredient tofuIngredient15 = new Ingredient("package medium-firm tofu, cubed and patted dry", "1(12ounce)","",1,true);
-        recipe6.addIngredient(tofuIngredient15);
+        Ingredient tofuIngredient15 = new Ingredient("package medium-firm tofu, cubed and patted dry", "1(12ounce)","","1",1, recipe6);
+        ingredientRepo.save(tofuIngredient15);
 
         recipeRepo.save(recipe6);
 

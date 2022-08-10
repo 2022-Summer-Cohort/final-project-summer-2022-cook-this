@@ -27,14 +27,10 @@ public class RecipeController {
     }
 
     @GetMapping("api/recipes/{id}")
-    public Recipe getCategoryById(@PathVariable Long Id) {
-        return recipeRepo.findById(Id).get();
-    }
-
-    @GetMapping("api/recipes/{id}")
-    public Recipe getRecipeById(@PathVariable Long id){
+    public Recipe getCategoryById(@PathVariable Long id) {
         return recipeRepo.findById(id).get();
     }
+
     @GetMapping("api/recipes/{id}/steps")
     public Iterable<Step> getStepsByRecipeId(@PathVariable Long id){
         Recipe recipeSteps= recipeRepo.findById(id).get();
@@ -113,14 +109,21 @@ public class RecipeController {
         recipeRepo.save(recipeToChange);
         return recipeToChange;
     }
-
-    @DeleteMapping("api/recipes/{id}")
+    @PatchMapping("api/recipes/{id}/updateStep/{indexOfStep}")
+    public Recipe recipeToChangeStep(@PathVariable Integer indexOfStep, @RequestBody  Step updatedStep, @PathVariable Long id) {
+        Recipe recipeToChange = recipeRepo.findById(id).get();
+        recipeToChange.updateSingleStep(indexOfStep, updatedStep);
+        recipeRepo.save(recipeToChange);
+        return recipeToChange;
+    }
+    @DeleteMapping("api/recipes/{id}/deleteRecipe")
     public Iterable<Recipe> deleteRecipeById(@PathVariable Long id) {
         recipeRepo.deleteById(id);
         return recipeRepo.findAll();
     }
 }
-    
-
-
-
+//    @PatchMapping("/api/recipes/{id}/setIngredientMeasurment")
+//    public Recipe setIngredientMeasurementByRecipeId(@RequestBody String measurementToSet, @PathVariable Long id){
+//        Recipe recipeToChange = recipeRepo.findById(id).get();
+//        recipeToChange.setIngredientMeasurment()
+//    }
