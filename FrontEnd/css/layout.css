@@ -367,7 +367,7 @@ body{
     width: var(--size) - 10px;
     height: var(--size) - 10px;
     margin-left: auto;
-    transition:backgrounds 150ms ease-in-out ;
+    /* transition:backgrounds 150ms ease-in-out ; */
     }
     .search-bar:focus-within{ 
     width: 100%;
