@@ -1,10 +1,16 @@
 import makeFooter from "./footer.js";
 import singleRecipeView from "./Recipe.js";
 import singleCategoryView from "./singleCategory.js";
-import singleVideoView from "./learn-videos/singleVideo";
+import homeView from "./home.js";
 
 
 const container = document.querySelector("#anchor");
+
+function makeHomeView(){
+    container.innerHTML=homeView();
+    container.innerHTML+=makeFooter();
+    
+}
 
 function makeSingleCategoryView(categoryId){
     fetch(`http://localhost:8080/api/categories/${categoryId}`)
@@ -31,12 +37,17 @@ function makeSingleCategoryView(categoryId){
                     .catch(err => console.error(err))
                 })
                 
-                
+            
             })
         })
         .catch(err => console.error(err))
 }
 
+// const learnBtn = document.querySelector(".recipe-cards")
+// learnBtn.addEventListener("click", () =>{
+//     const learnIdEl = document.querySelector(".learn-card-id");
+//     singleVideoView(learnIdEl.value);
+// })
 
 // $('.show-1-yes').click(function() {
 //     $('#target-1').show(500);
@@ -59,13 +70,19 @@ function makeSingleCategoryView(categoryId){
 //     $('.show-2-yes').show(0);
 //     $('.hide-2-yes').hide(0);
 // });
-const learnBtn = document.querySelector(".recipe-cards")
-learnBtn.addEventListener("click", () =>{
-    const learnIdEl = document.querySelector(".learn-card-id");
-    singleVideoView(learnIdEl.value);
-})
 
-const openKnifeSafetyVideo = container.querySelector("#knife-safety")
-openKnifeSafetyVideo.addEventListener("click", () => {
-  popup.classList.add(".open-popup");
-});
+// const openKnifeSafetyVideo = container.querySelector("#knife-safety")
+// openKnifeSafetyVideo.addEventListener("click", () => {
+//   popup.classList.add(".open-popup");
+// });
+
+
+
+
+
+
+
+
+
+
+makeHomeView();
