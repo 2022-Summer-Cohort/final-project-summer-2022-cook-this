@@ -1,3 +1,19 @@
+import allIngredients from "./allIngredients.js";
+import makeFooter from "./footer.js";
+
+const container = document.querySelector("#anchor");
+
+function makeAllIngredients() {
+    fetch(`http://localhost:8080/api/ingredients`)
+        .then(res => res.json())
+        .then(ingredients => {
+            console.log(ingredients);
+            container.innerHTML = allIngredients(ingredients);
+            container.innerHTML += makeFooter();
+        })
+};
+
+makeAllIngredients();
 import makeFooter from "./footer.js";
 import singleRecipeView from "./Recipe.js";
 import singleCategoryView from "./singleCategory.js";
@@ -13,12 +29,12 @@ function makeHomeView(){
     
     const categoriesBtn = document.querySelector("#categories-btn")
     categoriesBtn.addEventListener("click", () =>{
-        container.innerHTML=allCategoriesVeiw();
+        container.innerHTML=allCategoriesView();
         container.innerHTML+=makeFooter();
     })
 }
 
-function allCategoriesVeiw(){
+function allCategoriesView(){
     fetch(`http://localhost:8080/api/categories`)
     .then(res => res.json())
     .then(categories =>{

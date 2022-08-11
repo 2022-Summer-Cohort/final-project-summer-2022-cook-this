@@ -27,7 +27,12 @@ public class Ingredient {
         this.description = description;
         this.ingredientMeasurement = ingredientMeasurement;
         this.spiceLevel = spiceLevel;
-        this.recipe = recipe;
+        String peppers = "";
+        for(int i = 0; i<spiceLevel; i++){
+            peppers += "&#x1F336;";
+        }
+        this.spicePeppers = peppers;
+        this.recipes = new ArrayList<>();
     }
     public Ingredient() {
     }
