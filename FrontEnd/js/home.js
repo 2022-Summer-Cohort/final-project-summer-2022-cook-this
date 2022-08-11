@@ -11,16 +11,16 @@ export default function homeView() {
                 <a href="#" class="side-tabs nav-tabs-0">
                     <img src="/images/search-icon.png" alt="search icon" id="search-tab">
                   </a>
-                <a href="./categories.html" class="side-tabs nav-tabs-2">
+                <a class="side-tabs nav-tabs-2" id="categories-btn">
                     <h2>Categories</h2>
                 </a>
-                <a href="./learn.html" class="side-tabs nav-tabs-3">
+                <a  class="side-tabs nav-tabs-3" id="learn-btn">
                     <h2>Learn to Cook!</h2>
                 </a>
-                <a href="./ingredients.html" class="side-tabs nav-tabs-4">
+                <a class="side-tabs nav-tabs-4" id="ingredients-btn">
                     <h2>Ingredient Info</h2>
                 </a>
-                <a href="#" class="side-tabs nav-tabs-4">
+                <a class="side-tabs nav-tabs-4" id="new-recipe-btn">
                     <h2>Submit a Recipe</h2>
                   </a>
             </nav>
