@@ -45,7 +45,7 @@ public class RecipeController {
     @PostMapping("api/recipes/{id}/addComment")
     public Recipe recipeToAddCommentTo(@RequestBody Review newComment, @PathVariable Long id) {
         Recipe recipeToChange = recipeRepo.findById(id).get();
-        recipeToChange.addComments(newComment);
+        recipeToChange.addReview(newComment);
         recipeRepo.save(recipeToChange);
         return recipeToChange;
     }

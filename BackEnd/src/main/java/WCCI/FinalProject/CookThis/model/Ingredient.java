@@ -14,64 +14,44 @@ public class Ingredient {
     @GeneratedValue
     private Long id;
     private String name;
-
     private String imageUrl;
-
     private String description;
-
     private String ingredientMeasurement;
-
     private int spiceLevel;
+    @ManyToOne @JsonIgnore
+    private Recipe recipe;
 
-    @ManyToMany
-    @JsonIgnore
-    private Collection<Recipe> recipes;
-
-
-    public Ingredient(String name, String imageUrl, String description, String ingredientMeasurement, int spiceLevel, Recipe... recipes) {
+    public Ingredient(String name, String imageUrl, String description, String ingredientMeasurement, int spiceLevel, Recipe recipe) {
         this.name = name;
         this.imageUrl = imageUrl;
         this.description = description;
         this.ingredientMeasurement = ingredientMeasurement;
         this.spiceLevel = spiceLevel;
-        this.recipes = new ArrayList<>();
+        this.recipe = recipe;
     }
-
-
     public Ingredient() {
     }
 
     public Long getId() {
         return id;
     }
-
     public String getName() {
         return name;
     }
-
     public String getImageUrl() {
         return imageUrl;
     }
-
-
     public String getDescription() {
         return description;
     }
-
     public int getSpiceLevel() {
         return spiceLevel;
     }
-
     public String getIngredientMeasurement() {
         return ingredientMeasurement;
     }
-
-    public void setRecipes(Collection<Recipe> recipes) {
-        this.recipes = recipes;
-    }
-
-    public Collection<Recipe> getRecipes() {
-        return recipes;
+    public Recipe getRecipe() {
+        return recipe;
     }
 
     @Override
@@ -81,21 +61,11 @@ public class Ingredient {
         Ingredient that = (Ingredient) o;
         return spiceLevel == that.spiceLevel  && Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(imageUrl, that.imageUrl) && Objects.equals(description, that.description);
     }
-
     @Override
     public int hashCode() {
         return Objects.hash(id, name, imageUrl, description, spiceLevel);
     }
 
-//    public void updateMeasurement(Long recId, Long measId) {
-//        for(Recipe recipe: recipes){
-//            for(Measurement measurement: measurements){
-//                if(recipe.getId()==recId && measurement.getId()==measId){
-//                    ingredientMeasurement = measurement.getAmount() + " " + measurement.getType();
-//                }
-//            }
-//        }
-//    }
 }
 
 
