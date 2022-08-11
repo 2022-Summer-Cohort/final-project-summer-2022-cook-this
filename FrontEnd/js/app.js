@@ -2,6 +2,7 @@ import makeFooter from "./footer.js";
 import singleRecipeView from "./Recipe.js";
 import singleCategoryView from "./singleCategory.js";
 import homeView from "./home.js";
+import allCategoriesView from "./categories.js";
 
 
 const container = document.querySelector("#anchor");
@@ -11,7 +12,18 @@ function makeHomeView(){
     container.innerHTML+=makeFooter();
     
 }
+const container = document.querySelector("#anchor")
+function allCategoriesVeiw(){
+    fetch(`http://localhost:8080/api/categories`)
+    .then(res => res.json())
+    .then(categories =>{
+        console.log(categories);
+        container.innerHTML = allCategoriesView(categories)
+        container.innerHTML += footer();
 
+    
+    })
+}
 function makeSingleCategoryView(categoryId){
     fetch(`http://localhost:8080/api/categories/${categoryId}`)
         .then(res => res.json())
