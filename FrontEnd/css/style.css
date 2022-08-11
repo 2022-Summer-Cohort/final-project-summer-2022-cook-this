@@ -2,3 +2,20 @@
     height: 100px;
     width: 100px;
 }
+
+.popup{
+    visibility: hidden;
+}
+.open-popup{
+    visibility: visible;
+}
+
+h2{
+    color: white;
+}
+
+.list-group{
+    display: flex;
+    background-color: rgb(209, 137, 43);
+    border-radius: 10px;
+}

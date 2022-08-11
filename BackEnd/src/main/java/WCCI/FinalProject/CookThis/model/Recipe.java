@@ -1,9 +1,6 @@
 package WCCI.FinalProject.CookThis.model;
 
-
-import WCCI.FinalProject.CookThis.repository.RecipeRepo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 import java.util.*;
 
@@ -15,76 +12,88 @@ public class Recipe {
     private String name;
     @ElementCollection
     private List<Step> steps;
-
     private String picOfDish;
     @ManyToMany
+    @JsonIgnore
     private Collection<Category> categories;
-
-//    @ManyToMany(mappedBy = "recipes")
-//    private Collection<Ingredient> ingredients;
-    @OneToMany(mappedBy = "recipes")
+    @OneToMany(mappedBy="recipe")
     private Collection<Ingredient> ingredients;
-
     @ElementCollection
-    private Collection<Review> comments;
-
+    private Collection<Review> reviews;
     private double avgRating;
 
-    public Recipe(String name, String picOfDish,Category ... categories) {
+    public Recipe(String name, String picOfDish, Category... categories) {
         this.steps = new ArrayList<>();
         this.name = name;
         this.picOfDish = picOfDish;
         this.categories = Arrays.asList(categories);
         this.ingredients = new ArrayList<>();
-        this.comments = new ArrayList<>();
+        this.reviews = new ArrayList<>();
+        this.avgRating = updateAvgRating();
     }
-
     public Recipe() {
     }
 
     public Long getId() {
         return id;
     }
-
     public String getName() {
         return name;
     }
-
     public Collection<Step> getSteps() {
         return steps;
     }
-
     public String getPicOfDish() {
         return picOfDish;
     }
-
     public Collection<Category> getCategories() {
         return categories;
     }
-
     public Collection<Ingredient> getIngredients() {
         return ingredients;
     }
-
-    public Collection<Review> getComments() {
-        return comments;
+    public Collection<Review> getReviews() {
+        return reviews;
     }
-
-    public void addComments(Review newComment) {
-        comments.add(newComment);
-    }
-
-    public Step getSingleStep(Integer indexOfStep){
+    public Step getSingleStep(Integer indexOfStep) {
         return steps.get(indexOfStep);
     }
-    public void updateSingleStep(Integer indexOfStep, Step newStep){
+    public double getAvgRating() {
+        updateAvgRating();
+        return avgRating;
+    }
+
+    public void addReview(Review newReview) {
+        reviews.add(newReview);
+    }
+    public void updateSingleStep(Integer indexOfStep, Step newStep) {
         steps.remove(steps.get(indexOfStep));
         steps.add(indexOfStep, newStep);
     }
-
-    public double getAvgRating() {
-//        avgRating = avgRating();
-        return avgRating;
+    public void addStep(Step step1) {
+        steps.add(step1);
+    }
+    public void addIngredient(Ingredient ingredientToAdd) {
+        ingredients.add(ingredientToAdd);
+    }
+    public void changeName(String newName) {
+        name = newName;
+    }
+    public void deleteSteps() {
+        steps.removeAll(steps);
+    }
+    public void deleteSingleStep(int stepIndexToRemove) {
+        steps.remove(stepIndexToRemove);
+    }
+    public double updateAvgRating() {
+        double sum = 0;
+        for (Review rating : reviews) {
+            sum += rating.getRatings();
+        }
+        return Math.round((((sum / reviews.size()) * 10)) / 10);
+    }
+    public void deleteIngredients() {
+        ingredients.removeAll(ingredients);
     }
 
     @Override
@@ -94,49 +103,8 @@ public class Recipe {
         Recipe recipe = (Recipe) o;
         return id == recipe.id && Objects.equals(name, recipe.name) && Objects.equals(picOfDish, recipe.picOfDish);
     }
-
     @Override
     public int hashCode() {
         return Objects.hash(id, name, picOfDish);
     }
-
-    public void addStep(Step step1) {
-        steps.add(step1);
-    }
-
-    public void addIngredient(Ingredient ingredient1) {
-        ingredients.add(ingredient1);
-    }
-
-
-    public void changeName(String newName) {
-        name = newName;
-    }
-
-    public void addReview(Review pieReview1) {
-    }
-
-    public void deleteSteps() {
-        steps.removeAll(steps);
-    }
-    public void deleteSingleStep(int stepIndexToRemove){
-        steps.remove(stepIndexToRemove);
-    }
-
-    public double avgRating(){
-        double sum = 0;
-        for (Review rating: comments){
-            sum += rating.getRatings();
-        }
-        return Math.round((((sum / comments.size()) *10)) /10);
-    }
-
-    public void deleteIngredients() {
-        ingredients.removeAll(ingredients);
-    }
-
-//    public void deleteComments() {
-//        comments.removeAll(comments);
-//    }
 }
-
