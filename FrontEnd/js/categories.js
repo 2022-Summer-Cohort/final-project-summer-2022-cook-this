@@ -10,7 +10,9 @@ export default function allCategoriesVeiw(categories){
            <section class="recipe-list">
             ${ categories.map(category =>{
                 return`
-                <div class="card recipe-cards text-center" >
+                <div class="card recipe-cards text-center" > 
+                <input class="category-id" type="hidden" value="${category.id}">
+
                 <a href="./category.html">
                 <img src="/images/ApplePie.jpg" class="card-img-top" alt="Delicious Apple Pie" />
                 <div class="card-body">

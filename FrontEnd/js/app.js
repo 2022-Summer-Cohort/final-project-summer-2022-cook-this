@@ -25,8 +25,17 @@ function allCategoriesVeiw(){
         console.log(categories);
         container.innerHTML = allCategoriesView(categories)
         container.innerHTML += footer();
-    })
-}
+
+        // const categoryViewBtn = documanet.querySelectorAll(".card recipe-cards text-center")
+        // categoryViewBtn.forEach(categoryEl => {
+        //     const categoryIdEl = categoryEl.querySelector(".categoryId");
+        //     categoryEl.addEventListener("click",()=>{
+        //       makeCategoryView("catogoryIdEl.value");
+        //     })
+        })
+        
+    }
+
 function makeSingleCategoryView(categoryId){
     fetch(`http://localhost:8080/api/categories/${categoryId}`)
         .then(res => res.json())
@@ -94,8 +103,34 @@ function makeSingleCategoryView(categoryId){
 
 
 
+    const searchBtn = search.querySelector(".search-bar__submit");
+    const searchIN = searchInput.querySelector(".search-bar__input");
+
+    searchBtn.addEventListener("click", () =>{
+
+        fetch(`http://localhost:8080/api/recipes/${recipeIdEl.value}`)
+        .then(res=>res.json())
+        .then(recipeBuild => {
+            console.log(recipeBuild);
+            makeRecipeView(recipeBuild);
 
 
+        })
+        .catch(err => console.error(err))
+    })
+
+    function makeRecipeView (Recipe){
+        rightPageContainer.innerHTML = singleRecipeView(recipeBuild);
+        const recipeReviewBtn = document.querySelectorAll(".reviews-btn");
+        recipeReviewBtn.addEventListener("click", () => {
+        recipe    
+           
+
+        })
+        
+        
+
+    }
 
 
 
