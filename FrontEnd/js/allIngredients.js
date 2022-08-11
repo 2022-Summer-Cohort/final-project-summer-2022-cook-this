@@ -11,7 +11,7 @@ export default function allIngredients(ingredients) {
                     ${ingredients.map(ingredient => {
                         return `
                             <div class="card recipe-cards text-center">
-                                <a class="${ingredient.name}">
+                                <a class="ingredient-button">
                                     <img src="${ingredient.imageUrl}" class="card-img-top" alt="Thumbnail of ${ingredient.name}" />
                                     <div class="card-body">
                                         <h5 class="card-title">${ingredient.name}</h5>
@@ -26,11 +26,8 @@ export default function allIngredients(ingredients) {
                     </section>
                 </div>
             </section>
-            <section class="right-page">
-                <h2>&nbsp;</h2>
-                <section class="recipe-list recipe-flex">
-                    
-                </section>
+            <section class="right-page" id="ingredient-page">
+               
               
             </div>
             </section>
