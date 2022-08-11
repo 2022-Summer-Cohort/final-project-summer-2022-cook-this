@@ -6,17 +6,15 @@ import javax.persistence.Lob;
 @Embeddable
 public class Step {
     @Lob
-private String instructions;
+    private String instructions;
 
     public Step(String instructions) {
         this.instructions = instructions;
     }
-
+    public Step() {
+    }
     public String getInstructions() {
         return instructions;
-    }
-
-    public Step() {
     }
 }
 
