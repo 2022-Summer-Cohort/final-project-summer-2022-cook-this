@@ -23,6 +23,8 @@ public class Ingredient {
 
     private int spiceLevel;
 
+    private String spicePeppers;
+
     @ManyToMany
     @JsonIgnore
     private Collection<Recipe> recipes;
@@ -34,6 +36,11 @@ public class Ingredient {
         this.description = description;
         this.ingredientMeasurement = ingredientMeasurement;
         this.spiceLevel = spiceLevel;
+        String peppers = "";
+        for(int i = 0; i<spiceLevel; i++){
+            peppers += "&#x1F336;";
+        }
+        this.spicePeppers = peppers;
         this.recipes = new ArrayList<>();
     }
 
