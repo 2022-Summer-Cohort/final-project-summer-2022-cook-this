@@ -29,12 +29,12 @@ function makeHomeView(){
     
     const categoriesBtn = document.querySelector("#categories-btn")
     categoriesBtn.addEventListener("click", () =>{
-        container.innerHTML=allCategoriesVeiw();
+        container.innerHTML=allCategoriesView();
         container.innerHTML+=makeFooter();
     })
 }
 
-function allCategoriesVeiw(){
+function allCategoriesView(){
     fetch(`http://localhost:8080/api/categories`)
     .then(res => res.json())
     .then(categories =>{
