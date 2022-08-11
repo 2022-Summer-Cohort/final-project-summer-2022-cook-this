@@ -1,4 +1,4 @@
-export default function home() {
+export default function homeView() {
     return `
     <div class="container">
         <!-- <header>
