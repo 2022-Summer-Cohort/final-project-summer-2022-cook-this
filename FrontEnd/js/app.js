@@ -11,8 +11,13 @@ function makeHomeView(){
     container.innerHTML=homeView();
     container.innerHTML+=makeFooter();
     
+    const categoriesBtn = document.querySelector("#categories-btn")
+    categoriesBtn.addEventListener("click", () =>{
+        container.innerHTML=allCategoriesVeiw();
+        container.innerHTML+=makeFooter();
+    })
 }
-const container = document.querySelector("#anchor")
+
 function allCategoriesVeiw(){
     fetch(`http://localhost:8080/api/categories`)
     .then(res => res.json())
@@ -20,8 +25,6 @@ function allCategoriesVeiw(){
         console.log(categories);
         container.innerHTML = allCategoriesView(categories)
         container.innerHTML += footer();
-
-    
     })
 }
 function makeSingleCategoryView(categoryId){
