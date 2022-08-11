@@ -172,6 +172,9 @@ h1{
     width: 600px;
     padding-bottom: 3%;
 }
+.right-page-ingredient{
+    overflow-y: scroll;
+}
 .right-page-headers {
     text-align: center;
     font-size: 1em;
@@ -227,6 +230,31 @@ h1{
     width:50px;
     margin: 0px auto;
 }
+#ingredient-title {
+    font-size:x-large;
+}
+#ingredient-title h1{
+    text-align: left;   
+}
+#ingredient-title p{
+    font-size: small;
+    border: none;
+}
+.ingredient-image {
+    /* width: 100%; */
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+.ingredient-image img {
+    width:60%;
+    float: right;
+    margin-left: 3%;
+}
+#ingredient-description {
+    margin: 5% 5%;
+    text-align: left;
+}
 #ingredients-list{
     display: flex;
     flex-wrap: wrap;
@@ -269,6 +297,9 @@ h2{
     gap: 10px;
     flex-wrap: wrap;
     justify-content: center;
+}
+.video-frame-height{
+    height: 300px;
 }
 /* footer */
 footer {
