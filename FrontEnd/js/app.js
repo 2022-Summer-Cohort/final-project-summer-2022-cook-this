@@ -6,147 +6,186 @@ import allCategoriesView from "./categories.js";
 import allIngredients from "./allIngredients.js";
 import makeIngredientSection from "./singleIngredient.js";
 import openBookTabs from "./components/openBookTabs.js";
+import learn from "./learn.js";
+import fiveBasicSkillsView from "./learn-videos/5-basic-skills.js";
+import balancedFlavorsView from "./learn-videos/balancing-flavors.js";
+import bookmarksView from "./learn-videos/bookmarks.js";
+import budgetingView from "./learn-videos/budgeting.js";
+import knifeSkillsView from "./learn-videos/knife-safety.js";
+import mealPlanningView from "./learn-videos/meal-planning.js";
 
 
 const container = document.querySelector("#anchor");
 
 
-function makeAllIngredients() {
-    fetch(`http://localhost:8080/api/ingredients`)
-        .then(res => res.json())
-        .then(ingredients => {
-            console.log(ingredients);
-            container.innerHTML = allIngredients(ingredients);
-            container.innerHTML += makeFooter();
+// function makeAllIngredients() {
+//     fetch(`http://localhost:8080/api/ingredients`)
+//         .then(res => res.json())
+//         .then(ingredients => {
+//             console.log(ingredients);
+//             container.innerHTML = allIngredients(ingredients);
+//             container.innerHTML += makeFooter();
 
-        // open book tabs
-            const tabsContainer = document.querySelector(".book-tabs")
-            tabsContainer.innerHTML = openBookTabs();
-            const homeBtn = tabsContainer.querySelector("#home-btn")
-            const categoriesBtn = tabsContainer.querySelector("#categories-btn")
-            const ingredientsBtn = tabsContainer.querySelector("#ingredients-btn")
-            const newRecipeBtn = tabsContainer.querySelector("#new-recipe-btn")
-            const learnBtn = tabsContainer.querySelector("#home-btn")
+//         // open book tabs
+//             const tabsContainer = document.querySelector(".book-tabs")
+//             tabsContainer.innerHTML = openBookTabs();
+//             const homeBtn = tabsContainer.querySelector("#home-btn")
+//             const categoriesBtn = tabsContainer.querySelector("#categories-btn")
+//             const ingredientsBtn = tabsContainer.querySelector("#ingredients-btn")
+//             const newRecipeBtn = tabsContainer.querySelector("#new-recipe-btn")
+//             const learnBtn = tabsContainer.querySelector("#home-btn")
 
-            homeBtn.addEventListener("click", ()=>{
-                makeHomeView();
-            })
+//             homeBtn.addEventListener("click", ()=>{
+//                 makeHomeView();
+//             })
 
-            const ingredientPageEl = container.querySelector(".right-page");
-            const ingredientCardEl = container.querySelectorAll(".card");
-        ingredientCardEl.forEach(ingredient => {
-            const ingredientButton = ingredient.querySelector(".ingredient-button")
-            let ingredientIdEl = ingredient.querySelector(".ingredient-id");
+//             const ingredientPageEl = container.querySelector(".right-page");
+//             const ingredientCardEl = container.querySelectorAll(".card");
+//         ingredientCardEl.forEach(ingredient => {
+//             const ingredientButton = ingredient.querySelector(".ingredient-button")
+//             let ingredientIdEl = ingredient.querySelector(".ingredient-id");
     
-        ingredientButton.addEventListener("click", () => {
-            fetch(`http://localhost:8080/api/ingredients/${ingredientIdEl.value}`)
-            .then(res => res.json())
-            .then(ingredient => {
-                console.log(ingredient);
-                ingredientPageEl.innerHTML = makeIngredientSection(ingredient);
-            })
-        });  
-    });
-        })
+//         ingredientButton.addEventListener("click", () => {
+//             fetch(`http://localhost:8080/api/ingredients/${ingredientIdEl.value}`)
+//             .then(res => res.json())
+//             .then(ingredient => {
+//                 console.log(ingredient);
+//                 ingredientPageEl.innerHTML = makeIngredientSection(ingredient);
+//             })
+//         });  
+//     });
+//         })
     
     
     
-}
+// }
 
-function makeHomeView(){
-    container.innerHTML=homeView();
-    container.innerHTML+=makeFooter();
+// function makeHomeView(){
+//     container.innerHTML=homeView();
+//     container.innerHTML+=makeFooter();
     
-    const categoriesBtn = document.querySelector("#categories-btn")
-    categoriesBtn.addEventListener("click", () =>{
-        container.innerHTML=makeAllCategoriesView();
-        container.innerHTML+=makeFooter();
-    })
-}
+//     const categoriesBtn = document.querySelector("#categories-btn")
+//     categoriesBtn.addEventListener("click", () =>{
+//         container.innerHTML=makeAllCategoriesView();
+//         container.innerHTML+=makeFooter();
+//     })
+// }
 
-function makeAllCategoriesView(){
-    fetch(`http://localhost:8080/api/categories`)
-    .then(res => res.json())
-    .then(categories =>{
-        console.log(categories);
-        container.innerHTML = allCategoriesView(categories)
-        container.innerHTML += footer();
+// function makeAllCategoriesView(){
+//     fetch(`http://localhost:8080/api/categories`)
+//     .then(res => res.json())
+//     .then(categories =>{
+//         console.log(categories);
+//         container.innerHTML = allCategoriesView(categories)
+//         container.innerHTML += footer();
 
-        // const categoryViewBtn = documanet.querySelectorAll(".card recipe-cards text-center")
-        // categoryViewBtn.forEach(categoryEl => {
-        //     const categoryIdEl = categoryEl.querySelector(".categoryId");
-        //     categoryEl.addEventListener("click",()=>{
-        //       makeCategoryView("catogoryIdEl.value");
-        //     })
-        })
+//         // const categoryViewBtn = documanet.querySelectorAll(".card recipe-cards text-center")
+//         // categoryViewBtn.forEach(categoryEl => {
+//         //     const categoryIdEl = categoryEl.querySelector(".categoryId");
+//         //     categoryEl.addEventListener("click",()=>{
+//         //       makeCategoryView("catogoryIdEl.value");
+//         //     })
+//         })
         
-    }
+//     }
 
-function makeSingleCategoryView(categoryId){
-    fetch(`http://localhost:8080/api/categories/${categoryId}`)
-        .then(res => res.json())
-        .then(categoryBuild => {
-            console.log(categoryBuild);
-            container.innerHTML = singleCategoryView(categoryBuild);
-            container.innerHTML += makeFooter();
+// function makeSingleCategoryView(categoryId){
+//     fetch(`http://localhost:8080/api/categories/${categoryId}`)
+//         .then(res => res.json())
+//         .then(categoryBuild => {
+//             console.log(categoryBuild);
+//             container.innerHTML = singleCategoryView(categoryBuild);
+//             container.innerHTML += makeFooter();
 
-            const rightPageContainer = document.querySelector("#recipe-page")
-            const recipeCardEl = document.querySelectorAll(".recipe-cards")
+//             const rightPageContainer = document.querySelector("#recipe-page")
+//             const recipeCardEl = document.querySelectorAll(".recipe-cards")
 
-            recipeCardEl.forEach(recipe =>{
-                const recipeBtn = recipe.querySelector(".recipe-btn");
-                const recipeIdEl = recipe.querySelector(".recipe-id");
+//             recipeCardEl.forEach(recipe =>{
+//                 const recipeBtn = recipe.querySelector(".recipe-btn");
+//                 const recipeIdEl = recipe.querySelector(".recipe-id");
 
-                recipeBtn.addEventListener("click", () =>{
-                    fetch(`http://localhost:8080/api/recipes/${recipeIdEl.value}`)
-                    .then(res=>res.json())
-                    .then(recipeBuild => {
-                        console.log(recipeBuild);
-                        rightPageContainer.innerHTML = singleRecipeView(recipeBuild);
-                    })
-                    .catch(err => console.error(err))
-                })
+//                 recipeBtn.addEventListener("click", () =>{
+//                     fetch(`http://localhost:8080/api/recipes/${recipeIdEl.value}`)
+//                     .then(res=>res.json())
+//                     .then(recipeBuild => {
+//                         console.log(recipeBuild);
+//                         rightPageContainer.innerHTML = singleRecipeView(recipeBuild);
+//                     })
+//                     .catch(err => console.error(err))
+//                 })
                 
             
-            })
-        })
-        .catch(err => console.error(err))
+//             })
+//         })
+//         .catch(err => console.error(err))
+// }
+
+
+function makeLearnView(videoId){
+    container.innerHTML = learn();
+    container.innerHTML += makeFooter();
+
+    const rightPageContainer = document.querySelector(".right-page");
+    const videoBtn1 = document.querySelector("#videoId1");
+    const videoBtn2 = document.querySelector("#videoId2");
+    const videoBtn3 = document.querySelector("#videoId3");
+    const videoBtn4 = document.querySelector("#videoId4");
+    const videoBtn5 = document.querySelector("#videoId5");
+    const videoBtn6 = document.querySelector("#videoId6");
+
+    videoBtn1.addEventListener("click", () => {
+        rightPageContainer.innerHTML = knifeSkillsView();
+    })
+    videoBtn2.addEventListener("click", () => {
+        rightPageContainer.innerHTML = balancedFlavorsView();
+    })
+    videoBtn3.addEventListener("click", () => {
+        rightPageContainer.innerHTML = mealPlanningView();
+    })
+    videoBtn4.addEventListener("click", () => {
+        rightPageContainer.innerHTML = fiveBasicSkillsView();
+    })
+    videoBtn5.addEventListener("click", () => {
+        rightPageContainer.innerHTML = budgetingView();
+    })
+    videoBtn6.addEventListener("click", () => {
+        rightPageContainer.innerHTML = bookmarksView();
+    })
 }
 
+makeLearnView();
+
+// makeHomeView();
 
 
+//     const searchBtn = search.querySelector(".search-bar__submit");
+//     const searchIN = searchInput.querySelector(".search-bar__input");
+
+//     searchBtn.addEventListener("click", () =>{
+
+//         fetch(`http://localhost:8080/api/recipes/${recipeIdEl.value}`)
+//         .then(res=>res.json())
+//         .then(recipeBuild => {
+//             console.log(recipeBuild);
+//             makeRecipeView(recipeBuild);
 
 
-    const searchBtn = search.querySelector(".search-bar__submit");
-    const searchIN = searchInput.querySelector(".search-bar__input");
+//         })
+//         .catch(err => console.error(err))
+//     })
 
-    searchBtn.addEventListener("click", () =>{
-
-        fetch(`http://localhost:8080/api/recipes/${recipeIdEl.value}`)
-        .then(res=>res.json())
-        .then(recipeBuild => {
-            console.log(recipeBuild);
-            makeRecipeView(recipeBuild);
-
-
-        })
-        .catch(err => console.error(err))
-    })
-
-    function makeRecipeView (Recipe){
-        rightPageContainer.innerHTML = singleRecipeView(recipeBuild);
-        const recipeReviewBtn = document.querySelectorAll(".reviews-btn");
-        recipeReviewBtn.addEventListener("click", () => {
-        recipe    
+//     function makeRecipeView (Recipe){
+//         rightPageContainer.innerHTML = singleRecipeView(recipeBuild);
+//         const recipeReviewBtn = document.querySelectorAll(".reviews-btn");
+//         recipeReviewBtn.addEventListener("click", () => {
+//         recipe    
            
 
-        })
-        
-        
-
-    }
+//         })
+//     }
 
 
 
 
-makeHomeView();
+
+

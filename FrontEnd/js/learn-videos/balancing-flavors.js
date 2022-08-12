@@ -1,12 +1,11 @@
-export default function balancedFlavorsView(videoId) {
-    if(videoId==2){
+export default function balancedFlavorsView() {
     return `
         <section class="right-page " id="tutorial-page">
             <div id="balanced-flavors">
                 <h2 class="text-center">Balance of Flavors in Your Cooking</h2>
                 <br>
                 <section class="video-flex">
-                    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/S-flQSEgdWA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe class="video-frame-height" width="80%" height="40%" src="https://www.youtube-nocookie.com/embed/S-flQSEgdWA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <br>
                     <div id="video-text" class="text-start">
                         <p>
@@ -16,11 +15,9 @@ export default function balancedFlavorsView(videoId) {
                             <a href="#"> -Website to be linked?-</a>
                         </p>
                     </div>
+                    <input class="learn-id" type="hidden" value="2">
                 </section>
             </div>
         </section>
     `
-    }
-
-
 }
