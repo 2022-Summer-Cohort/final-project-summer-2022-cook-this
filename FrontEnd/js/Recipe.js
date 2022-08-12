@@ -1,3 +1,5 @@
+import reviewsModal from "./components/reviews.js"
+
 export default function singleRecipeView(recipe) {
     return `
         <div id="title">
@@ -47,5 +49,6 @@ export default function singleRecipeView(recipe) {
                 </ul>
             </section>
         </section>
+        ${reviewsModal(recipe)}
     `
 }

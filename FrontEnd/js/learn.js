@@ -1,3 +1,5 @@
+import openBookTabs from "./components/openBookTabs.js"
+
 export default function learn() {
     return `
     <div class="container">
@@ -98,7 +100,7 @@ export default function learn() {
             </div>
                 </section>
                 <nav class="book-tabs">
-                    
+                ${openBookTabs}
                 </nav>
             </div>
         </div>
