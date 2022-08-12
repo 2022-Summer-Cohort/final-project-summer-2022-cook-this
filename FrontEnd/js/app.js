@@ -3,9 +3,55 @@ import singleRecipeView from "./Recipe.js";
 import singleCategoryView from "./singleCategory.js";
 import homeView from "./home.js";
 import allCategoriesView from "./categories.js";
+import allIngredients from "./allIngredients.js";
+import makeIngredientSection from "./singleIngredient.js";
+import openBookTabs from "./components/openBookTabs.js";
 
 
 const container = document.querySelector("#anchor");
+
+
+function makeAllIngredients() {
+    fetch(`http://localhost:8080/api/ingredients`)
+        .then(res => res.json())
+        .then(ingredients => {
+            console.log(ingredients);
+            container.innerHTML = allIngredients(ingredients);
+            container.innerHTML += makeFooter();
+
+        // open book tabs
+            const tabsContainer = document.querySelector(".book-tabs")
+            tabsContainer.innerHTML = openBookTabs();
+            const homeBtn = tabsContainer.querySelector("#home-btn")
+            const categoriesBtn = tabsContainer.querySelector("#categories-btn")
+            const ingredientsBtn = tabsContainer.querySelector("#ingredients-btn")
+            const newRecipeBtn = tabsContainer.querySelector("#new-recipe-btn")
+            const learnBtn = tabsContainer.querySelector("#home-btn")
+
+            homeBtn.addEventListener("click", ()=>{
+                makeHomeView();
+            })
+
+            const ingredientPageEl = container.querySelector(".right-page");
+            const ingredientCardEl = container.querySelectorAll(".card");
+        ingredientCardEl.forEach(ingredient => {
+            const ingredientButton = ingredient.querySelector(".ingredient-button")
+            let ingredientIdEl = ingredient.querySelector(".ingredient-id");
+    
+        ingredientButton.addEventListener("click", () => {
+            fetch(`http://localhost:8080/api/ingredients/${ingredientIdEl.value}`)
+            .then(res => res.json())
+            .then(ingredient => {
+                console.log(ingredient);
+                ingredientPageEl.innerHTML = makeIngredientSection(ingredient);
+            })
+        });  
+    });
+        })
+    
+    
+    
+}
 
 function makeHomeView(){
     container.innerHTML=homeView();
@@ -13,12 +59,12 @@ function makeHomeView(){
     
     const categoriesBtn = document.querySelector("#categories-btn")
     categoriesBtn.addEventListener("click", () =>{
-        container.innerHTML=allCategoriesVeiw();
+        container.innerHTML=makeAllCategoriesView();
         container.innerHTML+=makeFooter();
     })
 }
 
-function allCategoriesVeiw(){
+function makeAllCategoriesView(){
     fetch(`http://localhost:8080/api/categories`)
     .then(res => res.json())
     .then(categories =>{
@@ -67,38 +113,6 @@ function makeSingleCategoryView(categoryId){
         .catch(err => console.error(err))
 }
 
-// const learnBtn = document.querySelector(".recipe-cards")
-// learnBtn.addEventListener("click", () =>{
-//     const learnIdEl = document.querySelector(".learn-card-id");
-//     singleVideoView(learnIdEl.value);
-// })
-
-// $('.show-1-yes').click(function() {
-//     $('#target-1').show(500);
-//     $('.show-1-yes').hide(0);
-//     $('.hide-1-yes').show(0);
-// });
-// $('.hide-1-yes').click(function() {
-//     $('#target-1').hide(500);
-//     $('.show-1-yes').show(0);
-//     $('.hide-1-yes').hide(0);
-// });
-/*  show 2 - hide 2  */
-// $('.show-2-yes').click(function() {
-//     $('#target-2').show(500);
-//     $('.show-2-yes').hide(0);
-//     $('.hide-2-yes').show(0);
-// });
-// $('.hide-2-yes').click(function() {
-//     $('#target-2').hide(500);
-//     $('.show-2-yes').show(0);
-//     $('.hide-2-yes').hide(0);
-// });
-
-// const openKnifeSafetyVideo = container.querySelector("#knife-safety")
-// openKnifeSafetyVideo.addEventListener("click", () => {
-//   popup.classList.add(".open-popup");
-// });
 
 
 

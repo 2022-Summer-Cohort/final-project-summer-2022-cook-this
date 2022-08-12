@@ -9,7 +9,7 @@ export default function learn() {
                         <br>
                         <section class="recipe-list">
                             <div class="card recipe-cards text-center">
-                                <a href="${}">
+                                <a 
                                     <img src="/images/learn-thumbnails/knife-safety-thumbnails.jpg" class="card-img-top" alt="Delicious Apple Pie" />
                                     <div class="card-body">
                                         <h5 class="card-title">Knife Skills 101 from Tasty</h5>
@@ -19,7 +19,7 @@ export default function learn() {
                             </div>
                             <section class="recipe-list">
                             <div class="card recipe-cards text-center">
-                                <a href="${}">
+                                <a 
                                     <img src="/images/learn-thumbnails/balanced-flavors-thumbnail.jpg" class="card-img-top" alt="Delicious Apple Pie" />
                                     <div class="card-body">
                                     <h5 class="card-title">How to Create a Balance of Flavors in Your Cooking</h5>
@@ -29,7 +29,7 @@ export default function learn() {
                             </div>
                             <section class="recipe-list">
                             <div class="card recipe-cards text-center">
-                                <a href="${}">
+                                <a 
                                     <img src="/images/learn-thumbnails/meal-planning-thumbnail.jpg" class="card-img-top" alt="Delicious Apple Pie" />
                                     <div class="card-body">
                                         <h5 class="card-title">MEAL PLANNING for Beginners | 6 Easy Steps</h5>
@@ -39,7 +39,7 @@ export default function learn() {
                             </div>
                             <section class="recipe-list">
                             <div class="card recipe-cards text-center">
-                                <a href="${}">
+                                <a 
                                     <img src="/images/learn-thumbnails/5-basic-cooking-skills-thumbnail.jpg" class="card-img-top" alt="Delicious Apple Pie" />
                                     <div class="card-body">
                                     <h5 class="card-title">How To Master 5 Basic Cooking Skills | Gordon Ramsay!</h5>
@@ -48,7 +48,7 @@ export default function learn() {
                                 </a>
                             </div>
                             <div class="card recipe-cards text-center">
-                                <a href="${}">
+                                <a 
                                     <img src="/images/learn-thumbnails/budgeting-thumbnail.jpg" class="card-img-top" alt="Delicious Apple Pie" />
                                     <div class="card-body">
                                     <h5 class="card-title">How to Budget for Groceries</h5>
@@ -57,7 +57,7 @@ export default function learn() {
                                 </a>
                             </div>
                             <div class="card recipe-cards text-center">
-                                <a href="${}">
+                                <a >
                                     <img src="/images/learn-thumbnails/bookmarking-thumbnail.jpg" class="card-img-top" alt="Delicious Apple Pie" />
                                     <div class="card-body">
                                     <h5 class="card-title">How to Manage Chrome Bookmarks Like a Pro (Website Tips)</h5>
@@ -69,47 +69,12 @@ export default function learn() {
                     </div>
                 </section>
                 <section class="right-page " id="tutorial-page">
-                    <h2 class="text-center">Knife Skills 101 from Tasty</h2>
-                    <br>
-                    <section class="video-flex">
-                        <iframe width="80%" height="40%" src="https://www.youtube-nocookie.com/embed/G-Fg7l7G1zw"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
-                            <br>
-                        <div id="video-text" class="text-start">
-                            <p>
-                            If you've ever struggled with basic knife skills then this video is definitely for you.
-                            Brunoise, small dice, medium dice, large dice, Julienne, batonnet, rough chop, fine mince or
-                            chiffonade whatever the case may be, it takes practice but still with it because you can do it!
-                            <br> <br>
-                            LOVE CHEF BILLY PARISI AND WANT MORE AMAZING RECIPES?<br>
-                            <a href="https://billyparisi.com" > -Website-</a>
-                            </p>
-                        </div>
-                    </section>
+                    
 
             </div>
             </section>
             <nav class="book-tabs">
-                <a href="#" class="side-tabs nav-tabs-0">
-                    <img src="/images/search-icon.png" alt="search icon" id="search-tab">
-                  </a>
-                  <a href="./home.html" class="side-tabs nav-tabs-1">
-                    <h2>Home</h2>
-                  </a>
-                  <a href="./categories.html" class="side-tabs nav-tabs-2">
-                    <h2>Categories</h2>
-                  </a>
-                  <a href="./ingredients.html" class="side-tabs nav-tabs-3">
-                    <h2>Ingredient Info</h2>
-                  </a>
-                  <a href="#" class="side-tabs nav-tabs-4">
-                    <h2>Submit a Recipe</h2>
-                  </a>
-                  <a href="./learn.html" class="side-tabs nav-tabs-5">
-                    <h2>Learn to Cook!</h2>
-                  </a>
+                
             </nav>
         </div>
     </div>

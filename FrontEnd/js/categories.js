@@ -1,4 +1,4 @@
-export default function allCategoriesVeiw(categories){
+export default function allCategoriesView(categories){
    return `
    <div class="container open-container">
    <div id="open-border">
