@@ -131,14 +131,14 @@ h1{
 .left-page-flex{
     height: 91%;
     overflow-y: scroll;
-    /* -ms-overflow-style: none;  
-    scrollbar-width: none;   */
 }
-/* .left-page-flex::-webkit-scrollbar {
-    display: hidden;
+/* .categories-list{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
 } */
 .recipe-list{
-    /* height: 600px; */
     display: flex;
     gap: 10px;
     flex-wrap: wrap;

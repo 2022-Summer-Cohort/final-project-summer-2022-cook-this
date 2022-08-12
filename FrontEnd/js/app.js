@@ -43,9 +43,7 @@ function tabLinks(){
 function makeHomeView(){
     container.innerHTML=homeView();
     container.innerHTML+=makeFooter();
-    
     tabLinks();
-
 }
 
 
@@ -84,7 +82,7 @@ function makeAllCategoriesView(){
         container.innerHTML = allCategoriesView(categories)
         container.innerHTML += makeFooter();
         tabLinks();
-        const categoryEl = document.querySelectorAll(".category-card")
+        const categoryEl = document.querySelectorAll(".category-cards")
 
         categoryEl.forEach(recipe =>{
             const categoryBtn = recipe.querySelector(".category-btn");
