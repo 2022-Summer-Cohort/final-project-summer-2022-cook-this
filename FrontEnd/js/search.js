@@ -7,6 +7,7 @@
 //     {title : 'medicine'},
 //     {title : 'pie'},
 // ];
+
 const list = document.getElementById('list');
  function setList(group){
      clearList();
