@@ -1,8 +1,6 @@
 export default function homeView() {
     return `
     <div class="container">
-        <!-- <header>
-        </header> -->
         <div id="closed-book">
             <div id="closed-book-image">
                 <img id="closed-book-image-spec" src="/images/COOKBOOKCOVER-SMALLERFONT.png" alt="Cook This Book Cover">
@@ -23,8 +21,8 @@ export default function homeView() {
                 <a class="side-tabs nav-tabs-4" id="new-recipe-btn">
                     <h2>Submit a Recipe</h2>
                   </a>
-                <a id="home-btn" class="side-tabs nav-tabs-5">
-                <h2>Home</h2>
+                <a id="home-btn" class="side-tabs nav-tabs-5" id="home-btn">
+                    <h2>Home</h2>
                 </a>
             </nav>
         </div>
