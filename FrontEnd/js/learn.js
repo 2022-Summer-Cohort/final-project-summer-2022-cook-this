@@ -9,7 +9,7 @@ export default function learn() {
                         <br>
                         <section class="recipe-list">
                             <div class="card recipe-cards text-center">
-                                <a 
+                                <a id="videoId1"> 
                                     <img src="/images/learn-thumbnails/knife-safety-thumbnails.jpg" class="card-img-top" alt="Delicious Apple Pie" />
                                     <div class="card-body">
                                         <h5 class="card-title">Knife Skills 101 from Tasty</h5>
@@ -17,9 +17,9 @@ export default function learn() {
                                     </div>
                                 </a>
                             </div>
-                            <section class="recipe-list">
+                        
                             <div class="card recipe-cards text-center">
-                                <a 
+                                <a id="videoId2"> 
                                     <img src="/images/learn-thumbnails/balanced-flavors-thumbnail.jpg" class="card-img-top" alt="Delicious Apple Pie" />
                                     <div class="card-body">
                                     <h5 class="card-title">How to Create a Balance of Flavors in Your Cooking</h5>
@@ -27,9 +27,9 @@ export default function learn() {
                                     </div>
                                 </a>
                             </div>
-                            <section class="recipe-list">
+                       
                             <div class="card recipe-cards text-center">
-                                <a 
+                                <a id="videoId3"> 
                                     <img src="/images/learn-thumbnails/meal-planning-thumbnail.jpg" class="card-img-top" alt="Delicious Apple Pie" />
                                     <div class="card-body">
                                         <h5 class="card-title">MEAL PLANNING for Beginners | 6 Easy Steps</h5>
@@ -37,9 +37,9 @@ export default function learn() {
                                     </div>
                                 </a>
                             </div>
-                            <section class="recipe-list">
+                        
                             <div class="card recipe-cards text-center">
-                                <a 
+                                <a id="videoId4">
                                     <img src="/images/learn-thumbnails/5-basic-cooking-skills-thumbnail.jpg" class="card-img-top" alt="Delicious Apple Pie" />
                                     <div class="card-body">
                                     <h5 class="card-title">How To Master 5 Basic Cooking Skills | Gordon Ramsay!</h5>
@@ -47,8 +47,9 @@ export default function learn() {
                                     </div>
                                 </a>
                             </div>
+                        
                             <div class="card recipe-cards text-center">
-                                <a 
+                                <a id="videoId5"> 
                                     <img src="/images/learn-thumbnails/budgeting-thumbnail.jpg" class="card-img-top" alt="Delicious Apple Pie" />
                                     <div class="card-body">
                                     <h5 class="card-title">How to Budget for Groceries</h5>
@@ -56,8 +57,9 @@ export default function learn() {
                                     </div>
                                 </a>
                             </div>
+
                             <div class="card recipe-cards text-center">
-                                <a >
+                                <a id="videoId6">
                                     <img src="/images/learn-thumbnails/bookmarking-thumbnail.jpg" class="card-img-top" alt="Delicious Apple Pie" />
                                     <div class="card-body">
                                     <h5 class="card-title">How to Manage Chrome Bookmarks Like a Pro (Website Tips)</h5>
@@ -68,14 +70,15 @@ export default function learn() {
                         </section>
                     </div>
                 </section>
-                <section class="right-page " id="tutorial-page">
-                    
-
-            </div>
-            </section>
-            <nav class="book-tabs">
+                <section class="right-page" id="tutorial-page">
                 
-            </nav>
+                </section>
+            </div>
+                </section>
+                <nav class="book-tabs">
+                    
+                </nav>
+            </div>
         </div>
     </div>
     `

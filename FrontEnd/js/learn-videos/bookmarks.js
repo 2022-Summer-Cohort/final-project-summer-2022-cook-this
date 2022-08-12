@@ -1,12 +1,11 @@
-export default function bookmarksView(videoId) {
-    if(videoId==6){
+export default function bookmarksView() {
     return `
         <section class="right-page " id="tutorial-page">
             <div id="manage-chrome-bookmarks">
                 <h2 class="text-center">How to Manage Chrome Bookmarks</h2>
                 <br>
                 <section class="video-flex">
-                    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/llqUNWs3qz8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe <iframe class="video-frame-height" width="80%" height="40%" src="https://www.youtube-nocookie.com/embed/llqUNWs3qz8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <br>
                     <div id="video-text" class="text-start">
                         <p>
@@ -21,5 +20,4 @@ export default function bookmarksView(videoId) {
             </div>
         </section>
     `
-    }
 }

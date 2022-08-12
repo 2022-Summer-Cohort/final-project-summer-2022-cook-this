@@ -1,5 +1,4 @@
-export default function knifeSkillsView(videoId) {
-    if(videoId==1){
+export default function knifeSkillsView() {
     return `
         <section class="right-page " id="tutorial-page">
             <div id="knife-skills-video">
@@ -31,5 +30,4 @@ export default function knifeSkillsView(videoId) {
             </div>
         </section>    
     `
-    }
 }
