@@ -1,12 +1,11 @@
-export default function mealPlanningView(videoId) {
-    if(videoId==3){
+export default function mealPlanningView() {
     return `
         <section class="right-page " id="tutorial-page">
             <div id="meal-planning">
                 <h2 class="text-center">Meal Planning for Begginers</h2>
                 <br>
                 <section class="video-flex">
-                    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/r1OSDnCDoGQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe <iframe class="video-frame-height" width="80%" height="40%" src="https://www.youtube-nocookie.com/embed/r1OSDnCDoGQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <br>
                     <div id="video-text" class="text-start">
                         <p>
@@ -21,5 +20,4 @@ export default function mealPlanningView(videoId) {
             </div>
         </section>
     `
-    }
 }

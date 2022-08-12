@@ -1,12 +1,11 @@
-export default function fiveBasicSkillsView(videoId) {
-    if(videoId==4){
+export default function fiveBasicSkillsView() {
     return `
         <section class="right-page " id="tutorial-page">
             <div id="5-basic-cooking-skills">
                 <h2 class="text-center">How to Master 5 Basic Cooking Skills</h2>
                 <br>
                 <section class="video-flex">
-                    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ZJy1ajvMU1k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe <iframe class="video-frame-height" width="80%" height="40%" src="https://www.youtube-nocookie.com/embed/ZJy1ajvMU1k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <br>
                     <div id="video-text" class="text-start">
                         <p>
@@ -21,5 +20,4 @@ export default function fiveBasicSkillsView(videoId) {
             </div>
         </section>
     `
-    }
 }
