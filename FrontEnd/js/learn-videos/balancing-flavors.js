@@ -16,11 +16,10 @@ export default function balancedFlavorsView(videoId) {
                             <a href="#"> -Website to be linked?-</a>
                         </p>
                     </div>
+                    <input class="learn-id" type="hidden" value="2">
                 </section>
             </div>
         </section>
     `
     }
-
-
 }

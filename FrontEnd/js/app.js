@@ -114,7 +114,7 @@ function makeSingleCategoryView(categoryId){
 }
 
 
-
+makeHomeView();
 
 
     const searchBtn = search.querySelector(".search-bar__submit");
@@ -149,4 +149,4 @@ function makeSingleCategoryView(categoryId){
 
 
 
-makeHomeView();
+
