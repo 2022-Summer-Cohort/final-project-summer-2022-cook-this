@@ -16,16 +16,12 @@ import mealPlanningView from "./learn-videos/meal-planning.js";
 
 const container = document.querySelector("#anchor");
 
-function makeHomeView(){
-    container.innerHTML=homeView();
-    container.innerHTML+=makeFooter();
-    
-    // open book tabs
+function tabLinks(){
     const homeBtn = document.querySelector("#home-btn")
     const categoriesBtn = document.querySelector("#categories-btn")
     const ingredientsBtn = document.querySelector("#ingredients-btn")
     const newRecipeBtn = document.querySelector("#new-recipe-btn")
-    const learnBtn = document.querySelector("#home-btn")
+    const learnBtn = document.querySelector("#learn-btn")
 
     homeBtn.addEventListener("click", ()=>{
         makeHomeView();
@@ -42,6 +38,13 @@ function makeHomeView(){
     learnBtn.addEventListener("click", ()=>{
         makeLearnView();
     })
+}
+
+function makeHomeView(){
+    container.innerHTML=homeView();
+    container.innerHTML+=makeFooter();
+    
+    tabLinks();
 
 }
 
@@ -53,6 +56,7 @@ function makeAllIngredients() {
             console.log(ingredients);
             container.innerHTML = allIngredients(ingredients);
             container.innerHTML += makeFooter();
+            tabLinks();
 
             const ingredientPageEl = container.querySelector(".right-page");
             const ingredientCardEl = container.querySelectorAll(".card");
@@ -79,7 +83,7 @@ function makeAllCategoriesView(){
         console.log(categories);
         container.innerHTML = allCategoriesView(categories)
         container.innerHTML += makeFooter();
-
+        tabLinks();
         const categoryEl = document.querySelectorAll(".category-card")
 
         categoryEl.forEach(recipe =>{
@@ -101,35 +105,35 @@ function makeSingleCategoryView(categoryId){
             console.log(categoryBuild);
             container.innerHTML = singleCategoryView(categoryBuild);
             container.innerHTML += makeFooter();
-
-            const rightPageContainer = document.querySelector("#recipe-page")
+            tabLinks();
+            
             const recipeCardEl = document.querySelectorAll(".recipe-cards")
-
             recipeCardEl.forEach(recipe =>{
                 const recipeBtn = recipe.querySelector(".recipe-btn");
                 const recipeIdEl = recipe.querySelector(".recipe-id");
-
-                recipeBtn.addEventListener("click", () =>{
-                    fetch(`http://localhost:8080/api/recipes/${recipeIdEl.value}`)
-                    .then(res=>res.json())
-                    .then(recipeBuild => {
-                        console.log(recipeBuild);
-                        rightPageContainer.innerHTML = singleRecipeView(recipeBuild);
-                    })
-                    .catch(err => console.error(err))
+                recipeBtn.addEventListener("click", ()=>{
+                    makeRecipeView(recipeIdEl.value);
                 })
-                
-            
             })
         })
         .catch(err => console.error(err))
 }
 
+function makeRecipeView(recipeId){
+    const rightPageContainer = document.querySelector("#recipe-page")
+    fetch(`http://localhost:8080/api/recipes/${recipeId}`)
+    .then(res=>res.json())
+    .then(recipeBuild => {
+        console.log(recipeBuild);
+        rightPageContainer.innerHTML = singleRecipeView(recipeBuild);
+    })
+    .catch(err => console.error(err))
+}
 
 function makeLearnView(videoId){
     container.innerHTML = learn();
     container.innerHTML += makeFooter();
-
+    tabLinks();
     const rightPageContainer = document.querySelector(".right-page");
     const videoBtn1 = document.querySelector("#videoId1");
     const videoBtn2 = document.querySelector("#videoId2");
@@ -158,7 +162,6 @@ function makeLearnView(videoId){
     })
 }
 
-
 //     const searchBtn = search.querySelector(".search-bar__submit");
 //     const searchIN = searchInput.querySelector(".search-bar__input");
 
@@ -175,12 +178,7 @@ function makeLearnView(videoId){
 //         .catch(err => console.error(err))
 //     })
 
-//     function makeRecipeView (Recipe){
-//         rightPageContainer.innerHTML = singleRecipeView(recipeBuild);
-//         const recipeReviewBtn = document.querySelectorAll(".reviews-btn");
-//         recipeReviewBtn.addEventListener("click", () => {
-//         recipe    
-           
+
 
 //         })
 //     }

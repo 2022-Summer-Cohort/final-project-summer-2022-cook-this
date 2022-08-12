@@ -8,7 +8,7 @@ export default function singleCategoryView(category) {
                 <section class="left-page">
                     <h1>${category.title}</h1>
                     <br>
-                    <div class="recipe-flex">
+                    <div class="left-page-flex">
                         <section class="recipe-list">
                             ${category.recipes.map(recipe =>{
                                 return `
