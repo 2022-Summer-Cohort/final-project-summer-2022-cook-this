@@ -10,15 +10,17 @@ export default function allCategoriesView(categories){
            <section class="recipe-list">
             ${ categories.map(category =>{
                 return`
-                <div class="card recipe-cards text-center" >
-                <a href="./category.html">
-                <img src="/images/ApplePie.jpg" class="card-img-top" alt="Delicious Apple Pie" />
-                <div class="card-body">
-                  <h5 class="card-title">${category.title}</h5>
-                  <p class="card-text">See all  ${category.title} recipes</p>
+                <div class="card recipe-cards text-center category-btn" > 
+                <input class="category-id" type="hidden" value="${category.id}">
+
+                  <a>
+                    <img src="/images/ApplePie.jpg" class="card-img-top" alt="Delicious Apple Pie" />
+                    <div class="card-body">
+                      <h5 class="card-title">${category.title}</h5>
+                      <p class="card-text">See all  ${category.title} recipes</p>
+                    </div>
+                  </a>
                 </div>
-              </a>
-              </div>
                 `
 
             }) .join("")
