@@ -1,12 +1,12 @@
-const recipe = [
-    {title : 'italian'},
-    {title : 'chocalate1'},
-    {title : 'mediterranean'},
-    {title : 'stinky'},
-    {title : 'binky'},
-    {title : 'medicine'},
-    {title : 'pie'},
-];
+// const recipe = [
+//     {title : 'italian'},
+//     {title : 'chocalate1'},
+//     {title : 'mediterranean'},
+//     {title : 'stinky'},
+//     {title : 'binky'},
+//     {title : 'medicine'},
+//     {title : 'pie'},
+// ];
 const list = document.getElementById('list');
  function setList(group){
      clearList();
