@@ -1,3 +1,5 @@
+import openBookTabs from "./components/openBookTabs.js"
+
 export default function allIngredients(ingredients) {
     return `
     <div class="container">
@@ -6,7 +8,7 @@ export default function allIngredients(ingredients) {
             <section class="left-page">
                 <h2 class="text-center">Select an Ingredient</h2>
                 <br>
-                <div class="recipe-flex">
+                <div class="left-page-flex">
                     <section class="recipe-list">
                     ${ingredients.map(ingredient => {
                         return `
@@ -33,6 +35,7 @@ export default function allIngredients(ingredients) {
             </section>
 
             <nav class="book-tabs">
+            ${openBookTabs()}
             </nav>
             
         </div>

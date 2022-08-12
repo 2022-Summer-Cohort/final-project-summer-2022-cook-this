@@ -6,7 +6,7 @@ export default function learn() {
         <div id="open-border">
             <div id="open-book">
                 <section class="left-page">
-                    <div class="recipe-flex">
+                    <div class="left-page-flex">
                         <h2 class="text-center">Select a Tutorial below:</h2>
                         <br>
                         <section class="recipe-list">
@@ -100,7 +100,7 @@ export default function learn() {
             </div>
                 </section>
                 <nav class="book-tabs">
-                ${openBookTabs}
+                ${openBookTabs()}
                 </nav>
             </div>
         </div>

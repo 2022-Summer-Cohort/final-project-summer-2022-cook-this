@@ -1,5 +1,35 @@
 export default function makeFooter() {
     return `
+    <footer class="container-fluid text-center" id="footer">
+        <div class="row">
+            <div class="col"></div>
+            <p class="copyright col">&copy; 2022, Cook This!  </p>
+            <div class="dev-list col">
+                <h4>Devs:</h4>
+                <div class="fw-light">
+                    <div  class="dev-btn" data-bs-toggle="modal" data-bs-target="#stein-popup">
+                        Alex K. Stein
+                    </div>
+                    <div id="pedro-btn" class="dev-btn" data-bs-toggle="modal" data-bs-target="#pedro-popup">
+                        Pedro Barbosa
+                    </div>
+                    <div id="mia-btn" class="dev-btn" data-bs-toggle="modal" data-bs-target="#mia-popup">
+                        Mia Olivera
+                    </div>
+                    <div id="zak-btn" class="dev-btn" data-bs-toggle="modal" data-bs-target="#zak-popup">
+                        Zakariya Mohamud
+                    </div>
+                    <div id="arsema-btn" class="dev-btn" data-bs-toggle="modal" data-bs-target="#arsi-popup">
+                        Arsema Berhe
+                    </div>
+                    <div id="lex-btn" class="dev-btn" data-bs-toggle="modal" data-bs-target="#lex-popup">
+                        Lex Nathans
+                    </div>
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
+
     </footer>
     <div class="modal fade" id="stein-popup" tabindex="-1" aria-labelledby="steinModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
