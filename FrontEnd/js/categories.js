@@ -1,3 +1,5 @@
+import openBookTabs from "./components/openBookTabs.js"
+
 export default function allCategoriesView(categories){
    return `
    <div class="container open-container">
@@ -10,24 +12,22 @@ export default function allCategoriesView(categories){
            <section class="recipe-list">
             ${ categories.map(category =>{
                 return`
-                <div class="card recipe-cards text-center category-btn" > 
-                <input class="category-id" type="hidden" value="${category.id}">
+                <div class="category-card">
+                  <div class="card recipe-cards text-center category-btn" > 
+                  <input class="category-id" type="hidden" value="${category.id}">
 
-                  <a>
-                    <img src="/images/ApplePie.jpg" class="card-img-top" alt="Delicious Apple Pie" />
-                    <div class="card-body">
-                      <h5 class="card-title">${category.title}</h5>
-                      <p class="card-text">See all  ${category.title} recipes</p>
-                    </div>
-                  </a>
+                    <a>
+                      <img src="/images/ApplePie.jpg" class="card-img-top" alt="Delicious Apple Pie" />
+                      <div class="card-body">
+                        <h5 class="card-title">${category.title}</h5>
+                        <p class="card-text">See all  ${category.title} recipes</p>
+                      </div>
+                    </a>
+                  </div>
                 </div>
                 `
-
             }) .join("")
         }
-
-            
-
            </section>
          </div>
        </section>
@@ -36,26 +36,7 @@ export default function allCategoriesView(categories){
        </section>
      </div>
      <nav class="book-tabs">
-       <a href="#" class="side-tabs nav-tabs-0">
-         <img src="/images/search-icon.png" alt="search icon" id="search-tab">
-       </a>
-       <a href="./home.html" class="side-tabs nav-tabs-1">
-         <h2>Home</h2>
-       </a>
-       <a href="./categories.html" class="side-tabs nav-tabs-2">
-         <h2>Categories</h2>
-       </a>
-       <a href="./ingredients.html" class="side-tabs nav-tabs-3">
-         <h2>Ingredient Info</h2>
-       </a>
-       <a href="#" class="side-tabs nav-tabs-4">
-         <h2>Submit a Recipe</h2>
-       </a>
-       <a href="./learn.html" class="side-tabs nav-tabs-5">
-         <h2>Learn to Cook!</h2>
-       </a>
-       
-       
+       ${openBookTabs()}
      </nav>
    </div>
  </div>

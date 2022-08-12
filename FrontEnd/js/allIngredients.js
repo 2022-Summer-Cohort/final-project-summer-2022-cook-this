@@ -1,3 +1,5 @@
+import openBookTabs from "./components/openBookTabs.js"
+
 export default function allIngredients(ingredients) {
     return `
     <div class="container">
@@ -33,6 +35,7 @@ export default function allIngredients(ingredients) {
             </section>
 
             <nav class="book-tabs">
+            ${openBookTabs()}
             </nav>
             
         </div>

@@ -5,7 +5,6 @@ import homeView from "./home.js";
 import allCategoriesView from "./categories.js";
 import allIngredients from "./allIngredients.js";
 import makeIngredientSection from "./singleIngredient.js";
-import openBookTabs from "./components/openBookTabs.js";
 import learn from "./learn.js";
 import fiveBasicSkillsView from "./learn-videos/5-basic-skills.js";
 import balancedFlavorsView from "./learn-videos/balancing-flavors.js";
@@ -22,13 +21,11 @@ function makeHomeView(){
     container.innerHTML+=makeFooter();
     
     // open book tabs
-    const tabsContainer = document.querySelector(".book-tabs")
-    tabsContainer.innerHTML = openBookTabs();
-    const homeBtn = tabsContainer.querySelector("#home-btn")
-    const categoriesBtn = tabsContainer.querySelector("#categories-btn")
-    const ingredientsBtn = tabsContainer.querySelector("#ingredients-btn")
-    const newRecipeBtn = tabsContainer.querySelector("#new-recipe-btn")
-    const learnBtn = tabsContainer.querySelector("#home-btn")
+    const homeBtn = document.querySelector("#home-btn")
+    const categoriesBtn = document.querySelector("#categories-btn")
+    const ingredientsBtn = document.querySelector("#ingredients-btn")
+    const newRecipeBtn = document.querySelector("#new-recipe-btn")
+    const learnBtn = document.querySelector("#home-btn")
 
     homeBtn.addEventListener("click", ()=>{
         makeHomeView();
@@ -57,9 +54,6 @@ function makeAllIngredients() {
             container.innerHTML = allIngredients(ingredients);
             container.innerHTML += makeFooter();
 
-        
-
-
             const ingredientPageEl = container.querySelector(".right-page");
             const ingredientCardEl = container.querySelectorAll(".card");
         ingredientCardEl.forEach(ingredient => {
@@ -84,31 +78,21 @@ function makeAllCategoriesView(){
     .then(categories =>{
         console.log(categories);
         container.innerHTML = allCategoriesView(categories)
-        container.innerHTML += footer();
+        container.innerHTML += makeFooter();
 
-        const categoryIdEl = document.querySelectorAll(".category-id")
+        const categoryEl = document.querySelectorAll(".category-card")
 
-        categoryIdEl.forEach(recipe =>{
-            const recipeBtn = recipe.querySelector(".recipe-btn");
-            const recipeIdEl = recipe.querySelector(".recipe-id");
+        categoryEl.forEach(recipe =>{
+            const categoryBtn = recipe.querySelector(".category-btn");
+            const categoryIdEl = recipe.querySelector(".category-id");
 
-            recipeBtn.addEventListener("click", () =>{
-                fetch(`http://localhost:8080/api/recipes/${recipeIdEl.value}`)
-                .then(res=>res.json())
-                .then(recipeBuild => {
-                    console.log(recipeBuild);
-                    rightPageContainer.innerHTML = singleRecipeView(recipeBuild);
-                })
-                .catch(err => console.error(err))
+            categoryBtn.addEventListener("click", () =>{
+                makeSingleCategoryView(categoryIdEl.value)
             })
-            
-        
         })
     })
     .catch(err => console.error(err))
-        
-        
-    }
+}
 
 function makeSingleCategoryView(categoryId){
     fetch(`http://localhost:8080/api/categories/${categoryId}`)

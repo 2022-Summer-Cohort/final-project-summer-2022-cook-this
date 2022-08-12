@@ -345,16 +345,6 @@ footer {
     --clr-body:black;
     --clr-bg:white;
 }
-body{
-    min-height:100vh ;
-    display: flex;
-    justify-content:center;
-   
-    font-size: 1.125em;
-    line-height: 1.6;
-    color: var(--clr-body);
-
-}
 .content{
     width: 40vw;
     padding: 3em;
@@ -422,24 +412,12 @@ body{
     border-bottom-left-radius: 20px ;
     
 }
-   
-    
-
-
-
-.logo{
-    height: 100px;
-    width: 100px;
-}
-
 .popup{
     visibility: hidden;
 }
 .open-popup{
     visibility: visible;
 }
-
-
 .list-group{
     display: flex;
     background-color: rgb(209, 137, 43);
