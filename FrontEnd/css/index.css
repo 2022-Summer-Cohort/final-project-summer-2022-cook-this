@@ -193,6 +193,10 @@ h1{
     padding-left: 5%;
     overflow-y: scroll;
 }
+#tutorial-page{
+    padding-left: 5%;
+    overflow-y: scroll;
+}
 .avgRating{
     color: gold;
     margin-top: 0;
