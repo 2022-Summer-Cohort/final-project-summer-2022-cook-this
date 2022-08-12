@@ -8,7 +8,7 @@ export default function allCategoriesView(categories){
        <section class="left-page">
          <h2 class="text-center">Select a Category</h2>
          <br>
-         <div class="recipe-flex">
+         <div class="left-page-flex">
            <section class="recipe-list">
             ${ categories.map(category =>{
                 return`
