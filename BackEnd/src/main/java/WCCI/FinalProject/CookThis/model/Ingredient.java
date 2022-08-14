@@ -1,11 +1,7 @@
 package WCCI.FinalProject.CookThis.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.Objects;
 
 @Entity
@@ -18,7 +14,6 @@ public class Ingredient {
     private String description;
     private String ingredientMeasurement;
     private int spiceLevel;
-
     private String spicePeppers;
 
 

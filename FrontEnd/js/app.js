@@ -6,12 +6,8 @@ import allCategoriesView from "./categories.js";
 import allIngredients from "./allIngredients.js";
 import makeIngredientSection from "./singleIngredient.js";
 import learn from "./learn.js";
-import fiveBasicSkillsView from "./learn-videos/5-basic-skills.js";
-import balancedFlavorsView from "./learn-videos/balancing-flavors.js";
-import bookmarksView from "./learn-videos/bookmarks.js";
-import budgetingView from "./learn-videos/budgeting.js";
-import knifeSkillsView from "./learn-videos/knife-safety.js";
-import mealPlanningView from "./learn-videos/meal-planning.js";
+import displaySingleVideo from "./components/LearnVideoViews.js";
+
 
 
 const container = document.querySelector("#anchor");
@@ -128,35 +124,24 @@ function makeRecipeView(recipeId){
     .catch(err => console.error(err))
 }
 
+function makeSingleVideoView(videoId){
+    const rightPageContainer = document.querySelector(".right-page")
+    console.log(displaySingleVideo(videoId));
+    rightPageContainer.innerHTML = displaySingleVideo(videoId);
+}
+
 function makeLearnView(videoId){
     container.innerHTML = learn();
     container.innerHTML += makeFooter();
     tabLinks();
-    const rightPageContainer = document.querySelector(".right-page");
-    const videoBtn1 = document.querySelector("#videoId1");
-    const videoBtn2 = document.querySelector("#videoId2");
-    const videoBtn3 = document.querySelector("#videoId3");
-    const videoBtn4 = document.querySelector("#videoId4");
-    const videoBtn5 = document.querySelector("#videoId5");
-    const videoBtn6 = document.querySelector("#videoId6");
 
-    videoBtn1.addEventListener("click", () => {
-        rightPageContainer.innerHTML = knifeSkillsView();
-    })
-    videoBtn2.addEventListener("click", () => {
-        rightPageContainer.innerHTML = balancedFlavorsView();
-    })
-    videoBtn3.addEventListener("click", () => {
-        rightPageContainer.innerHTML = mealPlanningView();
-    })
-    videoBtn4.addEventListener("click", () => {
-        rightPageContainer.innerHTML = fiveBasicSkillsView();
-    })
-    videoBtn5.addEventListener("click", () => {
-        rightPageContainer.innerHTML = budgetingView();
-    })
-    videoBtn6.addEventListener("click", () => {
-        rightPageContainer.innerHTML = bookmarksView();
+    const learnCardEl = document.querySelectorAll(".learn-card")
+    learnCardEl.forEach(learnCard =>{
+        const videoBtn = learnCard.querySelector(".video-btn");
+        const videoIdEl = learnCard.querySelector(".learn-card-id");
+        videoBtn.addEventListener("click", ()=>{
+            makeSingleVideoView(videoIdEl.value);
+        })
     })
 }
 
