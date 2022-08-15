@@ -17,7 +17,7 @@ return `
     </div>
     <ul class="list-group" id="list" > ${recipes.map(recipe =>{
         return `
-    <li>${recipe.title}</li>
+    <li >${recipe.name}</li>
     `
 }).join("")
 }

@@ -10,17 +10,22 @@ import displaySingleVideo from "./components/LearnVideoViews.js";
 import newRecipeView from "./createRecipe.js";
 import submitRecipeBtn from "./components/SubmitRecipeBtn.js";
 import dummyRecipeView from "./components/dummyRecipeView.js";
-
+import searchView from "./searchView.js";
 
 const container = document.querySelector("#anchor");
 
 function tabLinks(){
+
+    const searchViewBtn = document.querySelector("#search-btn")
     const homeBtn = document.querySelector("#home-btn")
     const categoriesBtn = document.querySelector("#categories-btn")
     const ingredientsBtn = document.querySelector("#ingredients-btn")
     const newRecipeBtn = document.querySelector("#new-recipe-btn")
     const learnBtn = document.querySelector("#learn-btn")
 
+    searchViewBtn.addEventListener("click", ()=>{
+        makeSearchView();
+    })
     homeBtn.addEventListener("click", ()=>{
         makeHomeView();
     })
@@ -44,6 +49,83 @@ function makeHomeView(){
     tabLinks();
 }
 
+
+function makeSearchView(){
+    fetch(`http://localhost:8080/api/recipes`)
+        .then(res => res.json())
+        .then(recipes=>{
+            console.log(recipes);
+            container.innerHTML = searchView(recipes);
+            container.innerHTML += makeFooter();
+            tabLinks();
+
+            const recipeToSearch = [ 
+                recipes.map(recipe => {
+                {name:'recipe.name'}
+                })
+            ]
+            const list = document.getElementById('list');
+            function setList(group){
+                clearList();
+                for(const recipe of group){
+                    const item = document.createElement('li');
+                    item.classList.add('list-group-item');
+                    const text = document.createTextNode(recipe.name);
+                    item.appendChild(text);
+                    list.appendChild(item);
+                }
+                if (group.length ===0){
+                    setNoResult();
+                }
+            }
+            function clearList() {
+                while(list.firstChild){
+                    list.removeChild(list.firstChild);
+                }
+            }
+            function setNoResult(){
+                const item = document.createElement('li');
+                item.classList.add('list-group-item');
+                const text = document.createTextNode(recipeToSearch.name);
+                item.appendChild(text);
+                list.appendChild(item);
+            }
+            
+            function getRelevancy(value, searchTerm){
+                if (value === searchTerm){
+                    return 3;
+                }else if(value.startsWith(searchTerm)){
+                    return 3;
+                }else if(value.includes(searchTerm)){
+                    return 0;
+                }else {
+                    return -1;
+                }
+            }
+        
+            const searchIN = document.getElementById('search777');
+            
+            searchIN.addEventListener('input', (event) => {
+                let value = event.target.value;
+                if (value && value.trim().length > 0){
+                    value = value.trim().toLowerCase();
+                    setList(recipes.filter(recipe => {
+                        console.log(recipe);
+                        return recipe.name.includes(value);
+                    }).sort((recipeA,recipeB) => {
+                        return getRelevancy(recipeB.name,value) - getRelevancy(recipeA.name,value);
+                    })); 
+                }else {
+                    clearList();
+                }
+            });
+        
+            searchIN.addEventListener("focusout",function (){
+            clearList();
+            })
+        })
+    .catch(err => console.error(err))
+}
 
 function makeAllIngredients() {
     fetch(`http://localhost:8080/api/ingredients`)
@@ -132,7 +214,7 @@ function makeSingleVideoView(videoId){
     rightPageContainer.innerHTML = displaySingleVideo(videoId);
 }
 
-function makeLearnView(videoId){
+function makeLearnView(){
     container.innerHTML = learn();
     container.innerHTML += makeFooter();
     tabLinks();
@@ -189,20 +271,22 @@ function makeNewRecipeView(){
 }
 
 
-    const searchBtn = document.querySelector(".search-bar__submit");
-    const searchIN = document.querySelector(".search-bar__input");
+    // const searchBtn = document.querySelector(".search-bar__submit");
+    // const searchIN = document.querySelector(".search-bar__input");
 
-    searchBtn.addEventListener("click", () =>{
-        fetch(`http://localhost:8080/api/recipes/${recipeIdEl.value}`)
-        .then(res=>res.json())
-        .then(recipeBuild => {
-            console.log(recipeBuild);
-            makeRecipeView(recipeId);
+    // searchBtn.addEventListener("click", () =>{
+    //     fetch(`http://localhost:8080/api/recipes/${recipeIdEl.value}`)
+    //     .then(res=>res.json())
+    //     .then(recipeBuild => {
+    //         console.log(recipeBuild);
+    //         makeRecipeView(recipeId);
 
+//         .catch(err => console.error(err))
 
-        })
-        .catch(err => console.error(err))
-    })
+    //     
+    
+    //     
+    // })
 
 
 
