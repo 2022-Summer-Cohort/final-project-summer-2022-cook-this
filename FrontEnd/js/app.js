@@ -231,9 +231,19 @@ function makeNewRecipeView(){
     })
     const submitNewRecipeBtn = document.querySelector("#submit-new-recipe")
     submitNewRecipeBtn.addEventListener("click", ()=>{
-        
+        const newRecipe = dummyRecipe;
+        fetch(`http://localhost:8080/api/recipe`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newRecipe)
+        })
+        .then(res => res.json())
+        .then(newRecipe => {
+        makeSingleCategoryView(newRecipe.categories)
     })
-
+    
 })
 }
 
