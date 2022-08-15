@@ -156,23 +156,27 @@ function makeNewRecipeView(){
     tabLinks();
     
 
-    const ingredientInEL = document.querySelector("#ingedient-in-flex")
+    const ingredientInEL = document.querySelector(".extra-ingredients")
     const addIngredientBtn = document.querySelector("#add-ingredient-button")
     addIngredientBtn.addEventListener("click", () => {
-        ingredientInEL.innerHTML +=  
-        `
-        <div class="input-group">  <input id="ingredient-in" type="text" aria-label="Ingredient input" placeholder="ie. Lemon juice" class="form-control"> 
-        <input id="measurement-in" type="text" aria-label="Measurement input" placeholder="ie. 1 cup" class="form-control">
-        </div>
-        `
+        const newIngredientInput = document.createElement("input")
+        ingredientInEL.appendChild(newIngredientInput)
+        newIngredientInput.outerHTML = `
+         <div class="input-group ingredients">  
+             <input type="text" aria-label="Ingredient input" placeholder="ie. Lemon juice" class="form-control ingredient-in"> 
+            <input type="text" aria-label="Measurement input" placeholder="ie. 1 cup" class="form-control measurement-in">
+         </div>
+         `
     })
 
-    const stepInEL = document.querySelector("#steps-in-flex")
+    const stepInEL = document.querySelector(".extra-steps")
     const addStepBtn = document.querySelector("#add-step-button")
     addStepBtn.addEventListener("click", () => {
-        stepInEL.innerHTML +=  
+        const newStepInput = document.createElement("input")
+        stepInEL.appendChild(newStepInput)
+        newStepInput.outerHTML =  
         `
-        <input id="step-in" type="text" placeholder="Step 1..." class="form-control mb-1" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <input type="text" placeholder="Step 1..." class="form-control mb-1 step-in" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         `
     })
 
@@ -185,19 +189,38 @@ function makeNewRecipeView(){
     const categoryIn=document.querySelector("#category-in")
     const rightPageContainer = document.querySelector(".right-page")
     dummyRecipeBtn.addEventListener("click", ()=>{
+        
+        const stepEls = document.querySelectorAll(".step-in");
+        let stepArray = [];
+        stepEls.forEach(stepEls => {
+            stepArray.push({"instructions": stepEls.value})
+        })
+        const ingredientsDivs = document.querySelectorAll(".ingredients")
+        let ingedientArray = [];
+        
+        ingredientsDivs.forEach(ingredientDiv => {
+            const ingedientEl = ingredientDiv.querySelector(".ingredient-in")
+        const measurementEl = ingredientDiv.querySelector(".measurement-in")
+            ingedientArray.push(
+                {
+                    "name":ingedientEl.value,
+                    "imageUrl":"",
+                    "description":"",
+                    "ingredientMeasurement":measurementEl.value,
+                    "spiceLevel":0,
+                    "recipe":null
+                })
+            
+        })
+
+        // const measurementEls = document.querySelectorAll(".measurement-in")
+
         rightPageContainer.innerHTML = submitRecipeBtn();
         let dummyRecipe = {
             "name":newNameIn.value,
             "picOfDish":newImgURL.value,
-            "steps":[{"instructions":newStepIn.value}],
-            "ingredients":[{
-                "name":newIngredientIn.value,
-                "imageUrl":"",
-                "description":"",
-                "ingredientMeasurement":newMeasurementIn.value,
-                "spiceLevel":0,
-                "recipe":null
-            }],
+            "steps":stepArray,
+            "ingredients":ingedientArray,
             "categories":[{
                 "title":categoryIn.value
             }],
