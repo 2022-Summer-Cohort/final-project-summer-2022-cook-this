@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import java.awt.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Objects;
@@ -22,13 +24,13 @@ public class SiteUser {
     @ManyToMany
     private Collection<Recipe> favoriteRecipes;
 
-    public SiteUser(String userName, String emailAddress, String password, String firstName, String lastName, Recipe... favoriteRecipes) {
+    public SiteUser(String userName, String emailAddress, String password, String firstName, String lastName) {
         this.userName = userName;
         this.emailAddress = emailAddress;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.favoriteRecipes = Arrays.asList(favoriteRecipes);
+        this.favoriteRecipes = new ArrayList<>();
     }
 
     public SiteUser() {
@@ -50,6 +52,8 @@ public class SiteUser {
         return password;
     }
 
+    public void changePassword(String newPassword){ password = newPassword; };
+
     public String getFirstName() {
         return firstName;
     }
@@ -62,6 +66,7 @@ public class SiteUser {
         return favoriteRecipes;
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -73,5 +78,9 @@ public class SiteUser {
     @Override
     public int hashCode() {
         return Objects.hash(id, userName, emailAddress, password, firstName, lastName);
+    }
+
+    public void addFavoriteRecipe(Recipe recipeToAdd) {
+        favoriteRecipes.add(recipeToAdd);
     }
 }
