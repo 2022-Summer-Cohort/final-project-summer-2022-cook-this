@@ -23,6 +23,7 @@ export default function reviewsModal(recipe){
                                     <label for="review-content" class="form-label">Write your review below:</label>
                                     <textarea class="form-control" id="review-content" rows="3"></textarea>
                                 </div>
+                                <button class="btn btn-secondary">Submit</button>
                         </section>
                         <hr/>
                         ${recipe.reviews.map(review =>{
