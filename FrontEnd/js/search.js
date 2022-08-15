@@ -8,6 +8,18 @@
 //     {title : 'pie'},
 // ];
 
+fetch(`http://localhost:8080/api/recipes`) 
+    .then(res=>res.json())
+    .then(allRecipes => {
+        console.log(allRecipes);
+const recipe = [ 
+    allRecipes.map(recipeSearch => {
+    {title:'recipeSearch.title'}
+    })
+]
+
+    })
+
 const list = document.getElementById('list');
  function setList(group){
      clearList();
@@ -55,7 +67,7 @@ searchIN.addEventListener('input', (event) => {
     let value = event.target.value;
     if (value && value.trim().length > 0){
         value = value.trim().toLowerCase();
-        setList(recipe.filter(recipe => {
+        setList(recipeSearch.filter(recipeSearch => {
             return recipe.title.includes(value);
         }).sort((recipeA,recipeB) => {
             return getRelevancy(recipeB.name,value) - getRelevancy(recipeA.name,value);

@@ -171,7 +171,7 @@ function makeLearnView(videoId){
         .then(res=>res.json())
         .then(recipeBuild => {
             console.log(recipeBuild);
-            makeRecipeView(recipeBuild);
+            makeRecipeView(recipeId);
 
 
         })
