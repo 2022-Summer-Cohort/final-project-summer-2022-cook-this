@@ -148,16 +148,40 @@ function makeLearnView(videoId){
 }
 
 function makeNewRecipeView(){
-    container.innerHTML = newRecipeView();
+    fetch(`http://localhost:8080/api/categories/`)
+    .then(res=>res.json())
+    .then(categoriesList => {
+    container.innerHTML = newRecipeView(categoriesList);
     container.innerHTML += makeFooter();
     tabLinks();
+    
+
+    const ingredientInEL = document.querySelector("#ingedient-in-flex")
+    const addIngredientBtn = document.querySelector("#add-ingredient-button")
+    addIngredientBtn.addEventListener("click", () => {
+        ingredientInEL.innerHTML +=  
+        `
+        <div class="input-group">  <input id="ingredient-in" type="text" aria-label="Ingredient input" placeholder="ie. Lemon juice" class="form-control"> 
+        <input id="measurement-in" type="text" aria-label="Measurement input" placeholder="ie. 1 cup" class="form-control">
+        </div>
+        `
+    })
+
+    const stepInEL = document.querySelector("#steps-in-flex")
+    const addStepBtn = document.querySelector("#add-step-button")
+    addStepBtn.addEventListener("click", () => {
+        stepInEL.innerHTML +=  
+        `
+        <input id="step-in" type="text" placeholder="Step 1..." class="form-control mb-1" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        `
+    })
 
     const dummyRecipeBtn = document.querySelector("#add-new-recipe")
     const newNameIn=document.querySelector("#recipe-name-in")
     const newImgURL=document.querySelector("#img-url-in")
-    const newIngredientIn=document.querySelector("#ingredient-in")
-    const newMeasurementIn=document.querySelector("#measurement-in")
-    const newStepIn=document.querySelector("#step-in")
+    const newIngredientIn=document.querySelector(".ingredient-in")
+    const newMeasurementIn=document.querySelector(".measurement-in")
+    const newStepIn=document.querySelector(".step-in")
     const categoryIn=document.querySelector("#category-in")
     const rightPageContainer = document.querySelector(".right-page")
     dummyRecipeBtn.addEventListener("click", ()=>{
@@ -186,6 +210,8 @@ function makeNewRecipeView(){
     submitNewRecipeBtn.addEventListener("click", ()=>{
         
     })
+
+})
 }
 
 //     const searchBtn = search.querySelector(".search-bar__submit");
