@@ -15,7 +15,7 @@ return `
 
             
     </div>
-    <ul class="list-group" id="list" > ${recipes.map(recipe =>{
+    <ul class="list-group" id="listRecipes" > ${recipes.map(recipe =>{
         return `
     <li >${recipe.name}</li>
     `

@@ -64,8 +64,9 @@ function makeSearchView(){
                 {name:'recipe.name'}
                 })
             ]
-            const list = document.getElementById('list');
+            
             function setList(group){
+                const list = document.getElementById('listRecipes');
                 clearList();
                 for(const recipe of group){
                     const item = document.createElement('li');
@@ -79,11 +80,13 @@ function makeSearchView(){
                 }
             }
             function clearList() {
+                const list = document.getElementById('listRecipes');
                 while(list.firstChild){
                     list.removeChild(list.firstChild);
                 }
             }
             function setNoResult(){
+                const list = document.getElementById('listRecipes');
                 const item = document.createElement('li');
                 item.classList.add('list-group-item');
                 const text = document.createTextNode(recipeToSearch.name);
@@ -93,7 +96,7 @@ function makeSearchView(){
             
             function getRelevancy(value, searchTerm){
                 if (value === searchTerm){
-                    return 3;
+                    return 2;
                 }else if(value.startsWith(searchTerm)){
                     return 3;
                 }else if(value.includes(searchTerm)){
