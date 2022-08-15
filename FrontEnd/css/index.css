@@ -31,7 +31,6 @@ h1{
 /* Home Page: Closed Book */
 #closed-book{
     display: flex;
-    /* margin-left: 10%; */
 }
 #closed-book-image{
     text-align: right;
@@ -132,12 +131,6 @@ h1{
     height: 91%;
     overflow-y: scroll;
 }
-/* .categories-list{
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
-} */
 .recipe-list{
     display: flex;
     gap: 10px;
@@ -165,6 +158,16 @@ h1{
     margin: 3% 0;
     padding-left: 5%;
 }
+.new-recipe-form{
+    width: 80%;
+}
+.new-recipe-btns{
+    padding: 3px 6px;
+}
+.new-recipe{
+    margin-bottom: 5px;
+}
+
 /* Right Page: Recipe Page  */
 .right-page{
     background-color: white;
@@ -227,9 +230,6 @@ h1{
 #overall-rating{
     font-size: small;
 }
-#new-review h6{
-    color: black;
-}
 .hr-short{
     width:50px;
     margin: 0px auto;
@@ -245,7 +245,6 @@ h1{
     border: none;
 }
 .ingredient-image {
-    /* width: 100%; */
     display: flex;
     justify-content: right;
     align-items: center;

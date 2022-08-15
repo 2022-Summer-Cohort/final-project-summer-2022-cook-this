@@ -17,66 +17,40 @@
             <div id="open-book">
                 <section class="left-page">
                     <h1>Submit a New Recipe:</h1>
-                    <br>
-                    <div class="recipe-flex">
-                        <div class="new-recipe-form d-flex flex-column">
-                            <input type="text" class="new-recipe" placeholder="Recipe Name...">
-                            <br>
-                            <input type="text" class="new-recipe" placeholder="Recipe Steps">
-                            <button>Add Another Step</button>
-                            <br>
-                            <input type="text" class="new-recipe" placeholder="Image URL">
-                            <br>
-                            <div class="row">
-                            <input type="text" class="new-recipe col" placeholder="Ie. 4 cups"><input type="text" class="new-recipe col" placeholder="Ie. Chopped Parsley">
-                            </div>
-                            <button>Add Another Ingredient</button>
-                            <br>
-                            <input type="text" class="new-recipe" placeholder="Category">
-                            <br>
-                            <input type="submit" id="add-new-recipe">
+                    <div class="hr-short"><hr></div>
+                    <div class="left-page-flex">
+                        <div class="new-recipe-form d-flex flex-column ps-3">
+                            <h5>Recipe Name:</h5>
+                                <input type="text" placeholder="Ie. Captain Crunch Bars" class="form-control mb-3" aria-label="recipe name input" aria-describedby="inputGroup-sizing-default">
+                            Ingredients & measurement:
+                                <div class="input-group">
+                                    <input type="text" aria-label="Ingredient input" placeholder="ie. Lemon juice" class="form-control">
+                                    <input type="text" aria-label="Measurement input" placeholder="ie. 1 cup" class="form-control">
+                                </div>
+                                <button class="btn btn-warning add-step-btn new-recipe-btns mb-3 align-self-start">Add Another Step</button>
+                            Image:
+                                <input type="text" placeholder="Image URL" class="form-control mb-1" aria-label="image url input" aria-describedby="inputGroup-sizing-default">
+                            <h6 class="text-center">or </h6>
+                            <button class="btn btn-warning new-recipe-btns mb-3 align-self-center">Upload Image</button>
+                            Instructions:
+                                <input type="text" placeholder="Step 1..." class="form-control mb-1" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            <button class="btn btn-warning add-step-btn new-recipe-btns mb-3 align-self-start">Add Another Step</button>
+                            <div class="input-group">
+                                <label class="input-group-text" for="inputGroupSelect01">Category:</label>
+                                <select class="form-select" id="inputGroupSelect01">
+                                  <option selected>Select a category...</option>
+                                  <option value="1">Food</option>
+                                </select>
+                              </div>
+                              <br>
+                            <input id="add-new-recipe" value="Preview Your Recipe!" class="btn btn-warning">
                         </div>
                     </div>
                 </section>
 
                 <section class="right-page d-flex flex-column align-items-center" id="recipe-page">
-                    <div id="title">
-                        <h1 class="title-header">Recipe name...</h1>
-
-                        <button type="button" class="btn btn-light reviews-btn" data-bs-toggle="modal"
-                            data-bs-target="#staticBackdrop">
-                            Overall Rating: <span class="avgRating"> &starf;&starf;&starf;&starf;&starf;</span>
-                            <span class="review-tip ">Click for Ratings & Reviews</span>
-                        </button>
-
-                    </div>
-
-                    <figure class="recipe-image">
-                        <img src="#" class="img-fluid" alt="Add URL...">
-                    </figure>
-
-                    <section id="ingredients">
-                        <h2 class="right-page-headers">Ingredients</h2>
-                        <div id="ingredients-list">
-                            <div class="ingredient-list-item">
-                                <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
-                                <span>Add Ing</span>
-                            </div>
-
-                        </div>
-                    </section>
-                    <br>
-                    <section id="instructions">
-                        <h2 class="right-page-headers">Instructions</h2>
-                        <section class="inst-list-div">
-                            <ul id="instruction-list">
-                                <li>Step 1: Add step...</li>
-
-                                <br>
-                                <h4 class="text-center">Enjoy!</h4>
-                            </ul>
-                        </section>
-                    </section>
+                    <input id="submit-new-recipe" value="Submit Recipe" class="btn btn-warning mt-3">
+                    <span class="mb-3">OR Edit fields on the left page & hit preview to update.</span>
                 </section>
             </div>
             </section>

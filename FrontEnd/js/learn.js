@@ -93,12 +93,12 @@ export default function learn() {
                         </section>
                     </div>
                 </section> 
-
-            </div>
-        
                 <nav class="book-tabs">
                 ${openBookTabs()}
                 </nav>
+            </div>
+        
+                
             </div>
     </div>
     `

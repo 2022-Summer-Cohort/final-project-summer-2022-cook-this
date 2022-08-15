@@ -7,7 +7,9 @@ import allIngredients from "./allIngredients.js";
 import makeIngredientSection from "./singleIngredient.js";
 import learn from "./learn.js";
 import displaySingleVideo from "./components/LearnVideoViews.js";
-
+import newRecipeView from "./createRecipe.js";
+import submitRecipeBtn from "./components/SubmitRecipeBtn.js";
+import dummyRecipeView from "./components/dummyRecipeView.js";
 
 
 const container = document.querySelector("#anchor");
@@ -28,9 +30,9 @@ function tabLinks(){
     ingredientsBtn.addEventListener("click", ()=>{
         makeAllIngredients();
     })
-    // newRecipeBtn.addEventListener("click", ()=>{
-    //     makeNewRecipeView();
-    // })
+    newRecipeBtn.addEventListener("click", ()=>{
+        makeNewRecipeView();
+    })
     learnBtn.addEventListener("click", ()=>{
         makeLearnView();
     })
@@ -142,6 +144,47 @@ function makeLearnView(videoId){
         videoBtn.addEventListener("click", ()=>{
             makeSingleVideoView(videoIdEl.value);
         })
+    })
+}
+
+function makeNewRecipeView(){
+    container.innerHTML = newRecipeView();
+    container.innerHTML += makeFooter();
+    tabLinks();
+
+    const dummyRecipeBtn = document.querySelector("#add-new-recipe")
+    const newNameIn=document.querySelector("#recipe-name-in")
+    const newImgURL=document.querySelector("#img-url-in")
+    const newIngredientIn=document.querySelector("#ingredient-in")
+    const newMeasurementIn=document.querySelector("#measurement-in")
+    const newStepIn=document.querySelector("#step-in")
+    const categoryIn=document.querySelector("#category-in")
+    const rightPageContainer = document.querySelector(".right-page")
+    dummyRecipeBtn.addEventListener("click", ()=>{
+        rightPageContainer.innerHTML = submitRecipeBtn();
+        let dummyRecipe = {
+            "name":newNameIn.value,
+            "picOfDish":newImgURL.value,
+            "steps":[{"instructions":newStepIn.value}],
+            "ingredients":[{
+                "name":newIngredientIn.value,
+                "imageUrl":"",
+                "description":"",
+                "ingredientMeasurement":newMeasurementIn.value,
+                "spiceLevel":0,
+                "recipe":null
+            }],
+            "categories":[{
+                "title":categoryIn.value
+            }],
+            "reviews":null
+        }
+        console.log(dummyRecipe);
+        rightPageContainer.innerHTML+=dummyRecipeView(dummyRecipe);
+    })
+    const submitNewRecipeBtn = document.querySelector("#submit-new-recipe")
+    submitNewRecipeBtn.addEventListener("click", ()=>{
+        
     })
 }
 
