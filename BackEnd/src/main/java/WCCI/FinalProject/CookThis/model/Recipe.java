@@ -106,4 +106,8 @@ public class Recipe {
     public int hashCode() {
         return Objects.hash(id, name, picOfDish);
     }
+
+    public void addCategory(Category category) {
+        categories.add(category);
+    }
 }

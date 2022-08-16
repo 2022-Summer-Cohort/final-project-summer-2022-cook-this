@@ -1,5 +1,4 @@
 import openBookTabs from "./components/openBookTabs.js"
-let optionValue = 0
 export default function newRecipeView(categories){
 return `
     <div class="container">
@@ -40,9 +39,8 @@ return `
                                 <select class="form-select" id="category-in">
                                 <option selected>Select a category...</option>
                                 ${categories.map(category => {
-                                    optionValue ++;
                                     return `
-                                    <option value="${optionValue}">${category.title}</option>
+                                    <option value="${category.id}">${category.title}</option>
                                     `
                                 }).join("")
                             }
