@@ -62,10 +62,9 @@ public class Recipe {
         return steps.get(indexOfStep);
     }
     public double getAvgRating() {
-        updateAvgRating();
+        this.avgRating = updateAvgRating();
         return avgRating;
     }
-
     public void addReview(Review newReview) {
         reviews.add(newReview);
     }
@@ -96,7 +95,7 @@ public class Recipe {
     public double updateAvgRating() {
         double sum = 0;
         for (Review rating : reviews) {
-            sum += rating.getRatings();
+            sum += rating.getRating();
         }
         return Math.round((((sum / reviews.size()) * 10)) / 10);
     }
@@ -114,5 +113,9 @@ public class Recipe {
     @Override
     public int hashCode() {
         return Objects.hash(id, name, picOfDish);
+    }
+
+    public void addCategory(Category category) {
+        categories.add(category);
     }
 }

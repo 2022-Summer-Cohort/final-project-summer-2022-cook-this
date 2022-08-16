@@ -1,3 +1,5 @@
+import openBookTabs from "./components/openBookTabs.js"
+
 export default function singleCategoryView(category) {
     return `
     <div class="container">
@@ -6,7 +8,7 @@ export default function singleCategoryView(category) {
                 <section class="left-page">
                     <h1>${category.title}</h1>
                     <br>
-                    <div class="recipe-flex">
+                    <div class="left-page-flex">
                         <section class="recipe-list">
                             ${category.recipes.map(recipe =>{
                                 return `
@@ -32,24 +34,7 @@ export default function singleCategoryView(category) {
             </div>
             </section>
             <nav class="book-tabs">
-                <a href="#" class="side-tabs nav-tabs-0">
-                    <img src="/images/search-icon.png" alt="search icon" id="search-tab">
-                  </a>
-                  <a href="./home.html" class="side-tabs nav-tabs-1">
-                    <h2>Home</h2>
-                  </a>
-                  <a href="./categories.html" class="side-tabs nav-tabs-2">
-                    <h2>Categories</h2>
-                  </a>
-                  <a href="./ingredients.html" class="side-tabs nav-tabs-3">
-                    <h2>Ingredient Info</h2>
-                  </a>
-                  <a href="#" class="side-tabs nav-tabs-4">
-                    <h2>Submit a Recipe</h2>
-                  </a>
-                  <a href="./learn.html" class="side-tabs nav-tabs-5">
-                    <h2>Learn to Cook!</h2>
-                  </a>
+                ${openBookTabs()}
             </nav>
         </div>
     </div>
