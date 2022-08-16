@@ -222,18 +222,43 @@ function makeNewRecipeView(){
             "steps":stepArray,
             "ingredients":ingedientArray,
             "categories":[{
-                "title":categoryIn.value
+                "id": categoryIn.value,
             }],
-            "reviews":null
+            "reviews":[]
         }
         console.log(dummyRecipe);
         rightPageContainer.innerHTML+=dummyRecipeView(dummyRecipe);
-    })
-    const submitNewRecipeBtn = document.querySelector("#submit-new-recipe")
-    submitNewRecipeBtn.addEventListener("click", ()=>{
+
+
+        const submitNewRecipeBtn = document.querySelector("#submit-new-recipe")
+        submitNewRecipeBtn.addEventListener("click", ()=>{
+            const newRecipe = dummyRecipe;
+            fetch(`http://localhost:8080/api/recipe`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(newRecipe)
+            })
+            .then(res => res.json())
+            .then(newRecipe => {
+                fetch(`http://localhost:8080/api/categories/${categoryIn.value}/${newRecipe.id}`,{
+                    method: 'PATCH',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                .then(res => res.json())
+                .then(recipeSubmitted => {
+                    console.log(recipeSubmitted);
+                    makeSingleCategoryView(categoryIn.value);
+                    makeRecipeView(recipeSubmitted.id);
+                } )
+        })
         
     })
-
+    })
+   
 })
 }
 
