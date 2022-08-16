@@ -10,6 +10,7 @@ import displaySingleVideo from "./components/LearnVideoViews.js";
 import newRecipeView from "./createRecipe.js";
 import submitRecipeBtn from "./components/SubmitRecipeBtn.js";
 import dummyRecipeView from "./components/dummyRecipeView.js";
+import reviewsModal from "./components/reviews.js";
 
 
 const container = document.querySelector("#anchor");
@@ -122,8 +123,47 @@ function makeRecipeView(recipeId){
     .then(recipeBuild => {
         console.log(recipeBuild);
         rightPageContainer.innerHTML = singleRecipeView(recipeBuild);
+
+        const reviewAuthor = container.querySelector("#author-input")
+        const reviewRating = container.querySelector("#rating-input")
+        const reviewContent = container.querySelector("#review-content")
+        const submitReviewBtn = container.querySelector("#submitReview");
+        submitReviewBtn.addEventListener("click", () => {
+            const newRecipeReview ={
+                "author": reviewAuthor.value,
+                "content": reviewContent.value,
+                "rating": reviewRating.value
+            }
+            fetch(`http://localhost:8080/api/recipes/${recipeBuild.id}/addComment`,
+            {method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newRecipeReview)}
+            )
+
+            .then(res => res.json())
+            .then(reviewToSubmit => {
+                console.log(reviewToSubmit);
+                const reviewsList = document.querySelector(".reviews-list")
+                reviewsList.innerHTML += `
+                <div id="reviews-content">
+                <h6 class="text-start">${reviewAuthor.value} <span class="avgRating">
+            ${reviewRating.value} &starf;</span>
+             </h6>
+             <p class="text-start">
+                ${reviewContent.value}
+             </p>
+            <div class="hr-short"><hr/></div>
+        </div>`
+                
+            })
+        })
     })
     .catch(err => console.error(err))
+
+   
+    
 }
 
 function makeSingleVideoView(videoId){

@@ -23,23 +23,25 @@ export default function reviewsModal(recipe){
                                     <label for="review-content" class="form-label">Write your review below:</label>
                                     <textarea class="form-control" id="review-content" rows="3"></textarea>
                                 </div>
-                                <button class="btn btn-secondary">Submit</button>
+                                <button id="submitReview" class="btn btn-secondary">Submit</button>
                         </section>
                         <hr/>
+                        <div class="reviews-list">
+
                         ${recipe.reviews.map(review =>{
                             return`
-                            <div id="reviews-content">
-                                <h6 class="text-start">${review.author} <span class="avgRating">
+                                <div id="reviews-content">
+                                        <h6 class="text-start">${review.author} <span class="avgRating">
                                     ${review.rating} &starf;</span>
-                                </h6>
-                                <p class="text-start">
-                                    ${review.content}
-                                </p>
-                                <div class="hr-short"><hr/></div>
-                            </div>
-                            `
-                        }).join("")}
-                        
+                                     </h6>
+                                     <p class="text-start">
+                                        ${review.content}
+                                     </p>
+                                    <div class="hr-short"><hr/></div>
+                                </div>
+                                `
+                             }).join("")}
+                        </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
