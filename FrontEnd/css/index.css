@@ -9,6 +9,12 @@ body{
     background-image: url(/images/countertopBackground.jpg);
     background-size: cover;
 }
+#login-button {
+    position: absolute;
+}
+#login-logo {
+    width: 20%;
+}
 .container{
     margin-top: 1%;
     margin-bottom: 5%;
