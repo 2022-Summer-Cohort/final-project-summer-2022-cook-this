@@ -19,7 +19,7 @@ public class Category {
 
     public Category(String title) {
         this.title = title;
-        this.recipes = new ArrayList<>();
+
     }
     public Category() {
     }
