@@ -23,13 +23,13 @@ public class Populator implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Category category1 = new Category("Budget");
+        Category category1 = new Category("Budget", "https://images.pexels.com/photos/9660/business-money-pink-coins.jpg?cs=srgb&dl=pexels-skitterphoto-9660.jpg&fm=jpg");
         categoryRepo.save(category1);
-        Category category2 = new Category("Region");
+        Category category2 = new Category("Region", "https://imgc.allpostersimages.com/img/posters/vintage-world-map_u-L-F307U80.jpg?artHeight=550&artPerspective=n&artWidth=550");
         categoryRepo.save(category2);
-        Category category3 = new Category("Holiday");
+        Category category3 = new Category("Holiday", "https://www.ffyf.org/wp-content/uploads/2018/12/FFYF_HolidayCard_FB.gif");
         categoryRepo.save(category3);
-        Category category4 = new Category("Dietary Needs");
+        Category category4 = new Category("Dietary Needs", "https://i0.wp.com/chefbraakman.com/wp-content/uploads/2018/08/special-diets.jpg?resize=571%2C336&ssl=1");
         categoryRepo.save(category4);
 
         Recipe recipe1 = new Recipe("Apple Pie", "/images/ApplePie.jpg", category1, category3);
