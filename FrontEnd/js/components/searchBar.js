@@ -17,7 +17,9 @@ return `
     </div>
     <ul class="list-group" id="listRecipes" > ${recipes.map(recipe =>{
         return `
-    <li >${recipe.name}</li>
+    <li >${recipe.name} ${`
+    <input class="search-recipeId" type="hidden" value="${recipe.id}">
+    `}</li>
     `
 }).join("")
 }
