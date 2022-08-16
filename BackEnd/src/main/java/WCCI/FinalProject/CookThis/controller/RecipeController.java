@@ -42,7 +42,7 @@ public class RecipeController {
 //        return recipeSteps.getSteps();
 //    }
 
-    @PostMapping("api/recipes/{id}/addComment")
+    @PatchMapping("api/recipes/{id}/addComment")
     public Recipe recipeToAddCommentTo(@RequestBody Review newComment, @PathVariable Long id) {
         Recipe recipeToChange = recipeRepo.findById(id).get();
         recipeToChange.addReview(newComment);

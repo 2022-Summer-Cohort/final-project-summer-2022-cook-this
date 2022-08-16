@@ -12,7 +12,7 @@ export default function dummyRecipeView(recipe){
         </div>
 
         <figure class="recipe-image">
-            <img src="${recipe.picOfDish}" class="img-fluid" alt="Picture of ${recipe.name}">
+            <img src="${recipe.picOfDish}" class="img-fluid align-self-center" alt="Picture of ${recipe.name}">
         </figure>
 
         <section id="ingredients">

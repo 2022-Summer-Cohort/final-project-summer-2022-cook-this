@@ -28,16 +28,16 @@ Content-Type: application/json
 GET http://localhost:8080/api/recipes/5/steps
 
 ### Add a comment to a recipe WORKS
-POST http://localhost:8080/api/recipes/5/addComment
+PATCH http://localhost:8080/api/recipes/5/addComment
 Content-Type: application/json
 
-{"author":"x","content":"blah","ratings":3.8}
+{"author":"x","content":"blah","rating":3.8}
 
 ### Add recipe WORKS
 POST http://localhost:8080/api/recipe
 Content-Type: application/json
 
-{"name":"Blah","steps":[],"picOfDish":"","categories":[],"ingredients":[],"comments":[],"avgRating":9.8}
+{"name":"Blah","steps":[],"picOfDish":"","categories":["Budget"],"ingredients":[],"reviews":[],"avgRating":9.8}
 
 ### Add step to recipe WORKS
 POST http://localhost:8080/api/recipes/5/addSteps
@@ -50,7 +50,7 @@ Content-Type: application/json
 POST http://localhost:8080/api/recipe
 Content-Type: application/json
 
-{"name": "Best Dish Ever", "steps":[],"picOfDish":"","categories":[],"ingredients":[],"comments":[]}
+{"name": "Best Dish Ever", "steps":[],"picOfDish":"","categories":[{"id":1,"title":"Budget"}],"ingredients":[],"reviews":[]}
 
 ### Change recipe name by id  WORKS
 PATCH http://localhost:8080/api/recipe/5/name

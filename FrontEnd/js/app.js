@@ -192,15 +192,54 @@ function makeSingleCategoryView(categoryId) {
 		.catch((err) => console.error(err));
 }
 
-function makeRecipeView(recipeId) {
-	const rightPageContainer = document.querySelector('#recipe-page');
-	fetch(`http://localhost:8080/api/recipes/${recipeId}`)
-		.then((res) => res.json())
-		.then((recipeBuild) => {
-			console.log(recipeBuild);
-			rightPageContainer.innerHTML = singleRecipeView(recipeBuild);
-		})
-		.catch((err) => console.error(err));
+function makeRecipeView(recipeId){
+    const rightPageContainer = document.querySelector("#recipe-page")
+    fetch(`http://localhost:8080/api/recipes/${recipeId}`)
+    .then(res=>res.json())
+    .then(recipeBuild => {
+        console.log(recipeBuild);
+        rightPageContainer.innerHTML = singleRecipeView(recipeBuild);
+
+        const reviewAuthor = container.querySelector("#author-input")
+        const reviewRating = container.querySelector("#rating-input")
+        const reviewContent = container.querySelector("#review-content")
+        const submitReviewBtn = container.querySelector("#submitReview");
+        submitReviewBtn.addEventListener("click", () => {
+            const newRecipeReview ={
+                "author": reviewAuthor.value,
+                "content": reviewContent.value,
+                "rating": reviewRating.value
+            }
+            fetch(`http://localhost:8080/api/recipes/${recipeBuild.id}/addComment`,
+            {method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newRecipeReview)}
+            )
+
+            .then(res => res.json())
+            .then(reviewToSubmit => {
+                console.log(reviewToSubmit);
+                const reviewsList = document.querySelector(".reviews-list")
+                reviewsList.innerHTML += `
+                <div id="reviews-content">
+                <h6 class="text-start">${reviewAuthor.value} <span class="avgRating">
+            ${reviewRating.value} &starf;</span>
+             </h6>
+             <p class="text-start">
+                ${reviewContent.value}
+             </p>
+            <div class="hr-short"><hr/></div>
+        </div>`
+                
+            })
+        })
+    })
+    .catch(err => console.error(err))
+
+   
+    
 }
 
 function makeSingleVideoView(videoId) {
@@ -224,47 +263,119 @@ function makeLearnView() {
 	});
 }
 
-function makeNewRecipeView() {
-	container.innerHTML = newRecipeView();
-	container.innerHTML += makeFooter();
-	tabLinks();
+function makeNewRecipeView(){
+    fetch(`http://localhost:8080/api/categories/`)
+    .then(res=>res.json())
+    .then(categoriesList => {
+    container.innerHTML = newRecipeView(categoriesList);
+    container.innerHTML += makeFooter();
+    tabLinks();
+    
 
-	const dummyRecipeBtn = document.querySelector('#add-new-recipe');
-	const newNameIn = document.querySelector('#recipe-name-in');
-	const newImgURL = document.querySelector('#img-url-in');
-	const newIngredientIn = document.querySelector('#ingredient-in');
-	const newMeasurementIn = document.querySelector('#measurement-in');
-	const newStepIn = document.querySelector('#step-in');
-	const categoryIn = document.querySelector('#category-in');
-	const rightPageContainer = document.querySelector('.right-page');
-	dummyRecipeBtn.addEventListener('click', () => {
-		rightPageContainer.innerHTML = submitRecipeBtn();
-		let dummyRecipe = {
-			name: newNameIn.value,
-			picOfDish: newImgURL.value,
-			steps: [ { instructions: newStepIn.value } ],
-			ingredients: [
-				{
-					name: newIngredientIn.value,
-					imageUrl: '',
-					description: '',
-					ingredientMeasurement: newMeasurementIn.value,
-					spiceLevel: 0,
-					recipe: null
-				}
-			],
-			categories: [
-				{
-					title: categoryIn.value
-				}
-			],
-			reviews: null
-		};
-		console.log(dummyRecipe);
-		rightPageContainer.innerHTML += dummyRecipeView(dummyRecipe);
-	});
-	const submitNewRecipeBtn = document.querySelector('#submit-new-recipe');
-	submitNewRecipeBtn.addEventListener('click', () => {});
+    const ingredientInEL = document.querySelector(".extra-ingredients")
+    const addIngredientBtn = document.querySelector("#add-ingredient-button")
+    addIngredientBtn.addEventListener("click", () => {
+        const newIngredientInput = document.createElement("input")
+        ingredientInEL.appendChild(newIngredientInput)
+        newIngredientInput.outerHTML = `
+         <div class="input-group ingredients">  
+             <input type="text" aria-label="Ingredient input" placeholder="ie. Lemon juice" class="form-control ingredient-in"> 
+            <input type="text" aria-label="Measurement input" placeholder="ie. 1 cup" class="form-control measurement-in">
+         </div>
+         `
+    })
+
+    const stepInEL = document.querySelector(".extra-steps")
+    const addStepBtn = document.querySelector("#add-step-button")
+    addStepBtn.addEventListener("click", () => {
+        const newStepInput = document.createElement("input")
+        stepInEL.appendChild(newStepInput)
+        newStepInput.outerHTML =  
+        `
+        <input type="text" placeholder="Step 1..." class="form-control mb-1 step-in" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        `
+    })
+
+    const dummyRecipeBtn = document.querySelector("#add-new-recipe")
+    const newNameIn=document.querySelector("#recipe-name-in")
+    const newImgURL=document.querySelector("#img-url-in")
+    const newIngredientIn=document.querySelector(".ingredient-in")
+    const newMeasurementIn=document.querySelector(".measurement-in")
+    const newStepIn=document.querySelector(".step-in")
+    const categoryIn=document.querySelector("#category-in")
+    const rightPageContainer = document.querySelector(".right-page")
+    dummyRecipeBtn.addEventListener("click", ()=>{
+        
+        const stepEls = document.querySelectorAll(".step-in");
+        let stepArray = [];
+        stepEls.forEach(stepEls => {
+            stepArray.push({"instructions": stepEls.value})
+        })
+        const ingredientsDivs = document.querySelectorAll(".ingredients")
+        let ingedientArray = [];
+        
+        ingredientsDivs.forEach(ingredientDiv => {
+            const ingedientEl = ingredientDiv.querySelector(".ingredient-in")
+        const measurementEl = ingredientDiv.querySelector(".measurement-in")
+            ingedientArray.push(
+                {
+                    "name":ingedientEl.value,
+                    "imageUrl":"",
+                    "description":"",
+                    "ingredientMeasurement":measurementEl.value,
+                    "spiceLevel":0,
+                    "recipe":null
+                })
+            
+        })
+
+        // const measurementEls = document.querySelectorAll(".measurement-in")
+
+        rightPageContainer.innerHTML = submitRecipeBtn();
+        let dummyRecipe = {
+            "name":newNameIn.value,
+            "picOfDish":newImgURL.value,
+            "steps":stepArray,
+            "ingredients":ingedientArray,
+            "categories":[{
+                "id": categoryIn.value,
+            }],
+            "reviews":[]
+        }
+        console.log(dummyRecipe);
+        rightPageContainer.innerHTML+=dummyRecipeView(dummyRecipe);
+
+
+        const submitNewRecipeBtn = document.querySelector("#submit-new-recipe")
+        submitNewRecipeBtn.addEventListener("click", ()=>{
+            const newRecipe = dummyRecipe;
+            fetch(`http://localhost:8080/api/recipe`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(newRecipe)
+            })
+            .then(res => res.json())
+            .then(newRecipe => {
+                fetch(`http://localhost:8080/api/categories/${categoryIn.value}/${newRecipe.id}`,{
+                    method: 'PATCH',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                .then(res => res.json())
+                .then(recipeSubmitted => {
+                    console.log(recipeSubmitted);
+                    makeSingleCategoryView(categoryIn.value);
+                    makeRecipeView(recipeSubmitted.id);
+                } )
+        })
+        
+    })
+    })
+   
+})
 }
 
 // }
