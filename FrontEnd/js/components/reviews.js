@@ -11,19 +11,21 @@ export default function reviewsModal(recipe){
                 <div class="modal-body text-center">
                         <section id="new-review">
                             <h6>Create New Review</h6>
-                            <div class="row">
-                                <div class="col-8">
-                                    <input type="text" class="form-control" id="author-input" placeholder="Author Name ie. Lex Smith"/>
+                            <form class="review-form">
+                                <div class="row">
+                                    <div class="col-8">
+                                        <input required type="text" class="form-control" id="author-input" placeholder="Author Name ie. Lex Smith"/>
+                                    </div>
+                                    <div class="col d-flex">
+                                        <span>Rating:</span><input required type="number" class="form-control text-end" id="rating-input" min="1" max="5" placeholder="Rating"/>
+                                    </div>
                                 </div>
-                                <div class="col d-flex">
-                                    <span>Rating:</span><input type="number" class="form-control text-end" id="rating-input" min="1" max="5" placeholder="Rating"/>
-                                </div>
-                            </div>
-                                <div class="mb-3" id="review-content-input">
-                                    <label for="review-content" class="form-label">Write your review below:</label>
-                                    <textarea class="form-control" id="review-content" rows="3"></textarea>
-                                </div>
-                                <button id="submitReview" class="btn btn-secondary">Submit</button>
+                                    <div class="mb-3" id="review-content-input">
+                                        <label for="review-content" class="form-label">Write your review below:</label>
+                                        <textarea required class="form-control" id="review-content" rows="3"></textarea>
+                                    </div>
+                                    <button type="submit" id="submitReview" class="btn btn-secondary">Submit</button>
+                            </form>
                         </section>
                         <hr/>
                         <div class="reviews-list">

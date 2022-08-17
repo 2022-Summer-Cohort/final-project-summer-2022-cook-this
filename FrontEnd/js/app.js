@@ -202,8 +202,11 @@ function makeRecipeView(recipeId){
         const reviewAuthor = container.querySelector("#author-input")
         const reviewRating = container.querySelector("#rating-input")
         const reviewContent = container.querySelector("#review-content")
-        const submitReviewBtn = container.querySelector("#submitReview");
-        submitReviewBtn.addEventListener("click", () => {
+        // const submitReviewBtn = container.querySelector("#submitReview");
+
+		let reviewForm = document.querySelector(".review-form");
+		reviewForm.addEventListener('submit', handleForm);
+        reviewForm.addEventListener("submit", () => {
             const newRecipeReview ={
                 "author": reviewAuthor.value,
                 "content": reviewContent.value,
@@ -222,16 +225,15 @@ function makeRecipeView(recipeId){
                 console.log(reviewToSubmit);
                 const reviewsList = document.querySelector(".reviews-list")
                 reviewsList.innerHTML += `
-                    <div id="reviews-content">
-                        <h6 class="text-start">${reviewAuthor.value} <span class="avgRating">
-                            ${reviewRating.value} &starf;</span>
-                        </h6>
-                        <p class="text-start">
-                            ${reviewContent.value}
-                        </p>
-                        <div class="hr-short"><hr/></div>
-                    </div>
-                `
+                <div id="reviews-content">
+                <h6 class="text-start">${reviewAuthor.value} <span class="avgRating">
+            ${reviewRating.value} &starf;</span>
+             </h6>
+             <p class="text-start">
+                ${reviewContent.value}
+             </p>
+            <div class="hr-short"><hr/></div>
+        </div>`
                 
             })
         })
@@ -270,10 +272,12 @@ function makeNewRecipeView(){
     container.innerHTML = newRecipeView(categoriesList);
     container.innerHTML += makeFooter();
     tabLinks();
-    
+    let recipeForm = document.querySelector(".new-recipe-form");
+	recipeForm.addEventListener('submit', handleForm);
 
     const ingredientInEL = document.querySelector(".extra-ingredients")
     const addIngredientBtn = document.querySelector("#add-ingredient-button")
+	
     addIngredientBtn.addEventListener("click", () => {
         const newIngredientInput = document.createElement("input")
         ingredientInEL.appendChild(newIngredientInput)
@@ -299,21 +303,16 @@ function makeNewRecipeView(){
     const dummyRecipeBtn = document.querySelector("#add-new-recipe")
     const newNameIn=document.querySelector("#recipe-name-in")
     const newImgURL=document.querySelector("#img-url-in")
-    const newIngredientIn=document.querySelector(".ingredient-in")
-    const newMeasurementIn=document.querySelector(".measurement-in")
-    const newStepIn=document.querySelector(".step-in")
     const categoryIn=document.querySelector("#category-in")
     const rightPageContainer = document.querySelector(".right-page")
-    dummyRecipeBtn.addEventListener("click", ()=>{
+    recipeForm.addEventListener("submit", ()=>{
         
-        const stepEls = document.querySelectorAll(".step-in");
-        let stepArray = [];
-        stepEls.forEach(stepEls => {
-            stepArray.push({"instructions": stepEls.value})
-        })
-        const ingredientsDivs = document.querySelectorAll(".ingredients")
+		const ingredientsDivs = document.querySelectorAll(".ingredients")
         let ingedientArray = [];
-        
+		if(ingredientsDivs == ""){
+			alert("Please enter at least one ingredient and measurement")
+		}
+		else{
         ingredientsDivs.forEach(ingredientDiv => {
             const ingedientEl = ingredientDiv.querySelector(".ingredient-in")
         const measurementEl = ingredientDiv.querySelector(".measurement-in")
@@ -327,7 +326,19 @@ function makeNewRecipeView(){
                     "recipe":null
                 })
             
-        })
+        })}
+
+        const stepEls = document.querySelectorAll(".step-in");
+        let stepArray = [];
+		if(stepEls == ""){
+			alert("Please enter at least one step!")
+		}
+		else{
+        stepEls.forEach(stepEls => {
+            stepArray.push({"instructions": stepEls.value})
+        }
+		)}
+        
 
         // const measurementEls = document.querySelectorAll(".measurement-in")
 
@@ -377,6 +388,8 @@ function makeNewRecipeView(){
    
 })
 }
+
+function handleForm(event) { event.preventDefault(); } 
 
 // }
 
