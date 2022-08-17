@@ -15,7 +15,7 @@ export default function allCategoriesView(categories){
                   <div class="card  recipe-cards text-center category-cards" > 
                   <input class="category-id" type="hidden" value="${category.id}">
                     <a class="category-btn">
-                      <img src="/images/ApplePie.jpg" class="card-img-top" alt="Delicious Apple Pie" />
+                      <img src="${category.imageUrl}" class="card-img-top" alt="Image of Category" />
                       <div class="card-body">
                         <h5 class="card-title">${category.title}</h5>
                         <p class="card-text">See all  ${category.title} recipes</p>

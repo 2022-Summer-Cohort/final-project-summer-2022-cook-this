@@ -28,10 +28,10 @@ Content-Type: application/json
 GET http://localhost:8080/api/recipes/5/steps
 
 ### Add a comment to a recipe WORKS
-POST http://localhost:8080/api/recipes/5/addComment
+PATCH http://localhost:8080/api/recipes/5/addComment
 Content-Type: application/json
 
-{"author":"x","content":"blah","ratings":3.8}
+{"author":"x","content":"blah","rating":3.8}
 
 ### Add recipe WORKS
 POST http://localhost:8080/api/recipe

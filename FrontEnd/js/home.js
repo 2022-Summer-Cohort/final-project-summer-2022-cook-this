@@ -6,9 +6,9 @@ export default function homeView() {
                 <img id="closed-book-image-spec" src="/images/COOKBOOKCOVER-SMALLERFONT.png" alt="Cook This Book Cover">
             </div>
             <nav class="book-tabs-cover">
-                <a href="#" class="side-tabs nav-tabs-0">
-                    <img src="/images/search-icon.png" alt="search icon" id="search-tab">
-                  </a>
+            <a id="search-btn" class="side-tabs nav-tabs-0">
+            <img src="/images/search-icon.png" alt="search icon" id="search-tab"/>
+            </a>
                 <a class="side-tabs nav-tabs-1" id="categories-btn">
                     <h2>Categories</h2>
                 </a>

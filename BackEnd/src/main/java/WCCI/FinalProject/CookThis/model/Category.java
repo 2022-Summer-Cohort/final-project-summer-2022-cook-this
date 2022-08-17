@@ -14,12 +14,13 @@ public class Category {
     @GeneratedValue
     private Long id;
     private String title;
+    private String imageUrl;
     @ManyToMany(mappedBy = "categories")
     private Collection<Recipe> recipes;
 
-    public Category(String title) {
+    public Category(String title, String imageUrl) {
         this.title = title;
-
+        this.imageUrl = imageUrl;
     }
     public Category() {
     }
@@ -30,6 +31,11 @@ public class Category {
     public String getTitle() {
         return title;
     }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
     public Collection<Recipe> getRecipes() {
         return recipes;
     }

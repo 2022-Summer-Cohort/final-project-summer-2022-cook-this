@@ -4939,3 +4939,12 @@ call next value for hibernate_sequence [90036-214]
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+2022-08-16 14:09:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'https://images.squarespace-cdn.com/content/v1/55370317e4b047f1053ee431/15518968... (336)"; SQL statement:
+insert into ingredient (description, image_url, ingredient_measurement, name, recipe_id, spice_level, spice_peppers, id) values (?, ?, ?, ?, ?, ?, ?, ?) [22001-214]
+2022-08-16 14:09:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'https://images.squarespace-cdn.com/content/v1/55370317e4b047f1053ee431/15518968... (336)"; SQL statement:
+insert into ingredient (description, image_url, ingredient_measurement, name, recipe_id, spice_level, spice_peppers, id) values (?, ?, ?, ?, ?, ?, ?, ?) [22001-214]
+2022-08-16 14:36:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'https://www.seriouseats.com/thmb/Wwjm9RXsiv3Ht1BFwZo9U_GGRrQ=/1500x844/smart/fi... (274)"; SQL statement:
+insert into ingredient (description, image_url, ingredient_measurement, name, recipe_id, spice_level, spice_peppers, id) values (?, ?, ?, ?, ?, ?, ?, ?) [22001-214]
