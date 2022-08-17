@@ -45,6 +45,9 @@ public class RecipeController {
     @PatchMapping("api/recipes/{id}/addComment")
     public Recipe recipeToAddCommentTo(@RequestBody Review newComment, @PathVariable Long id) {
         Recipe recipeToChange = recipeRepo.findById(id).get();
+        if(newComment.getRating() == null){
+            newComment.setRating(5.0);
+        }
         recipeToChange.addReview(newComment);
         recipeRepo.save(recipeToChange);
         return recipeToChange;
