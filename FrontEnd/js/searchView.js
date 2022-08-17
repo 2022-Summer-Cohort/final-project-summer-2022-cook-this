@@ -3,27 +3,24 @@ import makeSearchBar from './components/searchBar.js';
 export default function searchView(Recipes) {
 	return `
 <div class="container">
-<div id="open-border">
-    <div id="open-book">
-        <section class="left-page">
+        <div id="open-border">
+            <div id="open-book">
+                <section class="left-page">
+                    <h1>Search Recipes</h1>
+                    <br>
+                    ${makeSearchBar(Recipes)}
+                    
+                </section>
 
-            <h1>Search</h1>
-            <br>
-            <div class="left-page-flex">
-            <section class="recipe-list">
-               ${makeSearchBar(Recipes)}
-            </section>
+                <section class="right-page d-flex flex-column align-items-center" id="recipe-page">
+            
+                </section>   
             </div>
-        </section>
-
-        <section class="right-page d-flex flex-column align-items-center" id="recipe-page">
+        
+            <nav class="book-tabs">
+                ${openBookTabs()}
+            </nav>
         </div>
-    </section>
-   
-    <nav class="book-tabs">
-      ${openBookTabs()}
-    </nav>
-</div>
-</div>
-`;
+    </div>
+`
 }
