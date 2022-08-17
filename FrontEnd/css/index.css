@@ -92,7 +92,11 @@ h1{
 }
 .nav-tabs-0{
     height: 50px;
-    background-color: rgb(250, 234, 212);;
+    background-color: rgb(250, 234, 212);
+    box-shadow: none;
+}
+.nav-tabs-1{
+    background-color: (219, 187, 146);
 }
 .nav-tabs-2{
     background-color:rgb(219, 187, 146);
@@ -104,7 +108,7 @@ h1{
     background-color:rgb(185, 155, 121);
 }
 .nav-tabs-5{
-    background-color:rgb(167, 145, 118);
+    background-color:rgb(164, 138, 107);
 }
 /* Open Book Pages */
 @media screen and (max-width:1400px){
