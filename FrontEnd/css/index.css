@@ -291,7 +291,6 @@ h2{
 }
 /* Right Page: Learn */
 #video-text{
-
     width: 80%;
 }
 .video-flex{
@@ -306,7 +305,23 @@ h2{
 .video-frame-height{
     height: 300px;
 }
-
+/* Right Page: Devs */
+#dev-card-flex{
+    height: 91%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+.dev-cards{ 
+    max-width: 40%;
+}
+.dev-card-img{
+    height: 100px;
+}
+.dev-cards h5{
+    margin:0px;
+}
 /* footer */
 footer {
     background-color: #59433E;
@@ -339,6 +354,12 @@ footer {
 .dev-info{
     display: flex;
     flex-direction: column;
+}
+.tagline{
+    font-size: .8rem;
+}
+.social-icon:hover{
+    transform: scale(1.1);
 }
 /* //search-bar */
 :root{

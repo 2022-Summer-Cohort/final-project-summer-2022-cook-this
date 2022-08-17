@@ -33,8 +33,3 @@ return `
 
 `
 } 
-
-
-// <i class="fa-solid fa-microphone-lines"></i><i
-//             class="fa fa-search" 
-//              aria-label="submit search" ></i>
