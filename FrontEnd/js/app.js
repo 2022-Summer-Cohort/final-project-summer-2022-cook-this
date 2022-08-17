@@ -69,12 +69,11 @@ function makeSearchView() {
 				const list = document.getElementById('listRecipes');
 				clearList();
 				for (const recipe of group) {
-					const item = document.createElement('li');
-					item.classList.add('list-group-item');
+					const item = document.createElement('a');
+					item.classList.add('recipe-list-item');
 					const text = document.createTextNode(recipe.name);
 					item.appendChild(text);
 					list.appendChild(item);
-
                     list.addEventListener('click', () => {
                         makeRecipeView(recipe.id);
                         
@@ -93,8 +92,8 @@ function makeSearchView() {
 			}
 			function setNoResult() {
 				const list = document.getElementById('listRecipes');
-				const item = document.createElement('li');
-				item.classList.add('list-group-item');
+				const item = document.createElement('a');
+				item.classList.add('recipe-list-item');
 				const text = document.createTextNode(recipeToSearch.name);
 				item.appendChild(text);
 				list.appendChild(item);
@@ -225,7 +224,7 @@ function makeRecipeView(recipeId){
             .then(reviewToSubmit => {
                 console.log(reviewToSubmit);
                 const reviewsList = document.querySelector(".reviews-list")
-				reviewsList.innerHTML += `
+                reviewsList.innerHTML += `
                 <div id="reviews-content">
                 <h6 class="text-start">${reviewAuthor.value} <span class="avgRating">
             ${reviewRating.value} &starf;</span>
