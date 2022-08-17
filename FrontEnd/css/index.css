@@ -20,6 +20,25 @@ body{
 #login-password-group {
     width: 40%;
 }
+#favorite-heart{
+    color: red;
+}
+.btn-link {
+    outline: none;
+    color:red;
+}
+.btn-link:focus {
+    outline: none;
+    color:red;
+}
+.btn-link:active {
+    outline: none;
+    color:red;
+}
+.btn-link:hover {
+    outline: none;
+    color:rgb(233, 119, 119);
+}
 .container{
     margin-top: 1%;
     margin-bottom: 5%;
