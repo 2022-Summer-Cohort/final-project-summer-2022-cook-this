@@ -106,7 +106,7 @@ h1{
 .nav-tabs-login-home {
     background-color: rgb(228, 205, 173);
     height: 55px;
-
+    z-index: 1;
 }
 .nav-tabs-login{
     height: 50px;
@@ -348,6 +348,9 @@ footer {
 }
 .modal-footer{
     background-color: #BF6002;
+}
+.modal {
+    z-index: 9999999999999;
 }
 .dev-btn:hover{
     cursor: pointer;
