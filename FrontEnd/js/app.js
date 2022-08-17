@@ -165,7 +165,7 @@ function makeAllCategoriesView() {
 				categoryBtn.addEventListener('click', () => {
 					makeSingleCategoryView(categoryIdEl.value);
 				});
-			});
+			});  
 		})
 		.catch((err) => console.error(err));
 }
@@ -300,9 +300,14 @@ function makeNewRecipeView(){
         `
     })
 
+	let newImgURL=document.querySelector("#img-url-in")
+const submitUpload = document.querySelector("#submit-upload-image")
+submitUpload.addEventListener("click", () => {
+newImgURL = document.querySelector("#myFile");
+})
+
     const dummyRecipeBtn = document.querySelector("#add-new-recipe")
     const newNameIn=document.querySelector("#recipe-name-in")
-    const newImgURL=document.querySelector("#img-url-in")
     const categoryIn=document.querySelector("#category-in")
     const rightPageContainer = document.querySelector(".right-page")
     recipeForm.addEventListener("submit", ()=>{
@@ -384,6 +389,8 @@ function makeNewRecipeView(){
         })
         
     })
+
+	
     })
    
 })
