@@ -16,7 +16,7 @@ export default function reviewsModal(recipe){
                                     <input type="text" class="form-control" id="author-input" placeholder="Author Name ie. Lex Smith"/>
                                 </div>
                                 <div class="col d-flex">
-                                    <span>Rating:</span><input type="number" class="form-control text-end" id="rating-input" min="1" max="5" placeholder="5"/>
+                                    <span>Rating:</span><input type="number" class="form-control text-end" id="rating-input" min="1" max="5" placeholder="Rating"/>
                                 </div>
                             </div>
                                 <div class="mb-3" id="review-content-input">
