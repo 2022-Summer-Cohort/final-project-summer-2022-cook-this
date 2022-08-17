@@ -9,11 +9,16 @@ body{
     background-image: url(/images/countertopBackground.jpg);
     background-size: cover;
 }
+
 #login-button {
-    position: absolute;
+    /* position: absolute; */
+    z-index:999999;
 }
 #login-logo {
     width: 20%;
+}
+#login-password-group {
+    width: 40%;
 }
 .container{
     margin-top: 1%;
@@ -96,7 +101,19 @@ h1{
 }
 .nav-tabs-0{
     height: 50px;
-    background-color: rgb(250, 234, 212);;
+    background-color: rgb(250, 234, 212);
+}
+.nav-tabs-login-home {
+    background-color: rgb(228, 205, 173);
+    height: 55px;
+
+}
+.nav-tabs-login{
+    height: 50px;
+    background-color:rgb(244, 223, 195);
+}
+.nav-tabs-1 {
+    height: 60px;
 }
 .nav-tabs-2{
     background-color:rgb(219, 187, 146);
