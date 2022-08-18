@@ -1,6 +1,6 @@
 export default function makeSearchBar(recipes){
 return `
-<h5>click below to search</h5>
+<h5>Click below to search</h5>
 <div class="search-bar mb-3">
         
         <input id="search777" type="text" 
