@@ -3,7 +3,13 @@ import reviewsModal from "./components/reviews.js"
 export default function singleRecipeView(recipe) {
     return `
         <div id="title">
-            <h1 class="title-header">${recipe.name}</h1>
+            <div class="title-heart-flex">
+                <h1 class="title-header">${recipe.name}</h1>
+                <a id="favorite-heart" type="button" class="btn btn-link heart-btn">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="favorite-tip">Add to Favorites</span>
+                </a>
+            </div>
 
             <button type="button" class="btn btn-light reviews-btn" data-bs-toggle="modal"
                 data-bs-target="#staticBackdrop">

@@ -11,36 +11,10 @@ import newRecipeView from './createRecipe.js';
 import submitRecipeBtn from './components/SubmitRecipeBtn.js';
 import dummyRecipeView from './components/dummyRecipeView.js';
 import searchView from './searchView.js';
+import loginEyes from './components/loginEyes.js';
 
 const container = document.querySelector('#anchor');
 
-function tabLinks() {
-	const searchViewBtn = document.querySelector('#search-btn');
-	const homeBtn = document.querySelector('#home-btn');
-	const categoriesBtn = document.querySelector('#categories-btn');
-	const ingredientsBtn = document.querySelector('#ingredients-btn');
-	const newRecipeBtn = document.querySelector('#new-recipe-btn');
-	const learnBtn = document.querySelector('#learn-btn');
-
-	searchViewBtn.addEventListener('click', () => {
-		makeSearchView();
-	});
-	homeBtn.addEventListener('click', () => {
-		makeHomeView();
-	});
-	categoriesBtn.addEventListener('click', () => {
-		makeAllCategoriesView();
-	});
-	ingredientsBtn.addEventListener('click', () => {
-		makeAllIngredients();
-	});
-	newRecipeBtn.addEventListener('click', () => {
-		makeNewRecipeView();
-	});
-	learnBtn.addEventListener('click', () => {
-		makeLearnView();
-	});
-}
 
 function makeHomeView() {
 	container.innerHTML = homeView();
@@ -67,6 +41,14 @@ function makeSearchView() {
 				})
 			];
 
+			const recipeCardEl = document.querySelectorAll('.recipe-cards');
+			recipeCardEl.forEach((recipe) => {
+				const recipeBtn = recipe.querySelector('.recipe-btn');
+				const recipeIdEl = recipe.querySelector('.recipe-id');
+				recipeBtn.addEventListener('click', () => {
+					makeRecipeView(recipeIdEl.value);
+				});
+			});
 
 			function setList(group) {
 				const list = document.getElementById('listRecipes');
@@ -212,8 +194,17 @@ function makeRecipeView(recipeId){
         const reviewAuthor = container.querySelector("#author-input")
         const reviewRating = container.querySelector("#rating-input")
         const reviewContent = container.querySelector("#review-content")
+		const heartBtn = container.querySelector(".fa-heart");
         // const submitReviewBtn = container.querySelector("#submitReview");
-
+		heartBtn.addEventListener("click", () => {
+			if(heartBtn.classList.contains("fa-regular")){
+				heartBtn.classList.remove("fa-regular");
+				heartBtn.classList.add("fa-solid")
+			}else{
+				heartBtn.classList.remove("fa-solid");
+				heartBtn.classList.add("fa-regular");
+			}
+		})
 		let reviewForm = document.querySelector(".review-form");
 		reviewForm.addEventListener('submit', handleForm);
         reviewForm.addEventListener("submit", () => {

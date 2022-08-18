@@ -30,9 +30,8 @@ body{
     padding: 5px 0;
     font-size: 10pt;
     text-align: center;
-    position:absolute;
+    position:sticky;
     z-index: 1;
-    right: 18%;
 }
 .heart-btn:hover .favorite-tip{
     visibility: visible;
@@ -60,6 +59,7 @@ body{
 }
 .fa-heart{
     transform: scale(1.25);
+    margin-right: 10px;
 
 }
 .fa-heart:hover {
