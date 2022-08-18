@@ -4,7 +4,7 @@ export default function singleRecipeView(recipe) {
     return `
         <div id="title">
             <div class="title-heart-flex">
-                <h1 class="title-header">${recipe.name}&nbsp;</h1>
+                <h1 class="title-header">${recipe.name}</h1>
                 <a id="favorite-heart" type="button" class="btn btn-link heart-btn">
                     <i class="fa-regular fa-heart"></i>
                     <span class="favorite-tip">Add to Favorites</span>
