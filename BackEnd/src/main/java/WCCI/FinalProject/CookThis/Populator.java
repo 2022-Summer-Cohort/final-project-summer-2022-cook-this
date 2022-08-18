@@ -262,6 +262,8 @@ public class Populator implements CommandLineRunner {
         Review tofuReview1 = new Review("Zak","Delicious",4.3);
         recipe6.addReview(tofuReview1);
         recipeRepo.save(recipe6);
+
+        SiteUser pwbarbosa = new SiteUser("pwbarbosa","pwbarbosa@gmail.com","IcancodeIT123!","Pedro","Barbosa");
     }
 
 
