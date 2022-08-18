@@ -11,9 +11,12 @@ import newRecipeView from './createRecipe.js';
 import submitRecipeBtn from './components/SubmitRecipeBtn.js';
 import dummyRecipeView from './components/dummyRecipeView.js';
 import searchView from './searchView.js';
+import tabLinks from './tabLinks.js';
+import loginModal from './components/loginModal.js';
 import loginEyes from './components/loginEyes.js';
 
 const container = document.querySelector('#anchor');
+let currentUserName = "";
 
 
 function makeHomeView() {
@@ -29,7 +32,7 @@ function makeSearchView() {
 			console.log(recipes);
 			container.innerHTML = searchView(recipes);
 			container.innerHTML += makeFooter();
-			tabLinks();
+			tabLinks(); loginEyes()
 
 			const recipeToSearch = [
 				recipes.map((recipe) => {
