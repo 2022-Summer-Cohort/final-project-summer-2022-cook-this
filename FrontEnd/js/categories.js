@@ -34,7 +34,6 @@ export default function allCategoriesView(categories){
      </div>
      <nav class="book-tabs">
        ${openBookTabs()}
-     </nav>
    </div>
  </div>
 `}

@@ -58,7 +58,6 @@ return `
             </section>
             <nav class="book-tabs">
                 ${openBookTabs()}
-            </nav>
         </div>
     </div>
 

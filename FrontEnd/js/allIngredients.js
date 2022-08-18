@@ -36,7 +36,6 @@ export default function allIngredients(ingredients) {
 
             <nav class="book-tabs">
             ${openBookTabs()}
-            </nav>
             
         </div>
     </div>
