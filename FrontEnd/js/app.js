@@ -61,20 +61,27 @@ function makeSearchView() {
 				recipes.map((recipe) => {
 					{
 						name: 'recipe.name';
+						picOfDish:'recipe.picOfDish'
+
 					}
 				})
 			];
+
 
 			function setList(group) {
 				const list = document.getElementById('listRecipes');
 				clearList();
 				for (const recipe of group) {
 					const item = document.createElement('a');
-					item.classList.add('recipe-list-item');
+					item.classList.add('recipe-list-item','d-flex','flex-column','justify-content-center');
+
 					const text = document.createTextNode(recipe.name);
+					const imageUrl = document.createElement("img");
+					imageUrl.src=recipe.picOfDish;
 					item.appendChild(text);
+					item.appendChild(imageUrl);
 					list.appendChild(item);
-                    list.addEventListener('click', () => {
+                    item.addEventListener('click', () => {
                         makeRecipeView(recipe.id);
                         
                     });
@@ -91,17 +98,20 @@ function makeSearchView() {
 				}
 			}
 			function setNoResult() {
-				const list = document.getElementById('listRecipes');
-				const item = document.createElement('a');
-				item.classList.add('recipe-list-item');
-				const text = document.createTextNode(recipeToSearch.name);
-				item.appendChild(text);
-				list.appendChild(item);
+				// const list = document.getElementById('listRecipes');
+				// const item = document.createElement('a');
+				// item.classList.add('recipe-list-item');
+				// const text = document.createTextNode(recipeToSearch.name);
+				// const imageUrl = document.createElement("img");
+				// imageUrl.src=recipes.picOfDish;
+				// item.appendChild(text);
+				// item.appendChild(imageUrl);
+				// list.appendChild(item);
 			}
 
 
 			const searchIN = document.getElementById('search777');
-
+			
 			searchIN.addEventListener('input', (event) => {
 				let value = event.target.value;
 				if (value && value.trim().length > 0) {
