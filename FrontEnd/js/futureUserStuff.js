@@ -4,6 +4,7 @@ const confirmPassField = document.querySelector("#confirm-password");
 const loginPassEye = document.querySelector("#lp-eye");
 const createPassEye = document.querySelector("#crp-eye");
 const confirmPassEye = document.querySelector("#cop-eye");
+const heartBtn = document.querySelector(".fa-heart");
 
 loginPassEye.addEventListener("click", () => {
     if(loginPassField.type === "password") {
@@ -50,5 +51,14 @@ confirmPassEye.addEventListener("click", () => {
         confirmPassEye.classList.add("fa-eye-slash");
     }
 });
+heartBtn.addEventListener("click", () => {
+    if(heartBtn.classList.contains("fa-regular")){
+        heartBtn.classList.remove("fa-regular");
+        heartBtn.classList.add("fa-solid")
+    }else{
+        heartBtn.classList.remove("fa-solid");
+        heartBtn.classList.add("fa-regular");
+    }
+})
 
 
