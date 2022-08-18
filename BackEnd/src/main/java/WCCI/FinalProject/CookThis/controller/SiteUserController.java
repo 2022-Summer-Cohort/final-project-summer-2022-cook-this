@@ -15,7 +15,19 @@ public class SiteUserController {
         this.siteUserRepo = siteUserRepo;
         this.recipeRepo = recipeRepo;
     }
-
+    @GetMapping("api/users")
+    public Iterable<SiteUser> getAllSiteUsers() {
+        return siteUserRepo.findAll();
+    }
+    @GetMapping("api/users/login")
+    public Boolean isUserValid(@RequestBody SiteUser siteUserToValidate){
+        for(SiteUser siteUser: siteUserRepo.findAll()){
+            if((siteUser.getUserName() == siteUserToValidate.getUserName() || siteUser.getEmailAddress() == siteUserToValidate.getUserName()) && siteUser.getPassword() == siteUserToValidate.getPassword()){
+                return true;
+            }
+        }
+        return false;
+    }
     @GetMapping("api/users/{userName}")
     public SiteUser getSiteUserByUserName(@PathVariable String userName) {
         return siteUserRepo.findByUserNameIgnoreCase(userName);
