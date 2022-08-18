@@ -1,5 +1,163 @@
-export default function makeFooter() {
-    return `
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Categories</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel=”stylesheet” href=”https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css” />
+    <link rel="stylesheet" href="/css/index.css" />
+    <script src="https://kit.fontawesome.com/893dddf7b4.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img id="login-logo" src="/images/cookThisPotLogo.png" />
+                    <h3 class="modal-title" id="staticBackdropLabel">&nbsp; Login or Create Account</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <section id="login">
+                        <h6>Login with Username or Email:</h6>
+                        <br>
+                        <div class="row">
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fa-solid fa-user fa-2x"></i></span>
+                                </div>
+                                <input type="text" class="form-control" id="author-input"
+                                    placeholder="Username or Email Address" />
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fa-solid fa-lock fa-2x"></i></span>
+                                </div>
+                                <input type="password" class="form-control input-group-append" id="login-password"
+                                    data-toggle="password" placeholder="Password" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i id="lp-eye" class="fa-solid fa-eye-slash fa-2x"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <button class="btn btn-secondary">Log In</button>
+                    </section>
+                    <hr />
+                    <section id="login">
+                        <h6>Create New Account:</h6>
+                        <br>
+                        <div class="row">
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fa-solid fa-user fa-2x"></i></span>
+                                </div>
+                                <input type="text" class="form-control" id="create-username" placeholder="Username" />
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fa-solid fa-lock fa-2x"></i></span>
+                                </div>
+                                <input type="password" class="form-control input-group-append" id="create-password"
+                                    data-toggle="password" placeholder="Password" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i id="crp-eye" class="fa-solid fa-eye-slash fa-2x"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fa-solid fa-lock fa-2x"></i></span>
+                                </div>
+                                <input type="password" class="form-control input-group-append" id="confirm-password"
+                                    data-toggle="password" placeholder="Confirm Password" />
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i id="cop-eye" class="fa-solid fa-eye-slash fa-2x"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fa-solid fa-envelope fa-2x"></i></span>
+                                </div>
+                                <input type="text" class="form-control" id="email-address"
+                                    placeholder="Email Address" />
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fa-solid fa-user fa-2x"></i></span>
+                                </div>
+                                <input type="text" class="form-control" id="first-name" placeholder="First Name" />
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fa-solid fa-user fa-2x"></i></span>
+                                </div>
+                                <input type="text" class="form-control" id="last-name" placeholder="Last Name" />
+                            </div>
+                        </div>
+                        <br>
+                        <button class="btn btn-secondary">Create Account</button>
+                    </section>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div id="closed-book">
+            <div id="closed-book-image">
+                <img id="closed-book-image-spec" src="/images/COOKBOOKCOVER-SMALLERFONT.png" alt="Cook This Book Cover">
+            </div>
+            <nav class="book-tabs-cover">
+                <a href="#" class="side-tabs nav-tabs-0">
+                    <img src="/images/search-icon.png" alt="search icon" id="search-tab">
+                </a>
+                <a id="login-button" class="side-tabs nav-tabs-login-home" data-bs-toggle="modal"
+                data-bs-target="#loginModal">
+                    Login
+                    <!-- <span class="review-tip ">Click to Login</span> -->
+                </a>
+                <a href="./categories.html" class="side-tabs nav-tabs-2" id="categories-btn">
+                    <h2>Categories</h2>
+                </a>
+                <a href="./learn.html" class="side-tabs nav-tabs-3" id="learn-btn">
+                    <h2>Learn to Cook!</h2>
+                </a>
+                <a href="./ingredients.html" class="side-tabs nav-tabs-4" id="ingredients-btn">
+                    <h2>Ingredient Info</h2>
+                </a>
+                <a href="#" class="side-tabs nav-tabs-5">
+                    <h2>Home</h2>
+                </a>
+            </nav>
+        </div>
+    </div>
+
     <footer class="container-fluid text-center" id="footer">
         <div class="row">
             <div class="col"></div>
@@ -31,6 +189,7 @@ export default function makeFooter() {
         </div>
 
     </footer>
+    <!-- Dev Modals -->
     <div class="modal fade" id="stein-popup" tabindex="-1" aria-labelledby="steinModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content text-center">
@@ -192,28 +351,14 @@ export default function makeFooter() {
             </div>
         </div>
     </div>
-    
-    <div class="modal fade" id="upload-image-popup" tabindex="-1" aria-labelledby="uploadImageModal" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content text-center">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="uploadImageModal">Upload Image</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body row align-items-center">
 
-                <input action="/action_page.php">
-                <input type="file" id="myFile" name="filename">
-                <input id="submit-upload-image" type="submit">
-              </input>
 
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    `
-}
+
+    <!-- <script src="/js/app.js" type="module"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <script src="/js/futureUserStuff.js"></script>
+</body>
+
+</html>

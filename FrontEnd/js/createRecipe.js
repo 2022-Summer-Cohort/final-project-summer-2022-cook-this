@@ -31,9 +31,8 @@ return `
                             </div>
                             <button class="btn btn-warning add-step-btn new-recipe-btns mb-3 align-self-start" id="add-step-button">Add Another Step</button>
                             Image:
-                                <input required id="img-url-in" type="text" placeholder="Image URL" class="form-control mb-1" aria-label="image url input" aria-describedby="inputGroup-sizing-default">
-                            <h6 class="text-center">or *Uploads Currently Disabled</h6>
-                            <button disabled class="btn btn-warning new-recipe-btns mb-3 align-self-center">Upload Image</button>
+                                <input required id="img-url-in" type="text" placeholder="Image URL" class="form-control mb-3" aria-label="image url input" aria-describedby="inputGroup-sizing-default">
+                            
                             <div class="input-group">
                                 <label class="input-group-text" for="category-in">Category:</label>
                                 <select required class="form-select" id="category-in">

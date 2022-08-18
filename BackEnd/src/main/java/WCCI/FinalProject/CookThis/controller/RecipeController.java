@@ -6,6 +6,7 @@ import WCCI.FinalProject.CookThis.model.Review;
 import WCCI.FinalProject.CookThis.model.Step;
 import WCCI.FinalProject.CookThis.repository.CategoryRepo;
 import WCCI.FinalProject.CookThis.repository.RecipeRepo;
+import WCCI.FinalProject.CookThis.repository.SiteUserRepo;
 import com.sun.xml.bind.XmlAccessorFactory;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,10 +16,12 @@ import java.util.Collection;
 public class RecipeController {
     private CategoryRepo categoryRepo;
     private RecipeRepo recipeRepo;
+    private SiteUserRepo siteUserRepo;
 
-    public RecipeController(CategoryRepo categoryRepo, RecipeRepo recipeRepo) {
+    public RecipeController(CategoryRepo categoryRepo, RecipeRepo recipeRepo, SiteUserRepo siteUserRepo) {
         this.categoryRepo = categoryRepo;
         this.recipeRepo = recipeRepo;
+        this.siteUserRepo = siteUserRepo;
     }
 
     @GetMapping("api/recipes")
@@ -123,6 +126,13 @@ public class RecipeController {
     public Iterable<Recipe> deleteRecipeById(@PathVariable Long id) {
         recipeRepo.deleteById(id);
         return recipeRepo.findAll();
+    }
+
+    @PatchMapping("api/recipes/{id}/makeFavorite")
+    public Iterable<Recipe> makeRecipeAUsersFavorite(@PathVariable Long id, @RequestBody Long siteUserId) {
+        siteUserRepo.findById(siteUserId).get().addFavoriteRecipe(recipeRepo.findById(id).get());
+        siteUserRepo.save(siteUserRepo.findById(id).get());
+        return siteUserRepo.findById(siteUserId).get().getFavoriteRecipes();
     }
 }
 //    @PatchMapping("/api/recipes/{id}/setIngredientMeasurment")
