@@ -482,7 +482,7 @@ footer {
     /* transition:backgrounds 150ms ease-in-out ; */
 }
 .search-bar:focus-within{ 
-    width: 100%;    
+    width: 90%;    
 }
 .search-bar__submit:focus-within{
     background-color:  rgb(231, 188, 130);
