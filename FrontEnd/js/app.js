@@ -60,7 +60,8 @@ function makeSearchView() {
 			const recipeToSearch = [
 				recipes.map((recipe) => {
 					{
-						name: 'recipe.name';
+						name: 'recipe.name',
+
 					}
 				})
 			];
