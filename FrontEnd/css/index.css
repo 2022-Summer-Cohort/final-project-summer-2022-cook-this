@@ -9,6 +9,9 @@ body{
     background-image: url(/images/countertopBackground.jpg);
     background-size: cover;
 }
+.eye:hover{
+    cursor: pointer;
+}
 #login-logo {
     width: 20%;
 }

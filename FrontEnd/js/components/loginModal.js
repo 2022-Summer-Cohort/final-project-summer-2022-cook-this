@@ -18,7 +18,7 @@ export default function loginModal() {
                                 <div class="input-group-append">
                                     <span class="input-group-text"><i class="fa-solid fa-user fa-2x"></i></span>
                                 </div>
-                                <input type="text" class="form-control" id="author-input"
+                                <input type="text" class="form-control" id="login-username-input"
                                     placeholder="Username or Email Address" />
                             </div>
                         </div>
@@ -28,15 +28,15 @@ export default function loginModal() {
                                 <div class="input-group-append">
                                     <span class="input-group-text"><i class="fa-solid fa-lock fa-2x"></i></span>
                                 </div>
-                                <input type="password" class="form-control input-group-append" id="login-password"
+                                <input type="password" value="" class="form-control input-group-append" id="login-password"
                                     data-toggle="password" placeholder="Password" />
                                 <div class="input-group-append">
-                                    <span class="input-group-text"><i id="lp-eye" class="fa-solid fa-eye-slash fa-2x"></i></span>
+                                    <span class="eye input-group-text"><i id="lp-eye" class="fa-solid fa-eye-slash fa-2x"></i></span>
                                 </div>
                             </div>
                         </div>
                         <br>
-                        <button class="btn btn-secondary">Log In</button>
+                        <button id="login-submit-btn" class="btn btn-secondary">Log In</button>
                     </section>
                     <hr>
                     <section id="login">
@@ -59,7 +59,7 @@ export default function loginModal() {
                                 <input type="password" class="form-control input-group-append" id="create-password"
                                     data-toggle="password" placeholder="Password" />
                                 <div class="input-group-append">
-                                    <span class="input-group-text"><i id="crp-eye" class="fa-solid fa-eye-slash fa-2x"></i></span>
+                                    <span class="eye input-group-text"><i id="crp-eye" class=" fa-solid fa-eye-slash fa-2x"></i></span>
                                 </div>
                             </div>
                         </div>
@@ -72,7 +72,7 @@ export default function loginModal() {
                                 <input type="password" class="form-control input-group-append" id="confirm-password"
                                     data-toggle="password" placeholder="Confirm Password" />
                                 <div class="input-group-append">
-                                    <span class="input-group-text"><i id="cop-eye" class="fa-solid fa-eye-slash fa-2x"></i></span>
+                                    <span class="eye input-group-text"><i id="cop-eye" class="fa-solid fa-eye-slash fa-2x"></i></span>
                                 </div>
                             </div>
                         </div>
