@@ -98,15 +98,15 @@ function makeSearchView() {
 				}
 			}
 			function setNoResult() {
-				const list = document.getElementById('listRecipes');
-				const item = document.createElement('a');
-				item.classList.add('recipe-list-item');
-				const text = document.createTextNode(recipeToSearch.name);
-				const imageUrl = document.createElement("img");
-				imageUrl.src=recipes.picOfDish;
-				item.appendChild(text);
-				item.appendChild(imageUrl);
-				list.appendChild(item);
+				// const list = document.getElementById('listRecipes');
+				// const item = document.createElement('a');
+				// item.classList.add('recipe-list-item');
+				// const text = document.createTextNode(recipeToSearch.name);
+				// const imageUrl = document.createElement("img");
+				// imageUrl.src=recipes.picOfDish;
+				// item.appendChild(text);
+				// item.appendChild(imageUrl);
+				// list.appendChild(item);
 			}
 
 
