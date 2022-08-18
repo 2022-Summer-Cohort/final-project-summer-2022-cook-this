@@ -220,8 +220,17 @@ function makeRecipeView(recipeId){
         const reviewAuthor = container.querySelector("#author-input")
         const reviewRating = container.querySelector("#rating-input")
         const reviewContent = container.querySelector("#review-content")
+		const heartBtn = container.querySelector(".fa-heart");
         // const submitReviewBtn = container.querySelector("#submitReview");
-
+		heartBtn.addEventListener("click", () => {
+			if(heartBtn.classList.contains("fa-regular")){
+				heartBtn.classList.remove("fa-regular");
+				heartBtn.classList.add("fa-solid")
+			}else{
+				heartBtn.classList.remove("fa-solid");
+				heartBtn.classList.add("fa-regular");
+			}
+		})
 		let reviewForm = document.querySelector(".review-form");
 		reviewForm.addEventListener('submit', handleForm);
         reviewForm.addEventListener("submit", () => {
