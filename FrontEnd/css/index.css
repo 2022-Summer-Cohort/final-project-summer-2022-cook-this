@@ -95,6 +95,12 @@ a:active{
 h1{
     text-align: center;
 }
+#pot-logo-about{
+    width: 30%;
+}
+.about-content{
+    padding: 0 3rem 0 1rem;
+}
 /* Home Page: Closed Book */
 #closed-book{
     display: flex;
@@ -205,7 +211,7 @@ h1{
     display: flex;
     width: 1300px;
 }
-/* Left Page: Single Category/Recipe list  */
+/* Left Page */
 .left-page{
     background-image: linear-gradient(to right, white 91%, rgba(0, 0, 0, 0.35));
     background-color: white;
@@ -216,16 +222,18 @@ h1{
     height: 91%;
     overflow-y: scroll;
 }
+.left-about-flex{
+    height: 80%;
+    overflow-y: scroll;
+}
 .recipe-list{
     display: flex;
-    /* flex-direction: row-reverse; */
     gap: 10px;
     flex-wrap: wrap;
     justify-content: center;
 }
 .recipe-cards {
     width: 40%;
-    /* min-height: 320px; */
     max-height: 320px;
 }
 .recipe-cards:hover {
@@ -260,7 +268,6 @@ h1{
     background-color: white;
     background-image: linear-gradient(to left, white 91%, rgba(0, 0, 0, 0.35));
     width: 600px;
-    padding-bottom: 3%;
 }
 .right-page-ingredient{
     overflow-y: scroll;
@@ -376,7 +383,6 @@ h2{
 }
 /* Right Page: Learn */
 #video-text{
-
     width: 80%;
 }
 .video-flex{
@@ -391,8 +397,35 @@ h2{
 .video-frame-height{
     height: 300px;
 }
-
+/* Right Page: Devs */
+#dev-card-flex{
+    height: 85%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-content: center;
+    gap: 1rem;
+    margin-right: 1rem;
+}
+.dev-cards{ 
+    width: 45%;
+    height: 27%;
+    margin-bottom: 0px;
+    justify-content: center;
+}
+.dev-card-img{
+    height: 100px;
+}
+.dev-cards h5{
+    margin:0px;
+}
+.dev-img-left{
+    align-items: flex-end;
+}
 /* footer */
+.page-logo{
+    height: 40px;
+}
 footer {
     background-color: #59433E;
     margin-right: 0px;
@@ -428,6 +461,12 @@ footer {
 .dev-info{
     display: flex;
     flex-direction: column;
+}
+.tagline{
+    font-size: .8rem;
+}
+.social-icon:hover{
+    transform: scale(1.1);
 }
 /* //search-bar */
 :root{
@@ -482,7 +521,7 @@ footer {
     /* transition:backgrounds 150ms ease-in-out ; */
 }
 .search-bar:focus-within{ 
-    width: 100%;    
+    width: 90%;    
 }
 .search-bar__submit:focus-within{
     background-color:  rgb(231, 188, 130);

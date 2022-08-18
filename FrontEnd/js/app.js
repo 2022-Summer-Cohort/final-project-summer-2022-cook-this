@@ -67,6 +67,14 @@ function makeSearchView() {
 				})
 			];
 
+			const recipeCardEl = document.querySelectorAll('.recipe-cards');
+			recipeCardEl.forEach((recipe) => {
+				const recipeBtn = recipe.querySelector('.recipe-btn');
+				const recipeIdEl = recipe.querySelector('.recipe-id');
+				recipeBtn.addEventListener('click', () => {
+					makeRecipeView(recipeIdEl.value);
+				});
+			});
 
 			function setList(group) {
 				const list = document.getElementById('listRecipes');
