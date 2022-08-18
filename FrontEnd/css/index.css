@@ -9,11 +9,6 @@ body{
     background-image: url(/images/countertopBackground.jpg);
     background-size: cover;
 }
-
-#login-button {
-    /* position: absolute; */
-    z-index:999999;
-}
 #login-logo {
     width: 20%;
 }
@@ -118,7 +113,6 @@ h1{
     writing-mode: vertical-rl;
     display: flex;
     justify-content: space-evenly;
-    height: 80%;
     padding-bottom: 2em;
     padding-right: .6%;
     overflow-y: hidden;
@@ -137,9 +131,11 @@ h1{
 .side-tabs{
     display: flex;
     align-items: flex-start;
+    gap: 0px;
     background-color:rgb(235, 206, 168);
     border-radius: 0 15px 15px 0;
     padding-left: 1%;
+    padding-right: 5px;
     height: 130px;
     min-width: 40px;
     justify-content: center;
@@ -151,6 +147,7 @@ h1{
     box-shadow: 2px 2px 2px 2px rgba(235, 206, 168,0.3);
     cursor: pointer;
     transform: scale(1.1);
+    z-index: 100;
 }
 .side-tabs h2{
     font-size: 1em;
@@ -158,30 +155,42 @@ h1{
     color: black;
     margin-top: 5px;
     margin-bottom: 5px;
-    
 }
 #search-tab{
     height: 30px;
     padding-right:5%;
 }
+#home-btn{
+    max-height: 75px;
+}
+#ingredients-btn{
+    max-height: 110px;
+}
+#search-btn{
+    max-height: 50px;
+}
+#new-recipe-btn{
+    max-height:100px
+}
+#learn-btn{
+    max-height: 100px;
+}
+#categories-btn{
+    max-height: 100px;
+}
+#about-btn{
+    max-height: 100px;
+}
 .nav-tabs-0{
-    height: 50px;
     background-color: rgb(250, 234, 212);
     box-shadow: none;
-
-}
-.nav-tabs-login-home {
-    background-color: rgb(228, 205, 173);
-    height: 55px;
-    z-index: 1;
 }
 .nav-tabs-login{
-    height: 50px;
+    height: 65px;
     background-color:rgb(244, 223, 195);
 }
 .nav-tabs-1{
     background-color: (219, 187, 146);
-        /* height: 60px; */
 }
 .nav-tabs-2{
     background-color:rgb(219, 187, 146);
@@ -194,6 +203,9 @@ h1{
 }
 .nav-tabs-5{
     background-color:rgb(164, 138, 107);
+}
+.nav-tabs-6{
+    background-color:rgb(156, 127, 91);
 }
 /* Open Book Pages */
 @media screen and (max-width:1400px){

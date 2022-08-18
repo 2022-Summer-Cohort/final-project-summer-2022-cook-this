@@ -212,7 +212,6 @@ export default function aboutView(){
             </div>
             <nav class="book-tabs">
                 ${openBookTabs()}
-            </nav>
         </div>
     </div>
     `

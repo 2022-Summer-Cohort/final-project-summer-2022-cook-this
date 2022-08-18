@@ -35,7 +35,6 @@ export default function singleCategoryView(category) {
             </section>
             <nav class="book-tabs">
                 ${openBookTabs()}
-            </nav>
         </div>
     </div>
     `

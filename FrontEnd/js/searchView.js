@@ -19,7 +19,6 @@ export default function searchView(Recipes) {
         
             <nav class="book-tabs">
                 ${openBookTabs()}
-            </nav>
         </div>
     </div>
 `
