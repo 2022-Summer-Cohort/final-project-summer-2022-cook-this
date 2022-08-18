@@ -103,21 +103,27 @@ function tabLinks() {
 	});
 
 }
-function loginSubmit(siteUser){
+function loginSubmit(){
 	const loginSubmitBtn = document.querySelector("#login-submit-btn")
 	const loginUserEl = document.querySelector("#login-username-input")
 	const loginPasswordEl = document.querySelector("#login-password")
+	let validates = false;
 	loginSubmitBtn.addEventListener("click", ()=>{
 		// const tempLoginUser = {
 		// 	"userName": loginUserEl.value,
 		// 	"password": loginPasswordEl.value,
 		// }
-		// fetch(`http://localhost:8080/api/users/login`)
+		// const siteUsers = new fetch(`http://localhost:8080/api/users`)
 		// 	.then(res => res.json())
-		// 	.then(siteusers => {
-		// 		console.log(siteusers);
-				
+		// 	.then(siteusers => {				
 		// 	})
+		// siteUsers.forEach((siteUser) => {
+		// 	if((loginUserEl.value == siteUser.userName || loginUserEl.value == siteUser.emailAddress) && loginPasswordEl.value == siteUser.password){
+		// 		alert(`Welcome to Cook This, ${siteUser.firstName}`);
+		// 	}else{
+		// 		alert("Invalid login credentials. Please, try again.");
+		// 	}
+		// })
 		loginUserEl.value = "";
 		loginPasswordEl.value = "";
 	})
