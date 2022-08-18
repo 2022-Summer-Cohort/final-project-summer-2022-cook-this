@@ -18,6 +18,9 @@ public class Recipe {
     private Collection<Category> categories;
     @OneToMany(mappedBy="recipe")
     private Collection<Ingredient> ingredients;
+    @ManyToMany(mappedBy="favoriteRecipes")
+    @JsonIgnore
+    private Collection<SiteUser> siteUsers;
     @ElementCollection
     private Collection<Review> reviews;
     private double avgRating;
@@ -69,6 +72,11 @@ public class Recipe {
         steps.remove(steps.get(indexOfStep));
         steps.add(indexOfStep, newStep);
     }
+
+    public Collection<SiteUser> getSiteUsers() {
+        return siteUsers;
+    }
+
     public void addStep(Step step1) {
         steps.add(step1);
     }

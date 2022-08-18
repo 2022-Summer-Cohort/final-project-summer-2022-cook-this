@@ -51,6 +51,5 @@ export default function reviewsModal(recipe){
             </div>
         </div>
     </div>
-`
-
+    `
 }
