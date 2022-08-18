@@ -67,6 +67,14 @@ function makeSearchView() {
 				})
 			];
 
+			const recipeCardEl = document.querySelectorAll('.recipe-cards');
+			recipeCardEl.forEach((recipe) => {
+				const recipeBtn = recipe.querySelector('.recipe-btn');
+				const recipeIdEl = recipe.querySelector('.recipe-id');
+				recipeBtn.addEventListener('click', () => {
+					makeRecipeView(recipeIdEl.value);
+				});
+			});
 
 			function setList(group) {
 				const list = document.getElementById('listRecipes');
@@ -212,8 +220,17 @@ function makeRecipeView(recipeId){
         const reviewAuthor = container.querySelector("#author-input")
         const reviewRating = container.querySelector("#rating-input")
         const reviewContent = container.querySelector("#review-content")
+		const heartBtn = container.querySelector(".fa-heart");
         // const submitReviewBtn = container.querySelector("#submitReview");
-
+		heartBtn.addEventListener("click", () => {
+			if(heartBtn.classList.contains("fa-regular")){
+				heartBtn.classList.remove("fa-regular");
+				heartBtn.classList.add("fa-solid")
+			}else{
+				heartBtn.classList.remove("fa-solid");
+				heartBtn.classList.add("fa-regular");
+			}
+		})
 		let reviewForm = document.querySelector(".review-form");
 		reviewForm.addEventListener('submit', handleForm);
         reviewForm.addEventListener("submit", () => {
