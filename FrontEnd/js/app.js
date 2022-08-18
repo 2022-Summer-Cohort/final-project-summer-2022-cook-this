@@ -103,11 +103,21 @@ function tabLinks() {
 	});
 
 }
-function loginSubmit(){
+function loginSubmit(siteUser){
 	const loginSubmitBtn = document.querySelector("#login-submit-btn")
 	const loginUserEl = document.querySelector("#login-username-input")
 	const loginPasswordEl = document.querySelector("#login-password")
 	loginSubmitBtn.addEventListener("click", ()=>{
+		// const tempLoginUser = {
+		// 	"userName": loginUserEl.value,
+		// 	"password": loginPasswordEl.value,
+		// }
+		// fetch(`http://localhost:8080/api/users/login`)
+		// 	.then(res => res.json())
+		// 	.then(siteusers => {
+		// 		console.log(siteusers);
+				
+		// 	})
 		loginUserEl.value = "";
 		loginPasswordEl.value = "";
 	})
