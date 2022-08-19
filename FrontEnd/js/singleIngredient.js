@@ -14,5 +14,6 @@ export default function makeIngredientSection(ingredient) {
             </article>
         </figure>
     </div>
+                </div>
     `
 }

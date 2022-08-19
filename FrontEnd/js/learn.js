@@ -6,9 +6,8 @@ export default function learn() {
         <div id="open-border">
             <div id="open-book">
                 <section class="left-page">
-                    <div class="left-page-flex">
-                        <h2 class="text-center">Select a Tutorial below:</h2>
-                        <br>
+                    <h2 class="text-center mb-3">Select a Tutorial below:</h2>
+                    <div class="video-list-flex">
                         <section class="recipe-list">
                             <div class="card recipe-cards learn-card text-center">
                                 <a class="video-btn"> 
@@ -71,31 +70,40 @@ export default function learn() {
                             </div>
                         </section>
                     </div>
+                    <div class="position-relative mt-3">
+                        <img class="position-absolute top-100 start-50 translate-middle img-fluid page-logo"
+                        src="/images/cookThisPotLogo.png" alt="">
+                    </div>
                 </section>
-                <section class="right-page d-flex flex-column align-items-center" id="tutorial-page">
-                    <div id="5-basic-cooking-skills">
-                        <h2 class="text-center">How to Master 5 Basic Cooking Skills</h2>
-                    <br>
+
+                <section class="right-page d-flex flex-column align-items-center" >
+                    <div id="tutorial-page">
+                        <h2 class="text-center mb-3">How to Master 5 Basic Cooking Skills</h2>
                         <section class="video-flex">
                             <iframe <iframe class="video-frame-height" width="80%" height="40%" src="https://www.youtube-nocookie.com/embed/ZJy1ajvMU1k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             <br>
                             <div id="video-text" class="text-start">
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate delectus sit molestias veniam recusandae, illum asperiores vitae doloremque nesciunt, inventore in iusto at provident perspiciatis nemo. Temporibus numquam omnis nesciunt.
-                                    <br> <br>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, dolorum quas possimus commodi inventore nam recusandae perferendis quod tempora voluptas blanditiis vero! Aut blanditiis maiores veniam tempora nisi, repellat dolores.<br>
-                                    <a href="#"> -Website to be linked?-</a>
+                                We've compiled five previous videos into one, helping you to master your basic skills in the kitchen. Cooking rice, chopping an onion, sharpening a knife, deboning a fish and cooking pasta.
+                                From Gordon's Ultimate Cookery Course.
+                                <br>
+                                    <a href="https://www.youtube.com/user/gordonramsay"> -Gordon Ramsey's YouTube Page-</a>
                                 </p>
                             </div>
-                            <input class="learn-id" type="hidden" value="4">
                         </section>
+                        
                     </div>
-                        </section>
+                    <div class="position-relative mt-4">
+                        <img class="position-absolute top-100 start-50 translate-middle page-logo"
+                        src="/images/cookThisPotLogo.png" alt="">
                     </div>
+                </section>
+                        
+                    </div>
+                        
                 </section> 
                 <nav class="book-tabs">
                 ${openBookTabs()}
-                </nav>
             </div>
         
                 

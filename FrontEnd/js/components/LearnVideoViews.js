@@ -29,6 +29,7 @@ export default function displaySingleVideo(videoId) {
                             </div>
                             <input class="learn-id" type="hidden" value="1">
                         </section>
+                        
                     </div>
             `
         case "2":
@@ -41,15 +42,16 @@ export default function displaySingleVideo(videoId) {
                             <br>
                             <div id="video-text" class="text-start">
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate delectus sit molestias veniam recusandae, illum asperiores vitae doloremque nesciunt, inventore in iusto at provident perspiciatis nemo. Temporibus numquam omnis nesciunt.
-                                    <br> <br>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, dolorum quas possimus commodi inventore nam recusandae perferendis quod tempora voluptas blanditiis vero! Aut blanditiis maiores veniam tempora nisi, repellat dolores.<br>
-                                    <a href="#"> -Website to be linked?-</a>
+                                    Former Canyon Ranch Corporate Chef Scott Uehlein explains how he creates a balance of flavors—sweet, sour, bitter and salty—into his dishes to create healthy, satisfying dishes with less fat.
+                                    <br>
+                                        <a href="https://www.youtube.com/c/canyonranch"> -Canyon Ranch YouTube Page-</a>
                                 </p>
                             </div>
                             <input class="learn-id" type="hidden" value="2">
                         </section>
+                        
                     </div>
+                    
             `
         case "3":
             return`
@@ -61,14 +63,20 @@ export default function displaySingleVideo(videoId) {
                             <br>
                             <div id="video-text" class="text-start">
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate delectus sit molestias veniam recusandae, illum asperiores vitae doloremque nesciunt, inventore in iusto at provident perspiciatis nemo. Temporibus numquam omnis nesciunt.
-                                    <br> <br>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, dolorum quas possimus commodi inventore nam recusandae perferendis quod tempora voluptas blanditiis vero! Aut blanditiis maiores veniam tempora nisi, repellat dolores.<br>
-                                    <a href="#"> -Website to be linked?-</a>
+                                    Today we're talking all about meal planning and how to get started in 6 easy steps. Do you meal plan?
+                                    <br><br>
+                                    ON THE BLOG
+                                    → Meal Planning for Beginners: <a href="https://bit.ly/2SK69Ta"> BLOG <a>
+                                    <br><br>
+                                    Disclaimer: This video is for informational purposes only and does not substitute or replace medical advice. All opinions expressed are my own. This description contains affiliate links, which means that if purchases are made when clicked, I’ll receive a small commission. Thank you!
+                                    <br><br>
+                                    Meghan Livingstone, CNP<br>
+                                    Certified Holistic Nutritionist
                                 </p>
                             </div>
                             <input class="learn-id" type="hidden" value="3">
                         </section>
+                      
                     </div>
             `
         case "4":
@@ -81,14 +89,15 @@ export default function displaySingleVideo(videoId) {
                             <br>
                             <div id="video-text" class="text-start">
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate delectus sit molestias veniam recusandae, illum asperiores vitae doloremque nesciunt, inventore in iusto at provident perspiciatis nemo. Temporibus numquam omnis nesciunt.
-                                    <br> <br>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, dolorum quas possimus commodi inventore nam recusandae perferendis quod tempora voluptas blanditiis vero! Aut blanditiis maiores veniam tempora nisi, repellat dolores.<br>
-                                    <a href="#"> -Website to be linked?-</a>
+                                We've compiled five previous videos into one, helping you to master your basic skills in the kitchen. Cooking rice, chopping an onion, sharpening a knife, deboning a fish and cooking pasta.
+                                From Gordon's Ultimate Cookery Course.
+                                <br>
+                                    <a href="https://www.youtube.com/user/gordonramsay"> -Gordon Ramsey's YouTube Page-</a>
                                 </p>
                             </div>
                             <input class="learn-id" type="hidden" value="4">
                         </section>
+                
                     </div>
             `
         case "5":
@@ -101,14 +110,14 @@ export default function displaySingleVideo(videoId) {
                             <br>
                             <div id="video-text" class="text-start">
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate delectus sit molestias veniam recusandae, illum asperiores vitae doloremque nesciunt, inventore in iusto at provident perspiciatis nemo. Temporibus numquam omnis nesciunt.
-                                    <br> <br>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, dolorum quas possimus commodi inventore nam recusandae perferendis quod tempora voluptas blanditiis vero! Aut blanditiis maiores veniam tempora nisi, repellat dolores.<br>
-                                    <a href="#"> -Website to be linked?-</a>
+                                When I first started using YNAB, I thought true budgeters kept their grocery bill really low. So, for a few months, I slashed our grocery budget, and it was... the worst. 😂 We would always go over, and I felt frustrated and defeated. Here’s what I eventually learned - I was under-budgeting. The numbers that worked for other people didn’t work for us, and that’s ok. I spend more on groceries now, but I’m also trying to be smarter with that spending. One thing that has helped? Creating a groceries category group in my budget. Let me show you how! - Ashley
+                                <br>
+                                    <a href="https://www.youneedabudget.com/"> -Website-</a>
                                 </p>
                             </div>
                             <input class="learn-id" type="hidden" value="5">
                         </section>
+                       
                     </div> 
                 
             `
@@ -122,14 +131,14 @@ export default function displaySingleVideo(videoId) {
                             <br>
                             <div id="video-text" class="text-start">
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate delectus sit molestias veniam recusandae, illum asperiores vitae doloremque nesciunt, inventore in iusto at provident perspiciatis nemo. Temporibus numquam omnis nesciunt.
-                                    <br> <br>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, dolorum quas possimus commodi inventore nam recusandae perferendis quod tempora voluptas blanditiis vero! Aut blanditiis maiores veniam tempora nisi, repellat dolores.<br>
-                                    <a href="#"> -Website to be linked?-</a>
+                                Organizing your website bookmarks doesn't have to be difficult. Google Chrome makes it easy to add and manage your favorite pages. But do you know these bookmark tips and tricks? In this video, Scott Friesen shows you all you need to know when it comes to managing your bookmarks in Chrome.
+                                <br>
+                                    <a href="https://www.simpletivity.com"> -Simpletivity Website-</a>
                                 </p>
                             </div>
                             <input class="learn-id" type="hidden" value="6">
                         </section>
+                    
                     </div>
                 
             `
