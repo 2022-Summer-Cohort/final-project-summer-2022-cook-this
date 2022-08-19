@@ -22,6 +22,116 @@ export default function allCategoriesView(categories){
                       </div>
                     </a>
                   </div>
+
+                  // <div class="card  recipe-cards text-center category-cards" > 
+                  // <input class="category-id" type="hidden" value="${category.id}">
+                  //   <a class="category-btn">
+                  //     <img src="/images/ApplePie.jpg" class="card-img-top" alt="Delicious Apple Pie" />
+                  //     <div class="card-body">
+                  //       <h5 class="card-title">${category.title}</h5>
+                  //       <p class="card-text">See all  ${category.title} recipes</p>
+                  //     </div>
+                  //   </a>
+                  // </div>
+
+                  // <div class="card  recipe-cards text-center category-cards" > 
+                  // <input class="category-id" type="hidden" value="${category.id}">
+                  //   <a class="category-btn">
+                  //     <img src="/images/ApplePie.jpg" class="card-img-top" alt="Delicious Apple Pie" />
+                  //     <div class="card-body">
+                  //       <h5 class="card-title">${category.title}</h5>
+                  //       <p class="card-text">See all  ${category.title} recipes</p>
+                  //     </div>
+                  //   </a>
+                  // </div>
+
+                  // <div class="card  recipe-cards text-center category-cards" > 
+                  // <input class="category-id" type="hidden" value="${category.id}">
+                  //   <a class="category-btn">
+                  //   <img src="/images/categories-images/pasta-category.jpg" class="card-img-top" alt="Delicious Pasta Recipes" />
+                  //   <div class="card-body">
+                  //       <h5 class="card-title">${category.title}</h5>
+                  //       <p class="card-text">See all  ${category.title} recipes</p>
+                  //     </div>
+                  //   </a>
+                  // </div>
+
+                  // <div class="card  recipe-cards text-center category-cards" > 
+                  // <input class="category-id" type="hidden" value="${category.id}">
+                  //   <a class="category-btn">
+                  //   <img src="/images/categories-images/sandwich-category.jpg" class="card-img-top" alt="Delicious Sandwich Recipes" />
+                  //   <div class="card-body">
+                  //       <h5 class="card-title">${category.title}</h5>
+                  //       <p class="card-text">See all  ${category.title} recipes</p>
+                  //     </div>
+                  //   </a>
+                  // </div>
+
+                  // <div class="card  recipe-cards text-center category-cards" > 
+                  // <input class="category-id" type="hidden" value="${category.id}">
+                  //   <a class="category-btn">
+                  //   <img src="/images/categories-images/bread-category.jpg" class="card-img-top" alt="Delicious Bread Recipes" />
+                  //   <div class="card-body">
+                  //       <h5 class="card-title">${category.title}</h5>
+                  //       <p class="card-text">See all  ${category.title} recipes</p>
+                  //     </div>
+                  //   </a>
+                  // </div>
+
+                  // <div class="card  recipe-cards text-center category-cards" > 
+                  // <input class="category-id" type="hidden" value="${category.id}">
+                  //   <a class="category-btn">
+                  //   <img src="/images/categories-images/healthy-category.jpg" class="card-img-top" alt="Delicious Healthy Recipes" />
+                  //   <div class="card-body">
+                  //       <h5 class="card-title">${category.title}</h5>
+                  //       <p class="card-text">See all  ${category.title} recipes</p>
+                  //     </div>
+                  //   </a>
+                  // </div>
+
+                  // <div class="card  recipe-cards text-center category-cards" > 
+                  // <input class="category-id" type="hidden" value="${category.id}">
+                  //   <a class="category-btn">
+                  //   <img src="/images/categories-images/glutenfree-category.jpg" class="card-img-top" alt="Delicious Gluten-Free Recipes" />
+                  //   <div class="card-body">
+                  //       <h5 class="card-title">${category.title}</h5>
+                  //       <p class="card-text">See all  ${category.title} recipes</p>
+                  //     </div>
+                  //   </a>
+                  // </div>
+
+                  // <div class="card  recipe-cards text-center category-cards" > 
+                  // <input class="category-id" type="hidden" value="${category.id}">
+                  //   <a class="category-btn">
+                  //   <img src="/images/categories-images/vegan-category.jpg" class="card-img-top" alt="Delicious Vegan Recipes" />
+                  //   <div class="card-body">
+                  //       <h5 class="card-title">${category.title}</h5>
+                  //       <p class="card-text">See all  ${category.title} recipes</p>
+                  //     </div>
+                  //   </a>
+                  // </div>
+
+                  // <div class="card  recipe-cards text-center category-cards" > 
+                  // <input class="category-id" type="hidden" value="${category.id}">
+                  //   <a class="category-btn">
+                  //   <img src="/images/categories-images/vegetarian-category.jpg" class="card-img-top" alt="Delicious Vegetarian Recipes" />
+                  //   <div class="card-body">
+                  //       <h5 class="card-title">${category.title}</h5>
+                  //       <p class="card-text">See all  ${category.title} recipes</p>
+                  //     </div>
+                  //   </a>
+                  // </div>
+
+                  // <div class="card  recipe-cards text-center category-cards" > 
+                  // <input class="category-id" type="hidden" value="${category.id}">
+                  //   <a class="category-btn">
+                  //     <img src="/images/categories-images/pasta-category.jpg" class="card-img-top" alt="Delicious Pasta Recipes" />
+                  //     <div class="card-body">
+                  //       <h5 class="card-title">${category.title}</h5>
+                  //       <p class="card-text">See all  ${category.title} recipes</p>
+                  //     </div>
+                  //   </a>
+                  // </div>
                 `
             }) .join("")
         }
