@@ -29,6 +29,10 @@ export default function displaySingleVideo(videoId) {
                             </div>
                             <input class="learn-id" type="hidden" value="1">
                         </section>
+                        <div class="position-relative">
+                            <img class="position-absolute top-100 start-50 translate-middle img-fluid page-logo"
+                            src="/images/cookThisPotLogo.png" alt="">
+                        </div>
                     </div>
             `
         case "2":

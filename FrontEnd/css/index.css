@@ -241,6 +241,12 @@ h1{
     height: 80%;
     overflow-y: scroll;
 }
+.category-top-list{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 .recipe-list{
     display: flex;
     gap: 10px;
@@ -278,7 +284,7 @@ h1{
     margin-bottom: 5px;
 }
 
-/* Right Page: Recipe Page  */
+/* Right Page */
 .right-page{
     background-color: white;
     background-image: linear-gradient(to left, white 91%, rgba(0, 0, 0, 0.35));
@@ -396,9 +402,25 @@ h2{
 #instructions ul li {
     margin-right: 10px;
 }
+.category-all-list{
+    display: flex;
+    height: 90%;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 /* Right Page: Learn */
 #video-text{
     width: 80%;
+}
+.video-list-flex{
+    display: flex;
+    gap: 10px;
+    height: 95%;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 91%;
+    overflow-y: scroll;
 }
 .video-flex{
     height: 91%;

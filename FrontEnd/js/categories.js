@@ -6,10 +6,10 @@ export default function allCategoriesView(categories){
    <div id="open-border">
      <div id="open-book">
        <section class="left-page">
-         <h2 class="text-center">Select a Category</h2>
+         <h2 class="text-center">Top Categories</h2>
          <br>
          <div class="left-page-flex">
-           <section class="recipe-list">
+           <section class="category-top-list">
             ${ categories.map(category =>{
                 return`
                   <div class="card  recipe-cards text-center category-cards" > 
@@ -27,10 +27,22 @@ export default function allCategoriesView(categories){
         }
            </section>
          </div>
+            <div class="position-relative">
+                <img class="position-absolute top-100 start-50 translate-middle img-fluid page-logo"
+                    src="/images/cookThisPotLogo.png" alt="">
+            </div>
        </section>
        <section class="right-page">
-         <br> <br>
+        <h2 class="text-center">All Categories</h2>
+        <section class="category-all-list">
+          
+        </section>
+        <div class="position-relative">
+            <img class="position-absolute top-100 start-50 translate-middle img-fluid page-logo"
+              src="/images/cookThisPotLogo.png" alt="">
+          </div>
        </section>
+       
      </div>
      <nav class="book-tabs">
        ${openBookTabs()}
