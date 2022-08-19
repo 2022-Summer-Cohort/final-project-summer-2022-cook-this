@@ -454,6 +454,7 @@ h2{
     align-content: center;
     gap: 1rem;
     margin-right: 1rem;
+    padding-left: 6%;
 }
 .dev-cards{ 
     width: 45%;
