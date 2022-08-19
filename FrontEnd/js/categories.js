@@ -15,7 +15,7 @@ export default function allCategoriesView(categories){
                   <div class="card  recipe-cards text-center category-cards" > 
                   <input class="category-id" type="hidden" value="${category.id}">
                     <a class="category-btn">
-                      <img src="/images/ApplePie.jpg" class="card-img-top" alt="Delicious Apple Pie" />
+                      <img src="/images/category-images/savory-category.png" class="card-img-top" alt="Delicious Savory Recipes" />
                       <div class="card-body">
                         <h5 class="card-title">${category.title}</h5>
                         <p class="card-text">See all  ${category.title} recipes</p>
@@ -26,7 +26,7 @@ export default function allCategoriesView(categories){
                   // <div class="card  recipe-cards text-center category-cards" > 
                   // <input class="category-id" type="hidden" value="${category.id}">
                   //   <a class="category-btn">
-                  //     <img src="/images/ApplePie.jpg" class="card-img-top" alt="Delicious Apple Pie" />
+                  //     <img src="/images/categories-images/dessert-category.png" class="card-img-top" alt="Delicious Dessert Recipes" />
                   //     <div class="card-body">
                   //       <h5 class="card-title">${category.title}</h5>
                   //       <p class="card-text">See all  ${category.title} recipes</p>
@@ -37,7 +37,7 @@ export default function allCategoriesView(categories){
                   // <div class="card  recipe-cards text-center category-cards" > 
                   // <input class="category-id" type="hidden" value="${category.id}">
                   //   <a class="category-btn">
-                  //     <img src="/images/ApplePie.jpg" class="card-img-top" alt="Delicious Apple Pie" />
+                  //     <img src="/images/categories-images/crockpot-category.jpg" class="card-img-top" alt="Delicious CrockPot Recipes" />
                   //     <div class="card-body">
                   //       <h5 class="card-title">${category.title}</h5>
                   //       <p class="card-text">See all  ${category.title} recipes</p>
@@ -48,7 +48,18 @@ export default function allCategoriesView(categories){
                   // <div class="card  recipe-cards text-center category-cards" > 
                   // <input class="category-id" type="hidden" value="${category.id}">
                   //   <a class="category-btn">
-                  //   <img src="/images/categories-images/pasta-category.jpg" class="card-img-top" alt="Delicious Pasta Recipes" />
+                  //     <img src="/images/categories-images/meditteranean-category.png" class="card-img-top" alt="Delicious Meditteranean Recipes" />
+                  //     <div class="card-body">
+                  //       <h5 class="card-title">${category.title}</h5>
+                  //       <p class="card-text">See all  ${category.title} recipes</p>
+                  //     </div>
+                  //   </a>
+                  // </div>
+
+                  // <div class="card  recipe-cards text-center category-cards" > 
+                  // <input class="category-id" type="hidden" value="${category.id}">
+                  //   <a class="category-btn">
+                  //   <img src="/images/categories-images/appetizer-category.jpg" class="card-img-top" alt="Delicious Appetizer Recipes" />
                   //   <div class="card-body">
                   //       <h5 class="card-title">${category.title}</h5>
                   //       <p class="card-text">See all  ${category.title} recipes</p>
@@ -70,7 +81,7 @@ export default function allCategoriesView(categories){
                   // <div class="card  recipe-cards text-center category-cards" > 
                   // <input class="category-id" type="hidden" value="${category.id}">
                   //   <a class="category-btn">
-                  //   <img src="/images/categories-images/bread-category.jpg" class="card-img-top" alt="Delicious Bread Recipes" />
+                  //   <img src="/images/categories-images/bread-category.png" class="card-img-top" alt="Delicious Bread Recipes" />
                   //   <div class="card-body">
                   //       <h5 class="card-title">${category.title}</h5>
                   //       <p class="card-text">See all  ${category.title} recipes</p>
