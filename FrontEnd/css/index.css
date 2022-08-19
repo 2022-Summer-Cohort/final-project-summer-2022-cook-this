@@ -310,7 +310,7 @@ h1{
     text-align: center;
 }
 #recipe-page{
-    padding-left: 5%;
+    padding-left: 8.5%;
     height: 95%;
     overflow-y: scroll;
 }
@@ -380,6 +380,7 @@ h1{
 #ingredient-description {
     margin: 5% 5%;
     text-align: left;
+    padding-left: 8.5%;
 }
 #ingredients-list{
     display: flex;
