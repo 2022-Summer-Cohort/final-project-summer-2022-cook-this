@@ -224,13 +224,16 @@ function makeSearchView() {
 		.catch((err) => console.error(err));
 }
 function makeAllIngredients() {
-	fetch(`http://localhost:8080/api/ingredients`).then((res) => res.json()).then((ingredients) => {
-		console.log(ingredients);
+	fetch(`http://localhost:8080/api/ingredients`)
+	.then((res) => res.json())
+	.then((ingredients) => {
+		console.log(ingredients[0]);
 		container.innerHTML = allIngredients(ingredients);
 		container.innerHTML += makeFooter();
 		tabLinks(); loginEyes();
-
 		const ingredientPageEl = container.querySelector('#ingredient-page');
+		ingredientPageEl.innerHTML=makeIngredientSection(ingredients[0])
+
 		const ingredientCardEl = container.querySelectorAll('.card');
 		ingredientCardEl.forEach((ingredient) => {
 			const ingredientButton = ingredient.querySelector('.ingredient-button');
@@ -240,7 +243,6 @@ function makeAllIngredients() {
 				fetch(`http://localhost:8080/api/ingredients/${ingredientIdEl.value}`)
 					.then((res) => res.json())
 					.then((ingredient) => {
-						console.log(ingredient);
 						ingredientPageEl.innerHTML = makeIngredientSection(ingredient);
 					});
 			});
@@ -276,7 +278,9 @@ function makeSingleCategoryView(categoryId) {
 			container.innerHTML = singleCategoryView(categoryBuild);
 			container.innerHTML += makeFooter();
 			tabLinks(); loginEyes();
-
+			if(categoryBuild.recipes.length >0){
+					makeRecipeView(categoryBuild.recipes[0].id)
+				}			
 			const recipeCardEl = document.querySelectorAll('.recipe-cards');
 			recipeCardEl.forEach((recipe) => {
 				const recipeBtn = recipe.querySelector('.recipe-btn');

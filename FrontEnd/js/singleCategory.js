@@ -1,4 +1,5 @@
 import openBookTabs from "./components/openBookTabs.js"
+import singleRecipeView from "./Recipe.js"
 
 export default function singleCategoryView(category) {
     return `
@@ -34,7 +35,7 @@ export default function singleCategoryView(category) {
 
                 <section class="right-page d-flex flex-column align-items-center" >
                 <div  id="recipe-page">
-
+                    
                 </div>
                 <div class="position-relative mt-3">
                     <img class="position-absolute top-100 start-50 translate-middle page-logo"
