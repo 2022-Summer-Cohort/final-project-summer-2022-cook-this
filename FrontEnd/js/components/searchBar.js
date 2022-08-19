@@ -1,7 +1,6 @@
 export default function makeSearchBar(recipes){
 return `
-<h5>click below to search</h5>
-<div class="search-bar mb-3">
+<div class="search-bar ms-3 mb-3">
         
         <input id="search777" type="text" 
         class="search-bar__input" 
@@ -13,7 +12,7 @@ return `
             <img src="/images/search-icon.png" alt="search icon" class="search-img">
         </button>
     </div>     
-    <section class="recipe-list search-left" id="listRecipes">
+    <section class="recipe-list search-left mb-3" id="listRecipes">
             ${recipes.map(recipe =>{
                 return `
                 <div class="card recipe-cards text-center">

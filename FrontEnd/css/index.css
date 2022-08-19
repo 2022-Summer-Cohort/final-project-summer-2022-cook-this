@@ -408,9 +408,10 @@ h2{
 #instructions ul li {
     margin-right: 10px;
 }
-.category-all-list{
+#category-all-list{
     display: flex;
-    height: 90%;
+    overflow-y: scroll;
+    height: 87%;
     gap: 10px;
     flex-wrap: wrap;
     justify-content: center;

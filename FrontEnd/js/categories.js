@@ -27,17 +27,32 @@ export default function allCategoriesView(categories){
         }
            </section>
          </div>
-            <div class="position-relative">
+            <div class="position-relative mt-3">
                 <img class="position-absolute top-100 start-50 translate-middle img-fluid page-logo"
                     src="/images/cookThisPotLogo.png" alt="">
             </div>
        </section>
        <section class="right-page">
-        <h2 class="text-center">All Categories</h2>
-        <section class="category-all-list">
+        <h2 class="text-center mb-3">All Categories</h2>
+        <section id="category-all-list">
+        ${ categories.map(category =>{
+          return`
+            <div class="card  recipe-cards text-center category-cards" > 
+            <input class="category-id" type="hidden" value="${category.id}">
+              <a class="category-btn">
+                <img src="${category.imageUrl}" class="card-img-top" alt="Image of Category" />
+                <div class="card-body">
+                  <h5 class="card-title">${category.title}</h5>
+                  <p class="card-text">See all  ${category.title} recipes</p>
+                </div>
+              </a>
+            </div>
+          `
+      }) .join("")
+  }
           
         </section>
-        <div class="position-relative">
+        <div class="position-relative mt-3">
             <img class="position-absolute top-100 start-50 translate-middle img-fluid page-logo"
               src="/images/cookThisPotLogo.png" alt="">
           </div>
