@@ -54,6 +54,7 @@ export default function singleRecipeView(recipe) {
                         <h4 class="text-center">Enjoy!</h4>
                 </ul>
             </section>
+            
         </section>
         ${reviewsModal(recipe)}
     `
