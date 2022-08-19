@@ -35,7 +35,7 @@ export default function singleCategoryView(category) {
 
                 <section class="right-page d-flex flex-column align-items-center" >
                 <div  id="recipe-page">
-                    ${singleRecipeView(category.recipes[0])}
+                    
                 </div>
                 <div class="position-relative mt-3">
                     <img class="position-absolute top-100 start-50 translate-middle page-logo"

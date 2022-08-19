@@ -300,6 +300,7 @@ h1{
 }
 #title {
     text-align: center;
+    margin: 0 auto;
 }
 .title-header{
     margin:0;
@@ -395,6 +396,7 @@ h1{
 }
 .recipe-image{
     width: 75%;
+    margin: 0 auto;
 }
 h2{
     margin: 0;

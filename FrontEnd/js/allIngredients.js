@@ -1,4 +1,5 @@
 import openBookTabs from "./components/openBookTabs.js"
+import makeIngredientSection from "./singleIngredient.js"
 
 export default function allIngredients(ingredients) {
     return `
