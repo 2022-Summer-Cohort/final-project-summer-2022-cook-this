@@ -6,9 +6,8 @@ export default function learn() {
         <div id="open-border">
             <div id="open-book">
                 <section class="left-page">
-                    <div class="left-page-flex">
-                        <h2 class="text-center">Select a Tutorial below:</h2>
-                        <br>
+                    <h2 class="text-center mb-3">Select a Tutorial below:</h2>
+                    <div class="video-list-flex">
                         <section class="recipe-list">
                             <div class="card recipe-cards learn-card text-center">
                                 <a class="video-btn"> 
@@ -71,9 +70,14 @@ export default function learn() {
                             </div>
                         </section>
                     </div>
+                    <div class="position-relative mt-3">
+                        <img class="position-absolute top-100 start-50 translate-middle img-fluid page-logo"
+                        src="/images/cookThisPotLogo.png" alt="">
+                    </div>
                 </section>
-                <section class="right-page d-flex flex-column align-items-center" id="tutorial-page">
-                    <div id="5-basic-cooking-skills">
+
+                <section class="right-page d-flex flex-column align-items-center" >
+                    <div id="tutorial-page">
                         <h2 class="text-center">How to Master 5 Basic Cooking Skills</h2>
                     <br>
                         <section class="video-flex">
@@ -89,9 +93,16 @@ export default function learn() {
                             </div>
                             <input class="learn-id" type="hidden" value="4">
                         </section>
+                        
                     </div>
-                        </section>
+                    <div class="position-relative mt-4">
+                        <img class="position-absolute top-100 start-50 translate-middle page-logo"
+                        src="/images/cookThisPotLogo.png" alt="">
                     </div>
+                </section>
+                        
+                    </div>
+                        
                 </section> 
                 <nav class="book-tabs">
                 ${openBookTabs()}

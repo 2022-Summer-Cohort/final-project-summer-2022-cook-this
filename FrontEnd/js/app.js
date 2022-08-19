@@ -12,7 +12,6 @@ import submitRecipeBtn from './components/SubmitRecipeBtn.js';
 import dummyRecipeView from './components/dummyRecipeView.js';
 import searchView from './searchView.js';
 import aboutView from './about.js';
-import loginModal from './components/loginModal.js';
 
 const container = document.querySelector('#anchor');
 let currentUserName = "";
@@ -117,13 +116,11 @@ function makeHomeView() {
 	container.innerHTML += makeFooter();
 	tabLinks(); loginEyes(); loginSubmit();
 }
-
 function makeAboutView() {
 	container.innerHTML = aboutView()
 	container.innerHTML += makeFooter();
 	tabLinks(); loginEyes();
 }
-
 function makeSearchView() {
 	fetch(`http://localhost:8080/api/recipes`)
 		.then((res) => res.json())
@@ -217,7 +214,6 @@ function makeSearchView() {
 		})
 		.catch((err) => console.error(err));
 }
-
 function makeAllIngredients() {
 	fetch(`http://localhost:8080/api/ingredients`).then((res) => res.json()).then((ingredients) => {
 		console.log(ingredients);
@@ -242,7 +238,6 @@ function makeAllIngredients() {
 		});
 	});
 }
-
 function makeAllCategoriesView() {
 	fetch(`http://localhost:8080/api/categories`)
 		.then((res) => res.json())
@@ -264,7 +259,6 @@ function makeAllCategoriesView() {
 		})
 		.catch((err) => console.error(err));
 }
-
 function makeSingleCategoryView(categoryId) {
 	fetch(`http://localhost:8080/api/categories/${categoryId}`)
 		.then((res) => res.json())
@@ -285,7 +279,6 @@ function makeSingleCategoryView(categoryId) {
 		})
 		.catch((err) => console.error(err));
 }
-
 function makeRecipeView(recipeId) {
 	const rightPageContainer = document.querySelector("#recipe-page")
 	fetch(`http://localhost:8080/api/recipes/${recipeId}`)
@@ -346,13 +339,11 @@ function makeRecipeView(recipeId) {
 		})
 		.catch(err => console.error(err))
 }
-
 function makeSingleVideoView(videoId) {
 	const rightPageContainer = document.querySelector('.right-page');
 	console.log(displaySingleVideo(videoId));
 	rightPageContainer.innerHTML = displaySingleVideo(videoId);
 }
-
 function makeLearnView() {
 	container.innerHTML = learn();
 	container.innerHTML += makeFooter();
@@ -367,7 +358,6 @@ function makeLearnView() {
 		});
 	});
 }
-
 function makeNewRecipeView() {
 	fetch(`http://localhost:8080/api/categories/`)
 		.then(res => res.json())
@@ -489,7 +479,6 @@ function makeNewRecipeView() {
 			})
 		})
 }
-
 function handleForm(event) { event.preventDefault(); }
 
 makeHomeView();
