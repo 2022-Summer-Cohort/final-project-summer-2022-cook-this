@@ -34,9 +34,13 @@ export default function allIngredients(ingredients) {
                 </div>
             </section>
 
-            <section class="right-page" id="ingredient-page">
-               
-              
+            <section class="right-page">
+               <div id="ingredient-page">
+               </div>
+               <div class="position-relative mt-3">
+                    <img class="position-absolute top-100 start-50 translate-middle page-logo"
+                    src="/images/cookThisPotLogo.png" alt="">
+                </div>
             </div>
             
             </section>

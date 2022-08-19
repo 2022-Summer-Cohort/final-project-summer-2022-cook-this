@@ -309,10 +309,12 @@ h1{
 }
 #recipe-page{
     padding-left: 5%;
+    height: 95%;
     overflow-y: scroll;
 }
 #tutorial-page{
     padding-left: 5%;
+    height: 93%;
     overflow-y: scroll;
 }
 .avgRating{
@@ -348,6 +350,10 @@ h1{
 .hr-short{
     width:50px;
     margin: 0px auto;
+}
+#ingredient-page{
+    height: 95%;
+    overflow-y: scroll;
 }
 #ingredient-title {
     font-size:x-large;

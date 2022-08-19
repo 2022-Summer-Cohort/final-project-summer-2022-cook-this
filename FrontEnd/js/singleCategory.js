@@ -27,15 +27,21 @@ export default function singleCategoryView(category) {
                         </section>
                     </div>
                     <div class="position-relative mt-3">
-                    <img class="position-absolute top-100 start-50 translate-middle img-fluid page-logo"
-                    src="/images/cookThisPotLogo.png" alt="">
-                </div>
+                        <img class="position-absolute top-100 start-50 translate-middle page-logo"
+                        src="/images/cookThisPotLogo.png" alt="">
+                    </div>
                 </section>
 
-                <section class="right-page d-flex flex-column align-items-center" id="recipe-page">
-                    
+                <section class="right-page d-flex flex-column align-items-center" >
+                <div  id="recipe-page">
+
+                </div>
+                <div class="position-relative mt-3">
+                    <img class="position-absolute top-100 start-50 translate-middle page-logo"
+                    src="/images/cookThisPotLogo.png" alt="">
+                </div>   
             </div>
-            </section>
+                </section>
             <nav class="book-tabs">
                 ${openBookTabs()}
         </div>

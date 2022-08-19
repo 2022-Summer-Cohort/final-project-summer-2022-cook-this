@@ -100,7 +100,6 @@ function tabLinks() {
 	aboutBtn.addEventListener('click', () => {
 		makeAboutView();
 	});
-
 }
 function loginSubmit(siteUser){
 	const loginSubmitBtn = document.querySelector("#login-submit-btn")
@@ -231,7 +230,7 @@ function makeAllIngredients() {
 		container.innerHTML += makeFooter();
 		tabLinks(); loginEyes();
 
-		const ingredientPageEl = container.querySelector('.right-page');
+		const ingredientPageEl = container.querySelector('#ingredient-page');
 		const ingredientCardEl = container.querySelectorAll('.card');
 		ingredientCardEl.forEach((ingredient) => {
 			const ingredientButton = ingredient.querySelector('.ingredient-button');
@@ -350,7 +349,7 @@ function makeRecipeView(recipeId) {
 		.catch(err => console.error(err))
 }
 function makeSingleVideoView(videoId) {
-	const rightPageContainer = document.querySelector('.right-page');
+	const rightPageContainer = document.querySelector('#tutorial-page');
 	console.log(displaySingleVideo(videoId));
 	rightPageContainer.innerHTML = displaySingleVideo(videoId);
 }
@@ -410,7 +409,7 @@ function makeNewRecipeView() {
 			const dummyRecipeBtn = document.querySelector("#add-new-recipe")
 			const newNameIn = document.querySelector("#recipe-name-in")
 			const categoryIn = document.querySelector("#category-in")
-			const rightPageContainer = document.querySelector(".right-page")
+			const rightPageContainer = document.querySelector("#recipe-page")
 			recipeForm.addEventListener("submit", () => {
 
 				const ingredientsDivs = document.querySelectorAll(".ingredients")

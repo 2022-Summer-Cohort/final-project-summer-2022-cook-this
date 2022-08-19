@@ -14,9 +14,6 @@ export default function makeIngredientSection(ingredient) {
             </article>
         </figure>
     </div>
-    <div class="position-relative mt-3">
-                    <img class="position-absolute top-100 start-50 translate-middle img-fluid page-logo"
-                    src="/images/cookThisPotLogo.png" alt="">
                 </div>
     `
 }
