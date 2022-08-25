@@ -110,7 +110,7 @@ function loginSubmit(siteUser){
 		// 	"userName": loginUserEl.value,
 		// 	"password": loginPasswordEl.value,
 		// }
-		// fetch(`http://localhost:8080/api/users/login`)
+		// fetch(`/api/users/login`)
 		// 	.then(res => res.json())
 		// 	.then(siteusers => {
 		// 		console.log(siteusers);
@@ -131,7 +131,7 @@ function makeAboutView() {
 	tabLinks(); loginEyes();
 }
 function makeSearchView() {
-	fetch(`http://localhost:8080/api/recipes`)
+	fetch(`/api/recipes`)
 		.then((res) => res.json())
 		.then((recipes) => {
 			console.log(recipes);
@@ -224,7 +224,7 @@ function makeSearchView() {
 		.catch((err) => console.error(err));
 }
 function makeAllIngredients() {
-	fetch(`http://localhost:8080/api/ingredients`)
+	fetch(`/api/ingredients`)
 	.then((res) => res.json())
 	.then((ingredients) => {
 		console.log(ingredients[0]);
@@ -240,7 +240,7 @@ function makeAllIngredients() {
 			let ingredientIdEl = ingredient.querySelector('.ingredient-id');
 
 			ingredientButton.addEventListener('click', () => {
-				fetch(`http://localhost:8080/api/ingredients/${ingredientIdEl.value}`)
+				fetch(`/api/ingredients/${ingredientIdEl.value}`)
 					.then((res) => res.json())
 					.then((ingredient) => {
 						ingredientPageEl.innerHTML = makeIngredientSection(ingredient);
@@ -250,7 +250,7 @@ function makeAllIngredients() {
 	});
 }
 function makeAllCategoriesView() {
-	fetch(`http://localhost:8080/api/categories`)
+	fetch(`/api/categories`)
 		.then((res) => res.json())
 		.then((categories) => {
 			console.log(categories);
@@ -271,7 +271,7 @@ function makeAllCategoriesView() {
 		.catch((err) => console.error(err));
 }
 function makeSingleCategoryView(categoryId) {
-	fetch(`http://localhost:8080/api/categories/${categoryId}`)
+	fetch(`/api/categories/${categoryId}`)
 		.then((res) => res.json())
 		.then((categoryBuild) => {
 			console.log(categoryBuild);
@@ -294,7 +294,7 @@ function makeSingleCategoryView(categoryId) {
 }
 function makeRecipeView(recipeId) {
 	const rightPageContainer = document.querySelector("#recipe-page")
-	fetch(`http://localhost:8080/api/recipes/${recipeId}`)
+	fetch(`/api/recipes/${recipeId}`)
 		.then(res => res.json())
 		.then(recipeBuild => {
 			console.log(recipeBuild);
@@ -322,7 +322,7 @@ function makeRecipeView(recipeId) {
 					"content": reviewContent.value,
 					"rating": reviewRating.value
 				}
-				fetch(`http://localhost:8080/api/recipes/${recipeBuild.id}/addComment`,
+				fetch(`/api/recipes/${recipeBuild.id}/addComment`,
 					{
 						method: 'PATCH',
 						headers: {
@@ -372,7 +372,7 @@ function makeLearnView() {
 	});
 }
 function makeNewRecipeView() {
-	fetch(`http://localhost:8080/api/categories/`)
+	fetch(`/api/categories/`)
 		.then(res => res.json())
 		.then(categoriesList => {
 			container.innerHTML = newRecipeView(categoriesList);
@@ -466,7 +466,7 @@ function makeNewRecipeView() {
 				const submitNewRecipeBtn = document.querySelector("#submit-new-recipe")
 				submitNewRecipeBtn.addEventListener("click", () => {
 					const newRecipe = dummyRecipe;
-					fetch(`http://localhost:8080/api/recipe`, {
+					fetch(`/api/recipe`, {
 						method: 'POST',
 						headers: {
 							'Content-Type': 'application/json'
@@ -475,7 +475,7 @@ function makeNewRecipeView() {
 					})
 						.then(res => res.json())
 						.then(newRecipe => {
-							fetch(`http://localhost:8080/api/categories/${categoryIn.value}/${newRecipe.id}`, {
+							fetch(`/api/categories/${categoryIn.value}/${newRecipe.id}`, {
 								method: 'PATCH',
 								headers: {
 									'Content-Type': 'application/json'
