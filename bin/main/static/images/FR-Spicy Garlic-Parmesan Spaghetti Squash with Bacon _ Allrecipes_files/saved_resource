@@ -1,0 +1,48 @@
+
+var ftGUID_6603760="5069C50AAC3039";
+var ftConfID_6603760="27980578";
+var ftParams_6603760="ftOBA=1&ft_agentEnv=0&ft_lat=39.9881&ft_long=-83.0479&ft_referrer=https%3A%2F%2Fallrecipes.assistpub.com%2Fdisplay.html%3F_otarOg%3Dhttps%253A%252F%252Fwww.allrecipes.com%26_cpub%3DAAXV53D7Q%26_csvr%3D080911_417%26_cgdpr%3D0%26_cgdprconsent%3D1%26_cusp_status%3D0%26_ccoppa%3D0%26_ositekey_disabled%3D1&gdpr=0&us_privacy=1YN-&ft_keyword=v3m84an&ft_section=v3m84an&cachebuster=448803.9764858496";
+var ftKeyword_6603760="v3m84an";
+var ftCustom_6603760="";
+var ftSection_6603760="v3m84an";
+var ftSegment_6603760="ahp3,aixc";
+var ftSegmentList_6603760=[{s:'ahp3'},{s:'aixc'}];
+var ftRuleMatch_6603760="00010000";
+var ftTimestamp_6603760="1660055219";
+var ftGeoC2_6603760="us";
+var ftGeoState_6603760="oh";
+var ftGeoCity_6603760="columbus";
+var ftISP_6603760="charter communications";
+var ftSpeed_6603760="cable";
+var ftDMA_6603760="535";
+var ftLong_6603760="-83.05";
+var ftLat_6603760="39.99";
+var ftPostal_6603760="43212";
+var ftTimeZone_6603760="-400";
+var ftMobileCarrier_6603760="";
+var ftImp6603760 = {};
+ftImp6603760.privacy = "x";
+ftImp6603760.guidAge = "265";
+ftImp6603760.impID = "4C6C5CA7-5AE8-21F4-CC4D-0395FA0245C4";
+ftImp6603760.duid = "FT:5069C50AAC3039";
+
+ftImp6603760.ft_tpplid = "";
+ftImp6603760.ft_c = {};
+ftImp6603760.gdpr = "0";
+ftImp6603760.gdpr_consent = "";
+ftImp6603760.gdpr_pd = "";
+ftImp6603760.oob_consent = "";
+ftImp6603760.gdprStoredConsent = "";
+ftImp6603760.us_privacy = "1YN-";
+
+ftImp6603760.jsAppend = "1";
+(function(){
+    var tag = document.getElementById('ft_servedby_6603760') || (function(s){
+    	return s[s.length-1];
+    }(document.getElementsByTagName('script'))),
+           js = document.createElement('script');
+    js.src =
+"https://cdn.flashtalking.com/xre/660/6603760/3993185/js/j-6603760-3993185.js";
+    js.id = "ftscript_m6603760";
+    tag.parentNode.insertBefore(js, tag);
+}());

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)https://cdn.flashtalking.com/166373/3993185/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<style></style>
+		<title>Absolut_300x250_Dynamic</title>
+		<link rel="stylesheet" type="text/css" href="./style.css">
+		<script src="./normalize.min.js"></script>
+		<script src="./gsap.min.js"></script>
+		
+	</head>
+	<body>
+		<div id="container">
+			<img id="background" src="./Control_BG_300x250.jpg">
+			<!-- <img id="guide" src="images/guide.jpg" style="position: absolute;"/> -->
+			<img id="cta" src="./ctatest_1in.png">
+				<div id="headline_container">
+				<div id="headline1" class="text"></div>			
+			</div>
+		
+		</div>
+
+		<!-- 
+			Flashtalking HTML5 API Documentation:
+			https://flashtalkingsupport.zendesk.com/hc/en-us/articles/360000616047-Class-FT  
+		-->
+		<script src="./html5API.js"></script>
+		<script src="./dlitetracker.js"></script>
+		<script>
+			var container    = myFT.$("#container");
+			var background   = myFT.$("#background");
+			var cta   		 = myFT.$("#cta");
+			var headline1     = myFT.$("#headline1");
+			
+
+			/**
+			 * After the Flashtalking Dynamic Ads version data has finished loading, the 'instantads' event is dispatched.
+			 * The callback function initiates the content update for dynamic elements with values from the manifest.js file.
+			*/
+			macros_arr.push( ["[%FT_GDPR%]","myFT.get('FT_GDPR')"], ["[%FT_GDPR_CONSENT%]","myFT.get('FT_GDPR_CONSENT')"] );
+
+			myFT.on('instantads', function() {
+
+				// Dispatch the 3rd party impression tracker
+               
+				
+				// Populate dynamic image elements
+				background[0].src = myFT.instantAds.background_img;
+				cta[0].src = myFT.instantAds.cta_img;
+
+				// Populate dynamic text elements
+				headline1[0].innerHTML     = myFT.instantAds.headline1_txt;
+				
+	
+				// Add dynamic clickTag
+				container.on('click', function() {
+					myFT.clickTag(1, myFT.instantAds.clickTag1_url);
+				});
+
+				start();
+			});
+
+			function start() { 
+				// Animate fade in
+				// container[0].style.transition = "opacity 1s";
+				// container[0].style.opacity = 1;
+				// background[0].classList.add('animate');
+				gsap.from(headline1, {duration: 1.8, delay: 0.1, ease: "circ.inOut", autoAlpha: 0});
+				
+				gsap.from(cta, {scaleX:0.2, scaleY:0.4, duration: 1, delay: 2, ease: "elastic.out(1, 0.5)", autoAlpha: 0});
+			};
+		</script>
+		<!-- <script src="js/animation.js"></script> -->
+	
+</body></html>
